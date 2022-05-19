@@ -1,0 +1,596 @@
+file 34548 1649680807                                           
+version 2
+run General-0-20220411-05:40:05-6389
+attr configname General
+attr datetime 20220411-05:40:05
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network AntennaDirectionalSelectivityExample
+attr processid 6389
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.host*.numWlanInterfaces 4
+param *.hostA.numApps 1
+param *.hostA.app[0].typename "\"PingApp\""
+param *.hostA.app[0].destAddr "\"hostB\""
+param *.hostA.app[0].startTime 0s
+param *.hostA.app[0].printPing true
+param *.hostA.wlan[*].radio.channelNumber 4
+param *.hostB.wlan[*].radio.channelNumber 5
+param *.radioMedium.analogModel.ignorePartialInterference true
+
+vector 0 AntennaDirectionalSelectivityExample.hostA.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 AntennaDirectionalSelectivityExample.hostA.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 AntennaDirectionalSelectivityExample.hostA.wlan[1].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 AntennaDirectionalSelectivityExample.hostA.wlan[1].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 AntennaDirectionalSelectivityExample.hostA.wlan[2].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 AntennaDirectionalSelectivityExample.hostA.wlan[2].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 6 AntennaDirectionalSelectivityExample.hostA.wlan[3].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 7 AntennaDirectionalSelectivityExample.hostA.wlan[3].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 8 AntennaDirectionalSelectivityExample.hostB.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 AntennaDirectionalSelectivityExample.hostB.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 10 AntennaDirectionalSelectivityExample.hostB.wlan[1].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 11 AntennaDirectionalSelectivityExample.hostB.wlan[1].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 12 AntennaDirectionalSelectivityExample.hostB.wlan[2].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 13 AntennaDirectionalSelectivityExample.hostB.wlan[2].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 14 AntennaDirectionalSelectivityExample.hostB.wlan[3].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 15 AntennaDirectionalSelectivityExample.hostB.wlan[3].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 16 AntennaDirectionalSelectivityExample.hostA.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 17 AntennaDirectionalSelectivityExample.hostA.wlan[1].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 18 AntennaDirectionalSelectivityExample.hostA.wlan[2].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 19 AntennaDirectionalSelectivityExample.hostA.wlan[3].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 20 AntennaDirectionalSelectivityExample.hostB.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 21 AntennaDirectionalSelectivityExample.hostB.wlan[1].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 22 AntennaDirectionalSelectivityExample.hostB.wlan[2].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 23 AntennaDirectionalSelectivityExample.hostB.wlan[3].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 24 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 25 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 26 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 27 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 28 AntennaDirectionalSelectivityExample.hostB.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 29 AntennaDirectionalSelectivityExample.hostB.wlan[1].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 30 AntennaDirectionalSelectivityExample.hostB.wlan[2].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 31 AntennaDirectionalSelectivityExample.hostB.wlan[3].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 32 AntennaDirectionalSelectivityExample.hostA.app[0] pingTxSeq:vector ETV
+attr interpolationmode none
+attr title "ping tx seq, vector"
+vector 33 AntennaDirectionalSelectivityExample.hostA.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 34 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 35 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 36 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 37 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 38 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 39 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 40 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 41 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 42 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 43 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 44 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 45 AntennaDirectionalSelectivityExample.hostA.wlan[3].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 46 AntennaDirectionalSelectivityExample receptionPower:vector ETV
+attr source receptionMinSignalPower(radioMedium.signalArrivalStarted)
+vector 47 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 48 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 49 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetSentToPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , vector(packetBytes)"
+vector 50 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 51 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 52 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 53 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 54 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 55 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, vector(packetBytes)"
+vector 56 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 57 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 58 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 59 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 60 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 61 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, vector(packetBytes)"
+vector 62 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 63 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 64 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 65 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 66 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 67 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetReceivedFromPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, vector(packetBytes)"
+vector 68 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 69 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 70 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 71 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 72 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 73 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 74 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 75 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 76 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 77 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 78 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 79 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 80 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 81 AntennaDirectionalSelectivityExample.hostA.wlan[2].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 82 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 83 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 84 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetSentToPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , vector(packetBytes)"
+vector 85 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 86 AntennaDirectionalSelectivityExample.hostA.wlan[2].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 87 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 88 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 89 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetReceivedFromPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, vector(packetBytes)"
+vector 90 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetReceivedFromPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, vector(packetBytes)"
+vector 91 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 92 AntennaDirectionalSelectivityExample.hostA.wlan[3].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 93 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 94 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 95 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 96 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 97 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 98 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 99 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 100 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 101 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 102 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 103 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 104 AntennaDirectionalSelectivityExample.hostA.wlan[1].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 105 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 106 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetSentToPeerMulticast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, vector(packetBytes)"
+vector 107 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetSentToPeerBroadcast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , vector(packetBytes)"
+vector 108 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 109 AntennaDirectionalSelectivityExample.hostA.wlan[1].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 110 AntennaDirectionalSelectivityExample.hostA.ipv4.ip packetDropAddressResolutionFailed:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, vector(packetBytes)"
+vector 111 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 112 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 113 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 114 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 115 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 116 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 117 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 118 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 119 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 120 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 121 AntennaDirectionalSelectivityExample.hostA.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 122 AntennaDirectionalSelectivityExample.hostA.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+0	27617 34 0 218 0 6 4 0 3 5 13
+1	27651 8 0 0 0 0 1 4 4 4 16
+2	27659 48 0 91 0 2.00005 5 0 3 7 17
+3	27707 8 0 0 0 0 1 4 4 4 16
+4	27715 100 0 161 0 4.00005 9 0 3 17 43
+5	27815 8 0 0 0 0 1 4 4 4 16
+6	27823 79 0 196 0 5.00005 7 0 3 12 30
+7	27902 8 0 0 0 0 1 4 4 4 16
+8	27910 24 0 0 0 0 3 0 2 2 4
+9	27934 8 0 0 0 0 1 5 5 5 25
+10	27942 27 0 0 0 0 3 0 2 2 4
+11	27969 9 0 0 0 0 1 5 5 5 25
+12	27978 27 0 0 0 0 3 0 2 2 4
+13	28005 9 0 0 0 0 1 5 5 5 25
+14	28014 27 0 0 0 0 3 0 2 2 4
+15	28041 9 0 0 0 0 1 5 5 5 25
+16	28050 188 0 218 0 6 14 0 3 25 61
+17	28238 188 0 220 0 6 14 0 3 25 61
+18	28426 188 0 221 0 6 14 0 3 19 43
+19	28614 187 0 222 0 6 14 0 3 22 52
+20	28801 9 0 0 0 0 1 1 1 1 1
+21	28810 9 0 0 0 0 1 1 1 1 1
+22	28819 9 0 0 0 0 1 1 1 1 1
+23	28828 9 0 0 0 0 1 1 1 1 1
+24	28837 10 0 0 0 0 1 31 31 31 961
+25	28847 10 0 0 0 0 1 31 31 31 961
+26	28857 10 0 0 0 0 1 31 31 31 961
+27	28867 10 0 0 0 0 1 31 31 31 961
+28	28877 10 0 0 0 0 1 31 31 31 961
+29	28887 10 0 0 0 0 1 31 31 31 961
+30	28897 10 0 0 0 0 1 31 31 31 961
+31	28907 10 0 0 0 0 1 31 31 31 961
+32	28917 73 1 211 0 6 7 0 6 21 91
+33	28990 80 3 213 0 6 7 28 28 196 5488
+34	29070 22 5 180 0 5 2 36 36 72 2592
+35	29092 22 5 180 0 5 2 64 64 128 8192
+36	29114 46 5 182 0 5 4 0 1 2 2
+37	29160 21 5 180 0 5 2 3 18 21 333
+38	29181 46 5 181 0 5 4 0 1 2 2
+39	29227 28 7 182 0.00011 5 2 64 64 128 8192
+40	29255 32 7 182 0.00011 5 2 0 0.00011 0.00011 1.21e-08
+41	29287 59 7 192 0.00011 5.00005 4 0 1 2 2
+42	29346 40 7 182 0.00011 5 2 24000000 24000000 48000000 1.152e+15
+43	29386 28 7 182 0.00011 5 2 64 64 128 8192
+44	29414 59 7 192 0.00011 5.00005 4 0 1 2 2
+45	29473 118 8 196 0.00011 5.00005 8 0 2 8 12
+46	29591 1299 10 222 0.00011 6 45 8.5534636515915e-11 0.02 0.42000000205283 0.0084
+47	30890 35 17 192 0.00016 5.00005 2 64 64 128 8192
+48	30925 35 17 192 0.00016 5.00005 2 64 64 128 8192
+49	30960 35 17 192 0.00016 5.00005 2 64 64 128 8192
+50	30995 35 17 192 0.00016 5.00005 2 64 64 128 8192
+51	31030 41 17 192 0.00016 5.00005 2 5e-05 5e-05 0.0001 5e-09
+52	31071 105 22 197 0.00016 5.00005 6 64 64 384 24576
+53	31176 105 22 197 0.00016 5.00005 6 64 64 384 24576
+54	31281 105 22 197 0.00016 5.00005 6 64 64 384 24576
+55	31386 105 22 197 0.00016 5.00005 6 64 64 384 24576
+56	31491 105 22 197 0.00016 5.00005 6 64 64 384 24576
+57	31596 105 22 197 0.00016 5.00005 6 36 36 216 7776
+58	31701 88 23 198 0.00016 5.00005 5 64 64 320 20480
+59	31789 88 23 198 0.00016 5.00005 5 64 64 320 20480
+60	31877 88 23 198 0.00016 5.00005 5 64 64 320 20480
+61	31965 88 23 198 0.00016 5.00005 5 64 64 320 20480
+62	32053 88 23 198 0.00016 5.00005 5 64 64 320 20480
+63	32141 88 23 198 0.00016 5.00005 5 36 36 180 6480
+64	32229 52 24 199 0.00016 5.00005 3 64 64 192 12288
+65	32281 52 24 199 0.00016 5.00005 3 64 64 192 12288
+66	32333 52 24 199 0.00016 5.00005 3 64 64 192 12288
+67	32385 52 24 199 0.00016 5.00005 3 64 64 192 12288
+68	32437 52 24 199 0.00016 5.00005 3 64 64 192 12288
+69	32489 52 24 199 0.00016 5.00005 3 36 36 108 3888
+70	32541 35 40 145 1 4 3 36 36 108 3888
+71	32576 35 40 145 1 4 3 64 64 192 12288
+72	32611 64 40 147 1 4 6 0 1 3 3
+73	32675 34 40 145 1 4 3 7 21 47 851
+74	32709 64 40 146 1 4 6 0 1 3 3
+75	32773 35 42 147 1 4 3 64 64 192 12288
+76	32808 32 42 147 1 4 3 0 0 0 0
+77	32840 82 42 157 1 4.00005 6 0 1 3 3
+78	32922 53 42 147 1 4 3 24000000 24000000 72000000 1.728e+15
+79	32975 35 42 147 1 4 3 64 64 192 12288
+80	33010 82 42 157 1 4.00005 6 0 1 3 3
+81	33092 164 43 161 1 4.00005 12 0 2 12 18
+82	33256 53 52 157 1.00005 4.00005 3 64 64 192 12288
+83	33309 53 52 157 1.00005 4.00005 3 64 64 192 12288
+84	33362 53 52 157 1.00005 4.00005 3 64 64 192 12288
+85	33415 53 52 157 1.00005 4.00005 3 64 64 192 12288
+86	33468 62 52 157 1.00005 4.00005 3 5e-05 5e-05 0.00015 7.5e-09
+87	33530 70 59 164 1.00005 4.00005 4 64 64 256 16384
+88	33600 70 59 164 1.00005 4.00005 4 64 64 256 16384
+89	33670 70 59 164 1.00005 4.00005 4 64 64 256 16384
+90	33740 70 59 164 1.00005 4.00005 4 64 64 256 16384
+91	33810 70 59 164 1.00005 4.00005 4 64 64 256 16384
+92	33880 70 59 164 1.00005 4.00005 4 36 36 144 5184
+93	33950 11 75 75 2 2 1 36 36 36 1296
+94	33961 11 75 75 2 2 1 64 64 64 4096
+95	33972 20 75 77 2 2 2 0 1 1 1
+96	33992 10 75 75 2 2 1 9 9 9 81
+97	34002 20 75 76 2 2 2 0 1 1 1
+98	34022 11 77 77 2 2 1 64 64 64 4096
+99	34033 10 77 77 2 2 1 0 0 0 0
+100	34043 28 77 87 2 2.00005 2 0 1 1 1
+101	34071 18 77 77 2 2 1 24000000 24000000 24000000 5.76e+14
+102	34089 12 77 77 2 2 1 64 64 64 4096
+103	34101 28 77 87 2 2.00005 2 0 1 1 1
+104	34129 56 78 91 2 2.00005 4 0 2 4 6
+105	34185 18 87 87 2.00005 2.00005 1 64 64 64 4096
+106	34203 18 87 87 2.00005 2.00005 1 64 64 64 4096
+107	34221 18 87 87 2.00005 2.00005 1 64 64 64 4096
+108	34239 18 87 87 2.00005 2.00005 1 64 64 64 4096
+109	34257 21 87 87 2.00005 2.00005 1 5e-05 5e-05 5e-05 2.5e-09
+110	34278 78 107 212 3 6 6 84 84 504 42336
+111	34356 13 215 215 6 6 1 36 36 36 1296
+112	34369 13 215 215 6 6 1 64 64 64 4096
+113	34382 24 215 217 6 6 2 0 1 1 1
+114	34406 12 215 215 6 6 1 4 4 4 16
+115	34418 24 215 216 6 6 2 0 1 1 1
+116	34442 13 217 217 6 6 1 64 64 64 4096
+117	34455 12 217 217 6 6 1 0 0 0 0
+118	34467 12 217 217 6 6 1 1 1 1 1
+119	34479 19 217 217 6 6 1 24000000 24000000 24000000 5.76e+14
+120	34498 13 217 217 6 6 1 64 64 64 4096
+121	34511 12 217 217 6 6 1 1 1 1 1
+122	34523 24 218 219 6 6 2 1 2 3 5
+

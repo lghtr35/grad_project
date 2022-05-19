@@ -1,0 +1,4972 @@
+version 2
+run General-0-20220406-14:03:54-29165
+attr configname General
+attr datetime 20220406-14:03:54
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MultiRadioShowcase
+attr processid 29165
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.accessPoint.numWlanInterfaces 2
+param *.accessPoint.wlan[0].mgmt.ssid "\"wlan2.4\""
+param *.accessPoint.wlan[1].mgmt.ssid "\"wlan5\""
+param *.accessPoint.wlan[1].radio.bandName "\"5 GHz\""
+param *.host1.wlan[*].agent.defaultSsid "\"wlan2.4\""
+param *.host2.wlan[*].agent.defaultSsid "\"wlan5\""
+param *.host2.wlan[0].radio.bandName "\"5 GHz\""
+param *.host1.numApps 1
+param *.host1.app[0].typename "\"PingApp\""
+param *.host1.app[0].destAddr "\"host2\""
+param *.host1.app[0].printPing true
+param **.numMediumVisualizers 4
+param **.displaySignals true
+param *.visualizer.mediumVisualizer[0].nodeFilter "\"host1\""
+param *.visualizer.mediumVisualizer[0].signalColor "\"red\""
+param *.visualizer.mediumVisualizer[1].nodeFilter "\"host2\""
+param *.visualizer.mediumVisualizer[1].signalColor "\"blue\""
+param *.visualizer.mediumVisualizer[2].nodeFilter "\"accessPoint\""
+param *.visualizer.mediumVisualizer[2].interfaceFilter "\"wlan[0]\""
+param *.visualizer.mediumVisualizer[2].signalColor "\"red\""
+param *.visualizer.mediumVisualizer[3].nodeFilter "\"accessPoint\""
+param *.visualizer.mediumVisualizer[3].interfaceFilter "\"wlan[1]\""
+param *.visualizer.mediumVisualizer[3].signalColor "\"blue\""
+param *.visualizer.numDataLinkVisualizers 2
+param *.visualizer.dataLinkVisualizer[*].displayLinks true
+param *.visualizer.dataLinkVisualizer[*].activityLevel "\"peer\""
+param *.visualizer.dataLinkVisualizer[0].nodeFilter "\"host1 or accessPoint\""
+param *.visualizer.dataLinkVisualizer[0].lineColor "\"red\""
+param *.visualizer.dataLinkVisualizer[0].labelColor "\"red\""
+param *.visualizer.dataLinkVisualizer[1].nodeFilter "\"accessPoint or host2\""
+param *.visualizer.dataLinkVisualizer[1].lineColor "\"darkblue\""
+param *.visualizer.dataLinkVisualizer[1].labelColor "\"darkblue\""
+param *.visualizer.interfaceTableVisualizer[0].displayInterfaceTables true
+param *.visualizer.interfaceTableVisualizer[0].placementHint "\"top\""
+param *.visualizer.ieee80211Visualizer[0].displayAssociations true
+param **.arp.typename "\"GlobalArp\""
+
+scalar MultiRadioShowcase.radioMedium.propagation "Arrival computation count" 355
+scalar MultiRadioShowcase.radioMedium "transmission count" 71
+scalar MultiRadioShowcase.radioMedium "signal send count" 355
+scalar MultiRadioShowcase.radioMedium "reception computation count" 355
+scalar MultiRadioShowcase.radioMedium "interference computation count" 1123
+scalar MultiRadioShowcase.radioMedium "reception decision computation count" 159
+scalar MultiRadioShowcase.radioMedium "listening decision computation count" 610
+scalar MultiRadioShowcase.radioMedium "reception cache hit" 81.246698362388
+attr unit %
+scalar MultiRadioShowcase.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar MultiRadioShowcase.radioMedium "noise cache hit" 0
+attr unit %
+scalar MultiRadioShowcase.radioMedium "snir cache hit" 50
+attr unit %
+scalar MultiRadioShowcase.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar MultiRadioShowcase.radioMedium "reception result cache hit" 0
+attr unit %
+scalar MultiRadioShowcase.host1.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar MultiRadioShowcase.host1.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar MultiRadioShowcase.host1.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].agent dropConfirm:count 0
+attr title "dropped confirms, count"
+scalar MultiRadioShowcase.host1.wlan[0].agent acceptConfirm:count 3
+attr title "accepted confirms, count"
+scalar MultiRadioShowcase.host1.wlan[0].agent sentRequest:count 3
+attr title "sent requests, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:count 5
+attr interpolationmode none
+attr title "packet popped, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 256
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 5
+field mean 0.0001976
+field stddev 0.000312107032923
+field min 0
+field max 0.000714
+field sum 0.000988
+field sqrsum 5.84872e-07
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	3
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	0
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	0
+bin	0.0001	0
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	0
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	0
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	1
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	0
+bin	0.00046	0
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+bin	0.00051	0
+bin	0.00052	0
+bin	0.00053	0
+bin	0.00054	0
+bin	0.00055	0
+bin	0.00056	0
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	0
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	1
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+bin	0.00086	0
+bin	0.00087	0
+bin	0.00088	0
+bin	0.00089	0
+bin	0.0009	0
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.0017943665523951
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:count 5
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 256
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 4
+field mean 7.49395055e-05
+field stddev 2.4626337e-05
+field min 3.8e-05
+field max 8.7252674e-05
+field sum 0.000299758022
+field sqrsum 2.4283087360451e-08
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	2.5e-05	0
+bin	2.6e-05	0
+bin	2.7e-05	0
+bin	2.8e-05	0
+bin	2.9e-05	0
+bin	3e-05	0
+bin	3.1e-05	0
+bin	3.2e-05	0
+bin	3.3e-05	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	1
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	0
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	0
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00075258849557216
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 5
+attr title "channel access granted, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.contention stateChanged:count 188
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 9
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 15
+attr title "packets defragmented, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf frameSequenceFinished:count 4
+attr title "finished frame sequences, count"
+statistic MultiRadioShowcase.host1.wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 4
+field mean 7.49395055e-05
+field stddev 2.4626337e-05
+field min 3.8e-05
+field max 8.7252674e-05
+field sum 0.000299758022
+field sqrsum 2.4283087360451e-08
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	2.5e-05	0
+bin	2.6e-05	0
+bin	2.7e-05	0
+bin	2.8e-05	0
+bin	2.9e-05	0
+bin	3e-05	0
+bin	3.1e-05	0
+bin	3.2e-05	0
+bin	3.3e-05	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	1
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	0
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	0
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+statistic MultiRadioShowcase.host1.wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 4
+field mean 1.75
+field stddev 0.5
+field min 1
+field max 2
+field sum 7
+field sqrsum 13
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	1
+bin	2	3
+bin	3	0
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeer:count 18
+attr interpolationmode none
+attr title "packets received, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 701
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 197
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 11
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 504
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 11
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 504
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 18
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 701
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeer:count 9
+attr interpolationmode none
+attr title "packets sent, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 312
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerUnicast:count 8
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 280
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerMulticast:count 1
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerBroadcast:count 1
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 9
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 312
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDrop:count 18
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDrop:sum(packetBytes) 487
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropNotAddressedToUs:count 18
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 487
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromLower:count 36
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromLower:sum(packetBytes) 1188
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetSentToLower:count 9
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetSentToLower:sum(packetBytes) 312
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromUpper:count 1
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 92
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDrop:count 18
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDrop:sum(packetBytes) 487
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropNotAddressedToUs:count 18
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 487
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar MultiRadioShowcase.host1.wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic MultiRadioShowcase.host1.wlan[0].radio radioChannel:histogram
+field count 4
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	4
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar MultiRadioShowcase.host1.wlan[0].radio radioMode:count 21
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar MultiRadioShowcase.host1.wlan[0].radio receptionState:count 92
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar MultiRadioShowcase.host1.wlan[0].radio transmissionState:count 36
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic MultiRadioShowcase.host1.wlan[0].radio minSnir:histogram
+field count 36
+field mean 444444448379.23
+field stddev 843274040578.5
+field min 2117.1415686719
+field max 2000000000000
+field sum 16000000141652
+field sqrsum 3.2e+25
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	28
+bin	50000000000	0
+bin	100000000000	0
+bin	150000000000	0
+bin	200000000000	0
+bin	250000000000	0
+bin	300000000000	0
+bin	350000000000	0
+bin	400000000000	0
+bin	450000000000	0
+bin	500000000000	0
+bin	550000000000	0
+bin	600000000000	0
+bin	650000000000	0
+bin	700000000000	0
+bin	750000000000	0
+bin	800000000000	0
+bin	850000000000	0
+bin	900000000000	0
+bin	950000000000	0
+bin	1000000000000	0
+bin	1050000000000	0
+bin	1100000000000	0
+bin	1150000000000	0
+bin	1200000000000	0
+bin	1250000000000	0
+bin	1300000000000	0
+bin	1350000000000	0
+bin	1400000000000	0
+bin	1450000000000	0
+bin	1500000000000	0
+bin	1550000000000	0
+bin	1600000000000	0
+bin	1650000000000	0
+bin	1700000000000	0
+bin	1750000000000	0
+bin	1800000000000	0
+bin	1850000000000	0
+bin	1900000000000	0
+bin	1950000000000	0
+bin	2000000000000	8
+bin	2050000000000	0
+bin	2100000000000	0
+bin	2150000000000	0
+bin	2200000000000	0
+bin	2250000000000	0
+bin	2300000000000	0
+bin	2350000000000	0
+bin	2400000000000	0
+bin	2450000000000	0
+bin	2500000000000	0
+statistic MultiRadioShowcase.host1.wlan[0].radio packetErrorRate:histogram
+field count 36
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	36
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic MultiRadioShowcase.host1.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic MultiRadioShowcase.host1.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar MultiRadioShowcase.host1.wlan[1].agent dropConfirm:count 0
+attr title "dropped confirms, count"
+scalar MultiRadioShowcase.host1.wlan[1].agent acceptConfirm:count 3
+attr title "accepted confirms, count"
+scalar MultiRadioShowcase.host1.wlan[1].agent sentRequest:count 3
+attr title "sent requests, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:count 4
+attr interpolationmode none
+attr title "packet popped, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 136
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 4
+field mean 0.000122
+field stddev 0.00018666904760386
+field min 0
+field max 0.000394
+field sum 0.000488
+field sqrsum 1.64072e-07
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	2
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	0
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	1
+bin	0.0001	0
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	0
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	0
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	0
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	1
+bin	0.0004	0
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	0
+bin	0.00046	0
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.00077575343475568
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:count 4
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 136
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 4
+field mean 7.49395055e-05
+field stddev 2.4626337e-05
+field min 3.8e-05
+field max 8.7252674e-05
+field sum 0.000299758022
+field sqrsum 2.4283087360451e-08
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	2.5e-05	0
+bin	2.6e-05	0
+bin	2.7e-05	0
+bin	2.8e-05	0
+bin	2.9e-05	0
+bin	3e-05	0
+bin	3.1e-05	0
+bin	3.2e-05	0
+bin	3.3e-05	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	1
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	0
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	0
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00047651294090588
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.contention channelAccessGranted:count 4
+attr title "channel access granted, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess.contention stateChanged:count 188
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.channelAccess channelOwnershipChanged:count 8
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.recipientMacDataService packetDefragmented:count 15
+attr title "packets defragmented, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf frameSequenceFinished:count 4
+attr title "finished frame sequences, count"
+statistic MultiRadioShowcase.host1.wlan[1].mac.dcf frameSequenceDuration:histogram
+field count 4
+field mean 7.49395055e-05
+field stddev 2.4626337e-05
+field min 3.8e-05
+field max 8.7252674e-05
+field sum 0.000299758022
+field sqrsum 2.4283087360451e-08
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	2.5e-05	0
+bin	2.6e-05	0
+bin	2.7e-05	0
+bin	2.8e-05	0
+bin	2.9e-05	0
+bin	3e-05	0
+bin	3.1e-05	0
+bin	3.2e-05	0
+bin	3.3e-05	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	1
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	0
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	0
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+statistic MultiRadioShowcase.host1.wlan[1].mac.dcf frameSequenceNumPackets:histogram
+field count 4
+field mean 1.75
+field stddev 0.5
+field min 1
+field max 2
+field sum 7
+field sqrsum 13
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	1
+bin	2	3
+bin	3	0
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeer:count 18
+attr interpolationmode none
+attr title "packets received, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeer:sum(packetBytes) 701
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 197
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerMulticast:count 11
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 504
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:count 11
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 504
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:count 18
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 701
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeer:count 8
+attr interpolationmode none
+attr title "packets sent, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeer:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 160
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerMulticast:count 1
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerBroadcast:count 1
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerWithoutRetry:count 8
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 192
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDrop:count 19
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDrop:sum(packetBytes) 607
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDropNotAddressedToUs:count 19
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 607
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetReceivedFromLower:count 37
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetReceivedFromLower:sum(packetBytes) 1308
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetSentToLower:count 8
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetSentToLower:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDrop:count 19
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDrop:sum(packetBytes) 607
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropNotAddressedToUs:count 19
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropNotAddressedToUs:sum(packetBytes) 607
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar MultiRadioShowcase.host1.wlan[1].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.wlan[1].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic MultiRadioShowcase.host1.wlan[1].radio radioChannel:histogram
+field count 4
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	4
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar MultiRadioShowcase.host1.wlan[1].radio radioMode:count 19
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar MultiRadioShowcase.host1.wlan[1].radio receptionState:count 92
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar MultiRadioShowcase.host1.wlan[1].radio transmissionState:count 32
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic MultiRadioShowcase.host1.wlan[1].radio minSnir:histogram
+field count 37
+field mean 486486490314.92
+field stddev 869917670201.22
+field min 2117.1415686719
+field max 2000000000000
+field sum 18000000141652
+field sqrsum 3.6e+25
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	28
+bin	50000000000	0
+bin	100000000000	0
+bin	150000000000	0
+bin	200000000000	0
+bin	250000000000	0
+bin	300000000000	0
+bin	350000000000	0
+bin	400000000000	0
+bin	450000000000	0
+bin	500000000000	0
+bin	550000000000	0
+bin	600000000000	0
+bin	650000000000	0
+bin	700000000000	0
+bin	750000000000	0
+bin	800000000000	0
+bin	850000000000	0
+bin	900000000000	0
+bin	950000000000	0
+bin	1000000000000	0
+bin	1050000000000	0
+bin	1100000000000	0
+bin	1150000000000	0
+bin	1200000000000	0
+bin	1250000000000	0
+bin	1300000000000	0
+bin	1350000000000	0
+bin	1400000000000	0
+bin	1450000000000	0
+bin	1500000000000	0
+bin	1550000000000	0
+bin	1600000000000	0
+bin	1650000000000	0
+bin	1700000000000	0
+bin	1750000000000	0
+bin	1800000000000	0
+bin	1850000000000	0
+bin	1900000000000	0
+bin	1950000000000	0
+bin	2000000000000	9
+bin	2050000000000	0
+bin	2100000000000	0
+bin	2150000000000	0
+bin	2200000000000	0
+bin	2250000000000	0
+bin	2300000000000	0
+bin	2350000000000	0
+bin	2400000000000	0
+bin	2450000000000	0
+bin	2500000000000	0
+statistic MultiRadioShowcase.host1.wlan[1].radio packetErrorRate:histogram
+field count 37
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	37
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic MultiRadioShowcase.host1.wlan[1].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic MultiRadioShowcase.host1.wlan[1].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar MultiRadioShowcase.host1.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar MultiRadioShowcase.host1.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar MultiRadioShowcase.host1.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.host1.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar MultiRadioShowcase.host1.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar MultiRadioShowcase.host1.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar MultiRadioShowcase.host1.app[0] "Pings sent" 1
+scalar MultiRadioShowcase.host1.app[0] "ping loss rate (%)" 100
+scalar MultiRadioShowcase.host1.app[0] "ping out-of-order rate (%)" 0
+scalar MultiRadioShowcase.host1.app[0] pingRxSeq:count 0
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar MultiRadioShowcase.host1.app[0] pingTxSeq:count 1
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar MultiRadioShowcase.host1.app[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar MultiRadioShowcase.host1.app[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+statistic MultiRadioShowcase.host1.app[0] rtt:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "ping round-trip time, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar MultiRadioShowcase.host2.lo[0].lo rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar MultiRadioShowcase.host2.lo[0].lo rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.lo[0].lo passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar MultiRadioShowcase.host2.lo[0].lo passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].agent dropConfirm:count 0
+attr title "dropped confirms, count"
+scalar MultiRadioShowcase.host2.wlan[0].agent acceptConfirm:count 3
+attr title "accepted confirms, count"
+scalar MultiRadioShowcase.host2.wlan[0].agent sentRequest:count 3
+attr title "sent requests, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:count 4
+attr interpolationmode none
+attr title "packet popped, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 136
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 4
+field mean 0.000277
+field stddev 0.00033452254532891
+field min 0
+field max 0.000674
+field sum 0.001108
+field sqrsum 6.42632e-07
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	2
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	0
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	0
+bin	0.0001	0
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	0
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	0
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	0
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	1
+bin	0.00044	0
+bin	0.00045	0
+bin	0.00046	0
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+bin	0.00051	0
+bin	0.00052	0
+bin	0.00053	0
+bin	0.00054	0
+bin	0.00055	0
+bin	0.00056	0
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	0
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	1
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.0018071968624017
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:count 4
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 136
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 4
+field mean 7.48980905e-05
+field stddev 2.4598727e-05
+field min 3.8e-05
+field max 8.7197454e-05
+field sum 0.000299592362
+field sqrsum 2.4254187952246e-08
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	2.5e-05	0
+bin	2.6e-05	0
+bin	2.7e-05	0
+bin	2.8e-05	0
+bin	2.9e-05	0
+bin	3e-05	0
+bin	3.1e-05	0
+bin	3.2e-05	0
+bin	3.3e-05	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	1
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	0
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	0
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00048864835433747
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 4
+attr title "channel access granted, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.contention stateChanged:count 104
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 8
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 13
+attr title "packets defragmented, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf frameSequenceFinished:count 4
+attr title "finished frame sequences, count"
+statistic MultiRadioShowcase.host2.wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 4
+field mean 7.48980905e-05
+field stddev 2.4598727e-05
+field min 3.8e-05
+field max 8.7197454e-05
+field sum 0.000299592362
+field sqrsum 2.4254187952246e-08
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	2.5e-05	0
+bin	2.6e-05	0
+bin	2.7e-05	0
+bin	2.8e-05	0
+bin	2.9e-05	0
+bin	3e-05	0
+bin	3.1e-05	0
+bin	3.2e-05	0
+bin	3.3e-05	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	1
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	0
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	0
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+statistic MultiRadioShowcase.host2.wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 4
+field mean 1.75
+field stddev 0.5
+field min 1
+field max 2
+field sum 7
+field sqrsum 13
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	1
+bin	2	3
+bin	3	0
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeer:count 16
+attr interpolationmode none
+attr title "packets received, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 636
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 195
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 9
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 441
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 9
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 441
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 16
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 636
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeer:count 8
+attr interpolationmode none
+attr title "packets sent, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 160
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerMulticast:count 1
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerBroadcast:count 1
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 8
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 192
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromLower:count 16
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromLower:sum(packetBytes) 636
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetSentToLower:count 8
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetSentToLower:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar MultiRadioShowcase.host2.wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic MultiRadioShowcase.host2.wlan[0].radio radioChannel:histogram
+field count 4
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	4
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar MultiRadioShowcase.host2.wlan[0].radio radioMode:count 19
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar MultiRadioShowcase.host2.wlan[0].radio receptionState:count 50
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar MultiRadioShowcase.host2.wlan[0].radio transmissionState:count 32
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic MultiRadioShowcase.host2.wlan[0].radio minSnir:histogram
+field count 16
+field mean 1411.8186080371
+field stddev 1.5759209579295e-05
+field min 1411.8186080371
+field max 1411.8186080371
+field sum 22589.097728594
+field sqrsum 31891708.511999
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1411.3	0
+bin	1411.32	0
+bin	1411.34	0
+bin	1411.36	0
+bin	1411.38	0
+bin	1411.4	0
+bin	1411.42	0
+bin	1411.44	0
+bin	1411.46	0
+bin	1411.48	0
+bin	1411.5	0
+bin	1411.52	0
+bin	1411.54	0
+bin	1411.56	0
+bin	1411.58	0
+bin	1411.6	0
+bin	1411.62	0
+bin	1411.64	0
+bin	1411.66	0
+bin	1411.68	0
+bin	1411.7	0
+bin	1411.72	0
+bin	1411.74	0
+bin	1411.76	0
+bin	1411.78	0
+bin	1411.8	16
+bin	1411.82	0
+bin	1411.84	0
+bin	1411.86	0
+bin	1411.88	0
+bin	1411.9	0
+bin	1411.92	0
+bin	1411.94	0
+bin	1411.96	0
+bin	1411.98	0
+bin	1412	0
+bin	1412.02	0
+bin	1412.04	0
+bin	1412.06	0
+bin	1412.08	0
+bin	1412.1	0
+bin	1412.12	0
+bin	1412.14	0
+bin	1412.16	0
+bin	1412.18	0
+bin	1412.2	0
+bin	1412.22	0
+bin	1412.24	0
+bin	1412.26	0
+bin	1412.28	0
+bin	1412.3	0
+bin	1412.32	0
+statistic MultiRadioShowcase.host2.wlan[0].radio packetErrorRate:histogram
+field count 16
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	16
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic MultiRadioShowcase.host2.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic MultiRadioShowcase.host2.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar MultiRadioShowcase.host2.wlan[1].agent dropConfirm:count 1
+attr title "dropped confirms, count"
+scalar MultiRadioShowcase.host2.wlan[1].agent acceptConfirm:count 0
+attr title "accepted confirms, count"
+scalar MultiRadioShowcase.host2.wlan[1].agent sentRequest:count 2
+attr title "sent requests, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:count 2
+attr interpolationmode none
+attr title "packet popped, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 64
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 2
+field mean 0.000213517326
+field stddev 0.00011313708498985
+field min 0.000133517326
+field max 0.000293517326
+field sum 0.000427034652
+field sqrsum 1.0397929700438e-07
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	9e-05	0
+bin	9.5e-05	0
+bin	0.0001	0
+bin	0.000105	0
+bin	0.00011	0
+bin	0.000115	0
+bin	0.00012	0
+bin	0.000125	0
+bin	0.00013	1
+bin	0.000135	0
+bin	0.00014	0
+bin	0.000145	0
+bin	0.00015	0
+bin	0.000155	0
+bin	0.00016	0
+bin	0.000165	0
+bin	0.00017	0
+bin	0.000175	0
+bin	0.00018	0
+bin	0.000185	0
+bin	0.00019	0
+bin	0.000195	0
+bin	0.0002	0
+bin	0.000205	0
+bin	0.00021	0
+bin	0.000215	0
+bin	0.00022	0
+bin	0.000225	0
+bin	0.00023	0
+bin	0.000235	0
+bin	0.00024	0
+bin	0.000245	0
+bin	0.00025	0
+bin	0.000255	0
+bin	0.00026	0
+bin	0.000265	0
+bin	0.00027	0
+bin	0.000275	0
+bin	0.00028	0
+bin	0.000285	0
+bin	0.00029	1
+bin	0.000295	0
+bin	0.0003	0
+bin	0.000305	0
+bin	0.00031	0
+bin	0.000315	0
+bin	0.00032	0
+bin	0.000325	0
+bin	0.00033	0
+bin	0.000335	0
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.00065184189044456
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:count 2
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 64
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 2
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 7.6e-05
+field sqrsum 2.888e-09
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	0	2
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00011603293091408
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.contention channelAccessGranted:count 2
+attr title "channel access granted, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess.contention stateChanged:count 192
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.channelAccess channelOwnershipChanged:count 4
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.recipientMacDataService packetDefragmented:count 12
+attr title "packets defragmented, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf frameSequenceFinished:count 2
+attr title "finished frame sequences, count"
+statistic MultiRadioShowcase.host2.wlan[1].mac.dcf frameSequenceDuration:histogram
+field count 2
+field mean 3.8e-05
+field stddev 0
+field min 3.8e-05
+field max 3.8e-05
+field sum 7.6e-05
+field sqrsum 2.888e-09
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	0	2
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+statistic MultiRadioShowcase.host2.wlan[1].mac.dcf frameSequenceNumPackets:histogram
+field count 2
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 2
+field sqrsum 2
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	2
+bin	2	0
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeer:count 12
+attr interpolationmode none
+attr title "packets received, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeer:sum(packetBytes) 574
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerUnicast:count 2
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 102
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerMulticast:count 10
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 472
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:count 10
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 472
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:count 12
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 574
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeer:count 4
+attr interpolationmode none
+attr title "packets sent, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeer:sum(packetBytes) 92
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerUnicast:count 2
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 28
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerMulticast:count 2
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 64
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerBroadcast:count 2
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 64
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerWithoutRetry:count 4
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 92
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDrop:count 29
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDrop:sum(packetBytes) 834
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDropNotAddressedToUs:count 29
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 834
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetReceivedFromLower:count 41
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetReceivedFromLower:sum(packetBytes) 1408
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetSentToLower:count 4
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetSentToLower:sum(packetBytes) 92
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDrop:count 29
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDrop:sum(packetBytes) 834
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropNotAddressedToUs:count 29
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropNotAddressedToUs:sum(packetBytes) 834
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar MultiRadioShowcase.host2.wlan[1].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.wlan[1].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic MultiRadioShowcase.host2.wlan[1].radio radioChannel:histogram
+field count 3
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	3
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar MultiRadioShowcase.host2.wlan[1].radio radioMode:count 11
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar MultiRadioShowcase.host2.wlan[1].radio receptionState:count 92
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar MultiRadioShowcase.host2.wlan[1].radio transmissionState:count 16
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic MultiRadioShowcase.host2.wlan[1].radio minSnir:histogram
+field count 41
+field mean 4432.7267934303
+field stddev 1973.0656794441
+field min 2117.1415686719
+field max 6072.9329943009
+field sum 181741.79853064
+field sqrsum 961331266.84901
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1100	0
+bin	1200	0
+bin	1300	0
+bin	1400	0
+bin	1500	0
+bin	1600	0
+bin	1700	0
+bin	1800	0
+bin	1900	0
+bin	2000	0
+bin	2100	17
+bin	2200	0
+bin	2300	0
+bin	2400	0
+bin	2500	0
+bin	2600	0
+bin	2700	0
+bin	2800	0
+bin	2900	0
+bin	3000	0
+bin	3100	0
+bin	3200	0
+bin	3300	0
+bin	3400	0
+bin	3500	0
+bin	3600	0
+bin	3700	0
+bin	3800	0
+bin	3900	0
+bin	4000	0
+bin	4100	0
+bin	4200	0
+bin	4300	0
+bin	4400	0
+bin	4500	0
+bin	4600	0
+bin	4700	0
+bin	4800	0
+bin	4900	0
+bin	5000	0
+bin	5100	0
+bin	5200	0
+bin	5300	0
+bin	5400	0
+bin	5500	0
+bin	5600	0
+bin	5700	0
+bin	5800	0
+bin	5900	0
+bin	6000	24
+bin	6100	0
+bin	6200	0
+bin	6300	0
+bin	6400	0
+bin	6500	0
+bin	6600	0
+bin	6700	0
+bin	6800	0
+bin	6900	0
+bin	7000	0
+bin	7100	0
+statistic MultiRadioShowcase.host2.wlan[1].radio packetErrorRate:histogram
+field count 41
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	41
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic MultiRadioShowcase.host2.wlan[1].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic MultiRadioShowcase.host2.wlan[1].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropAddressResolutionFailed:count 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, count"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropAddressResolutionFailed:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsAddressResolutionFailed(packetDropped)
+attr title "packet drop: address resolution failed, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropHopLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, count"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropHopLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsHopLimitReached(packetDropped)
+attr title "packet drop: hop limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropForwardingDisabled:count 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, count"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropForwardingDisabled:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropNoInterfaceFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, count"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropNoInterfaceFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoInterfaceFound(packetDropped)
+attr title "packet drop: no interface found, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropNoRouteFound:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, count"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropNoRouteFound:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropUndefined:count 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, count"
+scalar MultiRadioShowcase.host2.ipv4.ip packetDropUndefined:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.udp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar MultiRadioShowcase.host2.udp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.udp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar MultiRadioShowcase.host2.udp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.host2.udp passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, count"
+scalar MultiRadioShowcase.host2.udp droppedPkWrongPort:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+scalar MultiRadioShowcase.host2.udp droppedPkBadChecksum:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+scalar MultiRadioShowcase.accessPoint.relayUnit "number of received BPDUs from STP module" 0
+scalar MultiRadioShowcase.accessPoint.relayUnit "number of received frames from network (including BPDUs)" 1
+scalar MultiRadioShowcase.accessPoint.relayUnit "number of dropped frames (including BPDUs)" 0
+scalar MultiRadioShowcase.accessPoint.relayUnit "number of delivered BPDUs to the STP module" 0
+scalar MultiRadioShowcase.accessPoint.relayUnit "number of dispatched BPDU frames to the network" 0
+scalar MultiRadioShowcase.accessPoint.relayUnit "number of dispatched non-BDPU frames to the network" 1
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:count 18
+attr interpolationmode none
+attr title "packet popped, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 820
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 18
+field mean 0.00019244444444444
+field stddev 0.00023617396933373
+field min 0
+field max 0.000694
+field sum 0.003464
+field sqrsum 1.614856e-06
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	8
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	0
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	1
+bin	0.0001	0
+bin	0.00011	1
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	0
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	2
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	1
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	0
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	1
+bin	0.0004	0
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	1
+bin	0.00046	0
+bin	0.00047	0
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+bin	0.00051	0
+bin	0.00052	1
+bin	0.00053	0
+bin	0.00054	0
+bin	0.00055	0
+bin	0.00056	0
+bin	0.00057	0
+bin	0.00058	0
+bin	0.00059	1
+bin	0.0006	0
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	1
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+bin	0.00073	0
+bin	0.00074	0
+bin	0.00075	0
+bin	0.00076	0
+bin	0.00077	0
+bin	0.00078	0
+bin	0.00079	0
+bin	0.0008	0
+bin	0.00081	0
+bin	0.00082	0
+bin	0.00083	0
+bin	0.00084	0
+bin	0.00085	0
+bin	0.00086	0
+bin	0.00087	0
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.0045868457590469
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:count 18
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 820
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 18
+field mean 6.9800905555556e-05
+field stddev 2.1956148117402e-05
+field min 4.6e-05
+field max 9.1252674e-05
+field sum 0.0012564163
+field sqrsum 9.5894226977366e-08
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	0
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	8
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	6
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	4
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+bin	0.000101	0
+bin	0.000102	0
+bin	0.000103	0
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.0016636800742646
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.contention channelAccessGranted:count 18
+attr title "channel access granted, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess.contention stateChanged:count 216
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.channelAccess channelOwnershipChanged:count 36
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDefragmented:count 11
+attr title "packets defragmented, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf frameSequenceFinished:count 18
+attr title "finished frame sequences, count"
+statistic MultiRadioShowcase.accessPoint.wlan[0].mac.dcf frameSequenceDuration:histogram
+field count 18
+field mean 6.9800905555556e-05
+field stddev 2.1956148117402e-05
+field min 4.6e-05
+field max 9.1252674e-05
+field sum 0.0012564163
+field sqrsum 9.5894226977366e-08
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	0
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	8
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	6
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	4
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+bin	0.000101	0
+bin	0.000102	0
+bin	0.000103	0
+statistic MultiRadioShowcase.accessPoint.wlan[0].mac.dcf frameSequenceNumPackets:histogram
+field count 18
+field mean 1.5555555555556
+field stddev 0.51130999256491
+field min 1
+field max 2
+field sum 28
+field sqrsum 48
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	8
+bin	2	10
+bin	3	0
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeer:count 21
+attr interpolationmode none
+attr title "packets received, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeer:sum(packetBytes) 596
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerUnicast:count 17
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 468
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerMulticast:count 4
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 128
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:count 4
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 128
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:count 21
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 596
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeer:count 25
+attr interpolationmode none
+attr title "packets sent, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeer:sum(packetBytes) 918
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerUnicast:count 17
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 510
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerMulticast:count 8
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 408
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerBroadcast:count 8
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 408
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerWithoutRetry:count 25
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 918
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetReceivedFromLower:count 21
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetReceivedFromLower:sum(packetBytes) 596
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetSentToLower:count 25
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetSentToLower:sum(packetBytes) 918
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetSentToUpper:count 1
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetSentToUpper:sum(packetBytes) 92
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic MultiRadioShowcase.accessPoint.wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar MultiRadioShowcase.accessPoint.wlan[0].radio radioMode:count 52
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].radio receptionState:count 92
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar MultiRadioShowcase.accessPoint.wlan[0].radio transmissionState:count 99
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic MultiRadioShowcase.accessPoint.wlan[0].radio minSnir:histogram
+field count 21
+field mean 5649.0519201705
+field stddev 210.69013950309
+field min 5549.3151968457
+field max 6072.9329943009
+field sum 118630.09032358
+field sqrsum 671035346.2301
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	5410	0
+bin	5420	0
+bin	5430	0
+bin	5440	0
+bin	5450	0
+bin	5460	0
+bin	5470	0
+bin	5480	0
+bin	5490	0
+bin	5500	0
+bin	5510	0
+bin	5520	0
+bin	5530	0
+bin	5540	17
+bin	5550	0
+bin	5560	0
+bin	5570	0
+bin	5580	0
+bin	5590	0
+bin	5600	0
+bin	5610	0
+bin	5620	0
+bin	5630	0
+bin	5640	0
+bin	5650	0
+bin	5660	0
+bin	5670	0
+bin	5680	0
+bin	5690	0
+bin	5700	0
+bin	5710	0
+bin	5720	0
+bin	5730	0
+bin	5740	0
+bin	5750	0
+bin	5760	0
+bin	5770	0
+bin	5780	0
+bin	5790	0
+bin	5800	0
+bin	5810	0
+bin	5820	0
+bin	5830	0
+bin	5840	0
+bin	5850	0
+bin	5860	0
+bin	5870	0
+bin	5880	0
+bin	5890	0
+bin	5900	0
+bin	5910	0
+bin	5920	0
+bin	5930	0
+bin	5940	0
+bin	5950	0
+bin	5960	0
+bin	5970	0
+bin	5980	0
+bin	5990	0
+bin	6000	0
+bin	6010	0
+bin	6020	0
+bin	6030	0
+bin	6040	0
+bin	6050	0
+bin	6060	0
+bin	6070	4
+bin	6080	0
+bin	6090	0
+bin	6100	0
+bin	6110	0
+bin	6120	0
+bin	6130	0
+bin	6140	0
+bin	6150	0
+bin	6160	0
+bin	6170	0
+bin	6180	0
+bin	6190	0
+bin	6200	0
+bin	6210	0
+statistic MultiRadioShowcase.accessPoint.wlan[0].radio packetErrorRate:histogram
+field count 21
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	21
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic MultiRadioShowcase.accessPoint.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic MultiRadioShowcase.accessPoint.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:count 14
+attr interpolationmode none
+attr title "packet popped, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetPopped:sum(packetBytes) 714
+attr interpolationmode none
+attr title "packet popped, sum(packetBytes)"
+statistic MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 14
+field mean 0.00011942857142857
+field stddev 0.00021512848192711
+field min 0
+field max 0.000574
+field sum 0.001672
+field sqrsum 8.01328e-07
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, histogram"
+attr unit s
+bin	-inf	0
+bin	0	10
+bin	1e-05	0
+bin	2e-05	0
+bin	3e-05	0
+bin	4e-05	0
+bin	5e-05	0
+bin	6e-05	0
+bin	7e-05	0
+bin	8e-05	0
+bin	9e-05	0
+bin	0.0001	0
+bin	0.00011	0
+bin	0.00012	0
+bin	0.00013	0
+bin	0.00014	1
+bin	0.00015	0
+bin	0.00016	0
+bin	0.00017	0
+bin	0.00018	0
+bin	0.00019	0
+bin	0.0002	0
+bin	0.00021	0
+bin	0.00022	0
+bin	0.00023	0
+bin	0.00024	0
+bin	0.00025	0
+bin	0.00026	0
+bin	0.00027	0
+bin	0.00028	0
+bin	0.00029	0
+bin	0.0003	0
+bin	0.00031	0
+bin	0.00032	0
+bin	0.00033	0
+bin	0.00034	0
+bin	0.00035	0
+bin	0.00036	0
+bin	0.00037	0
+bin	0.00038	0
+bin	0.00039	0
+bin	0.0004	0
+bin	0.00041	0
+bin	0.00042	0
+bin	0.00043	0
+bin	0.00044	0
+bin	0.00045	0
+bin	0.00046	0
+bin	0.00047	2
+bin	0.00048	0
+bin	0.00049	0
+bin	0.0005	0
+bin	0.00051	0
+bin	0.00052	0
+bin	0.00053	0
+bin	0.00054	0
+bin	0.00055	0
+bin	0.00056	0
+bin	0.00057	1
+bin	0.00058	0
+bin	0.00059	0
+bin	0.0006	0
+bin	0.00061	0
+bin	0.00062	0
+bin	0.00063	0
+bin	0.00064	0
+bin	0.00065	0
+bin	0.00066	0
+bin	0.00067	0
+bin	0.00068	0
+bin	0.00069	0
+bin	0.0007	0
+bin	0.00071	0
+bin	0.00072	0
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0.0019935398985377
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:count 14
+attr interpolationmode none
+attr title "packet pushed, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetPushed:sum(packetBytes) 714
+attr interpolationmode none
+attr title "packet pushed, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetRemoved:count 0
+attr interpolationmode none
+attr title "packets removed, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.pendingQueue packetRemoved:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets removed, sum(packetBytes)"
+statistic MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 13
+field mean 5.8983832e-05
+field stddev 2.0295652001668e-05
+field min 4.6e-05
+field max 9.1197454e-05
+field sum 0.000766789816
+field sqrsum 5.0171163568328e-08
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, histogram"
+bin	-inf	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	0
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	9
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	1
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+bin	0.000101	0
+bin	0.000102	0
+bin	0.000103	0
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, max"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.00096671163129428
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, timeavg"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.contention channelAccessGranted:count 14
+attr title "channel access granted, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess.contention stateChanged:count 140
+attr interpolationmode none
+attr title "contention state changed, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.channelAccess channelOwnershipChanged:count 27
+attr interpolationmode sample-hold
+attr title "channel ownership, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.originatorMacDataService packetAggregated:count 0
+attr title "packets aggregated, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.originatorMacDataService packetFragmented:count 0
+attr title "packets fragmented, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr title "packets deaggregated, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.recipientMacDataService packetDefragmented:count 4
+attr title "packets defragmented, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr title "retry limit reached, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf frameSequenceFinished:count 13
+attr title "finished frame sequences, count"
+statistic MultiRadioShowcase.accessPoint.wlan[1].mac.dcf frameSequenceDuration:histogram
+field count 13
+field mean 5.8983832e-05
+field stddev 2.0295652001668e-05
+field min 4.6e-05
+field max 9.1197454e-05
+field sum 0.000766789816
+field sqrsum 5.0171163568328e-08
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations, histogram"
+bin	-inf	0
+bin	3.4e-05	0
+bin	3.5e-05	0
+bin	3.6e-05	0
+bin	3.7e-05	0
+bin	3.8e-05	0
+bin	3.9e-05	0
+bin	4e-05	0
+bin	4.1e-05	0
+bin	4.2e-05	0
+bin	4.3e-05	0
+bin	4.4e-05	0
+bin	4.5e-05	9
+bin	4.6e-05	0
+bin	4.7e-05	0
+bin	4.8e-05	0
+bin	4.9e-05	0
+bin	5e-05	0
+bin	5.1e-05	0
+bin	5.2e-05	0
+bin	5.3e-05	0
+bin	5.4e-05	0
+bin	5.5e-05	0
+bin	5.6e-05	0
+bin	5.7e-05	0
+bin	5.8e-05	0
+bin	5.9e-05	0
+bin	6e-05	0
+bin	6.1e-05	0
+bin	6.2e-05	0
+bin	6.3e-05	0
+bin	6.4e-05	0
+bin	6.5e-05	0
+bin	6.6e-05	0
+bin	6.7e-05	0
+bin	6.8e-05	0
+bin	6.9e-05	0
+bin	7e-05	0
+bin	7.1e-05	0
+bin	7.2e-05	0
+bin	7.3e-05	0
+bin	7.4e-05	0
+bin	7.5e-05	0
+bin	7.6e-05	0
+bin	7.7e-05	0
+bin	7.8e-05	0
+bin	7.9e-05	0
+bin	8e-05	0
+bin	8.1e-05	0
+bin	8.2e-05	0
+bin	8.3e-05	0
+bin	8.4e-05	0
+bin	8.5e-05	0
+bin	8.6e-05	0
+bin	8.7e-05	3
+bin	8.8e-05	0
+bin	8.9e-05	0
+bin	9e-05	0
+bin	9.1e-05	1
+bin	9.2e-05	0
+bin	9.3e-05	0
+bin	9.4e-05	0
+bin	9.5e-05	0
+bin	9.6e-05	0
+bin	9.7e-05	0
+bin	9.8e-05	0
+bin	9.9e-05	0
+bin	0.0001	0
+bin	0.000101	0
+bin	0.000102	0
+bin	0.000103	0
+statistic MultiRadioShowcase.accessPoint.wlan[1].mac.dcf frameSequenceNumPackets:histogram
+field count 13
+field mean 1.3076923076923
+field stddev 0.48038446141526
+field min 1
+field max 2
+field sum 17
+field sqrsum 25
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	9
+bin	2	4
+bin	3	0
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeer:count 8
+attr interpolationmode none
+attr title "packets received, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeer:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packets received, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 160
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerMulticast:count 1
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:count 1
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 32
+attr interpolationmode none
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:count 8
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 192
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeer:count 16
+attr interpolationmode none
+attr title "packets sent, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeer:sum(packetBytes) 636
+attr interpolationmode none
+attr title "packets sent, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerUnicast:count 7
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerUnicast:sum(packetBytes) 195
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerMulticast:count 9
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerMulticast:sum(packetBytes) 441
+attr interpolationmode none
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerBroadcast:count 9
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 441
+attr interpolationmode none
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerWithoutRetry:count 16
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 636
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetReceivedFromLower:count 8
+attr interpolationmode none
+attr title "packets received from lower layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetReceivedFromLower:sum(packetBytes) 192
+attr interpolationmode none
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetSentToLower:count 17
+attr interpolationmode none
+attr title "packets sent to lower layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetSentToLower:sum(packetBytes) 756
+attr interpolationmode none
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetReceivedFromUpper:count 1
+attr interpolationmode none
+attr title "packets received from upper layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetReceivedFromUpper:sum(packetBytes) 92
+attr interpolationmode none
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetSentToUpper:count 0
+attr interpolationmode none
+attr title "packets sent to upper layer, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDrop:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropOther:count 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar MultiRadioShowcase.accessPoint.wlan[1].mac linkBroken:count 0
+attr interpolationmode none
+attr title "link breaks, count"
+statistic MultiRadioShowcase.accessPoint.wlan[1].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar MultiRadioShowcase.accessPoint.wlan[1].radio radioMode:count 36
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].radio receptionState:count 50
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar MultiRadioShowcase.accessPoint.wlan[1].radio transmissionState:count 66
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic MultiRadioShowcase.accessPoint.wlan[1].radio minSnir:histogram
+field count 8
+field mean 1411.8186080371
+field stddev 0
+field min 1411.8186080371
+field max 1411.8186080371
+field sum 11294.548864297
+field sqrsum 15945854.256
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	1411.3	0
+bin	1411.32	0
+bin	1411.34	0
+bin	1411.36	0
+bin	1411.38	0
+bin	1411.4	0
+bin	1411.42	0
+bin	1411.44	0
+bin	1411.46	0
+bin	1411.48	0
+bin	1411.5	0
+bin	1411.52	0
+bin	1411.54	0
+bin	1411.56	0
+bin	1411.58	0
+bin	1411.6	0
+bin	1411.62	0
+bin	1411.64	0
+bin	1411.66	0
+bin	1411.68	0
+bin	1411.7	0
+bin	1411.72	0
+bin	1411.74	0
+bin	1411.76	0
+bin	1411.78	0
+bin	1411.8	8
+bin	1411.82	0
+bin	1411.84	0
+bin	1411.86	0
+bin	1411.88	0
+bin	1411.9	0
+bin	1411.92	0
+bin	1411.94	0
+bin	1411.96	0
+bin	1411.98	0
+bin	1412	0
+bin	1412.02	0
+bin	1412.04	0
+bin	1412.06	0
+bin	1412.08	0
+bin	1412.1	0
+bin	1412.12	0
+bin	1412.14	0
+bin	1412.16	0
+bin	1412.18	0
+bin	1412.2	0
+bin	1412.22	0
+bin	1412.24	0
+bin	1412.26	0
+bin	1412.28	0
+bin	1412.3	0
+bin	1412.32	0
+statistic MultiRadioShowcase.accessPoint.wlan[1].radio packetErrorRate:histogram
+field count 8
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	8
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic MultiRadioShowcase.accessPoint.wlan[1].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic MultiRadioShowcase.accessPoint.wlan[1].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+
