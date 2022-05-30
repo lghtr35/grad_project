@@ -2,6 +2,7 @@
 #include <algorithm>
 #include "RandomisedMessageDispatcher.h"
 #include <omnetpp.h>
+#include "inet/networklayer/common/L3AddressTag_m.h"
 
 using namespace inet;
 Define_Module(RandomisedMessageDispatcher);
@@ -14,6 +15,7 @@ Define_Module(RandomisedMessageDispatcher);
         WATCH_MAP(serviceToGateIndex);
         WATCH_MAP(protocolToGateIndex);
         wlanInterfaceCount = par("wlanInterfaceCount");
+        this->selectedWlan = par("selectedWlan");
         std::cout<<wlanInterfaceCount<<std::endl;
     }
 
@@ -96,6 +98,11 @@ Define_Module(RandomisedMessageDispatcher);
                 throw cRuntimeError("handlePacket(): Unknown protocol: id = %d, name = %s", protocol->getId(), protocol->getName());
         }
         auto interfaceReq = packet->findTag<InterfaceReq>();
+        /*L3AddressReq* addressReq = packet->findTag<L3AddressReq>();
+        if(addressReq == nullptr){
+            addressReq = packet->addTagIfAbsent<L3AddressReq>();
+        }
+        L3Address destAddress = addressReq->getDestAddress();*/
         if (interfaceReq != nullptr) {
             int interfaceId = interfaceReq->getInterfaceId();
             std::cout<<"interfaceId "<<interfaceId<<std::endl<<"wlanIds for gates: ";
@@ -107,9 +114,27 @@ Define_Module(RandomisedMessageDispatcher);
             auto it = interfaceIdToGateIndex.find(interfaceId);
             if (it != interfaceIdToGateIndex.end())
             {
-                int randomInterface = (rand()%wlanInterfaceCount) + 2;
-                std::cout<<it->second<<" Random wlan interface gate: "<< randomInterface<<std::endl;
-                return gate("out", randomInterface);
+                if(this->selectedWlan < 0){
+                    int randomInterface = (rand()%wlanInterfaceCount) + 2;
+                    std::cout<<it->second<<" Random wlan interface gate: "<< randomInterface << std::endl;
+                    /*Ipv4Address address = destAddress.toIpv4();
+                    uint32 addressInt = address.getInt();
+                    addressInt += (uint32)(randomInterface - 2);
+                    address.set(addressInt);
+                    destAddress.set(address);
+                    addressReq->setDestAddress(destAddress);*/
+                    return gate("out", randomInterface);
+                }else{
+                    /*Ipv4Address address = destAddress.toIpv4();
+                    uint32 addressInt = address.getInt();
+                    std::cout<<addressInt<<std::endl;
+                    addressInt += (uint32)this->selectedWlan;
+                    std::cout<<addressInt<<std::endl;
+                    address.set(addressInt);
+                    destAddress.set(address);
+                    addressReq->setDestAddress(destAddress);*/
+                    return gate("out", this->selectedWlan + 2);
+                }
             }
             else
                 throw cRuntimeError("handlePacket(): Unknown interface: id = %d", interfaceId);

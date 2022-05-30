@@ -20,6 +20,7 @@ simple RandomisedMessageDispatcher
 {    
     parameters:
         int wlanInterfaceCount = default(2);
+        int selectedWlan;
     gates:
         input in[];
         output out[];

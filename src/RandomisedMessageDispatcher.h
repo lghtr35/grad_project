@@ -14,6 +14,7 @@ using namespace inet;
             virtual void initialize() override;
 
             public:
+            int selectedWlan;
             virtual cGate *handlePacket(Packet *packet, cGate *inGate) override;
             virtual cGate *handleMessage(Message *message, cGate *inGate) override;
             virtual void handleRegisterInterface(const InterfaceEntry &interface, cGate *out,cGate *in) override;

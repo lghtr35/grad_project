@@ -19,7 +19,7 @@ import inet.node.inet.Router;
 import src.MyWirelessHost;
 import src.MyAdHoc;
 import inet.node.wireless.AccessPoint;
-import inet.physicallayer.ieee80211.packetlevel.Ieee80211ScalarRadioMedium;
+import inet.physicallayer.ieee80211.packetlevel.Ieee80211DimensionalRadioMedium;
 import inet.visualizer.integrated.IntegratedMultiCanvasVisualizer;
 
 
@@ -32,7 +32,7 @@ network MultiRadioShowcase
             parameters:
                 @display("p=50,50");
         }
-        radioMedium: Ieee80211ScalarRadioMedium {
+        radioMedium: Ieee80211DimensionalRadioMedium {
             parameters:
                 @display("p=50,100");
         }
@@ -40,21 +40,21 @@ network MultiRadioShowcase
             parameters:
                 @display("p=50,150");
         }
-        host_Beginning: MyAdHoc {
+        host0: MyAdHoc {
             parameters:
-                @display("p=217,18");
+                @display("p=217,28");
         }
-        host_Middle: MyAdHoc {
+        host2: MyAdHoc {
             parameters:
-                @display("p=815,247");
+                @display("p=764,263");
         }
-        host_End: MyAdHoc {
+        host3: MyAdHoc {
             parameters:
                 @display("p=1429,521");
         }
-        host_DifferentApp: MyAdHoc {
+        host1: MyAdHoc {
             parameters:
-                @display("p=217,72");
+                @display("p=217,489");
         }
 
 }
