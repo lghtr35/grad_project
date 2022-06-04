@@ -40,17 +40,17 @@ network MultiRadioShowcase
             parameters:
                 @display("p=50,150");
         }
-        host0: MyAdHoc {
-            parameters:
-                @display("p=217,28");
-        }
-        host2: MyAdHoc {
-            parameters:
-                @display("p=764,263");
-        }
+//        host0: MyAdHoc {
+//            parameters:
+//                @display("p=217,28");
+//        }
+//        host2: MyAdHoc {
+//            parameters:
+//                @display("p=1232.1238,264.42");
+//        }
         host3: MyAdHoc {
             parameters:
-                @display("p=1429,521");
+                @display("p=563.72876,264.42");
         }
         host1: MyAdHoc {
             parameters:
