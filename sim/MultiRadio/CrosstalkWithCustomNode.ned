@@ -16,8 +16,9 @@ package sim.MultiRadio;
 
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.inet.Router;
-import src.MyWirelessHost;
-import src.MyAdHoc;
+//import src.MyWirelessHost;
+//import src.MyAdHoc;
+import inet.node.inet.AdhocHost;
 import inet.node.wireless.AccessPoint;
 import inet.physicallayer.ieee80211.packetlevel.Ieee80211DimensionalRadioMedium;
 import inet.visualizer.integrated.IntegratedMultiCanvasVisualizer;
@@ -40,19 +41,19 @@ network MultiRadioShowcase
             parameters:
                 @display("p=50,150");
         }
-        host0: MyAdHoc {
+        host0: AdhocHost {
             parameters:
                 @display("p=217,28");
         }
-        host2: MyAdHoc {
+        host2: AdhocHost {
             parameters:
-                @display("p=764,263");
+                @display("p=1232.1238,264.42");
         }
-        host3: MyAdHoc {
+        host3: AdhocHost {
             parameters:
-                @display("p=1429,521");
+                @display("p=563.72876,264.42");
         }
-        host1: MyAdHoc {
+        host1: AdhocHost {
             parameters:
                 @display("p=217,489");
         }

@@ -1,14 +1,14 @@
 version 2
-run General-0-20220530-14:20:21-10379
+run General-0-20220609-12:59:20-4329
 attr configname General
-attr datetime 20220530-14:20:21
+attr datetime 20220609-12:59:20
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network MultiRadioShowcase
-attr processid 10379
+attr processid 4329
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -27,18 +27,19 @@ param *.host*.app[*].destPort 100
 param *.host*.app[*].messageLength 1000B
 param *.host*.app[*].startTime exponential(100us)
 param *.host0.app[*].sendInterval exponential(20ms)
-param *.host1.app[*].sendInterval exponential(10ms)
-param *.host2.app[*].sendInterval exponential(10ms)
+param *.host1.app[*].sendInterval exponential(1ms)
 param *.host1.app[*].packetName "\"DifferentMessage\""
-param *.host0.app[0].typename "\"UdpBasicApp\""
-param *.host0.app[0].destAddresses "\"host3\""
+param *.host0.app[0].typename "\"CustomApp\""
+param *.host0.app[0].destAddresses "\"10.0.0.8 10.0.0.9 10.0.0.10 10.0.0.11 10.0.0.12 10.0.0.13 10.0.0.14\""
+param *.host0.**.layer 0
 param *.host3.app[0].typename "\"UdpSink\""
-param *.host1.app[0].typename "\"UdpBasicApp\""
-param *.host1.app[0].destAddresses "\"host3\""
-param *.host2.app[*].typename "\"UdpBasicApp\""
-param *.host*.typename "\"AodvRouter\""
+param *.host1.app[0].typename "\"CustomApp\""
+param *.host1.app[0].layer 6
+param *.host1.app[0].destAddresses "\"10.0.0.8 10.0.0.9 10.0.0.10 10.0.0.11 10.0.0.12 10.0.0.13 10.0.0.14\""
+param *.host2.app[*].typename "\"UdpSink\""
 param **.numMediumVisualizers 4
 param **.displaySignals true
+param **.arp.typename "\"GlobalArp\""
 param *.visualizer.interfaceTableVisualizer[*].displayInterfaceTables true
 param *.visualizer.interfaceTableVisualizer[*].placementHint "\"top\""
 param *.visualizer.ieee80211Visualizer[*].displayAssociations true
@@ -47,35 +48,13 @@ param *.visualizer.dataLinkVisualizer[*].displayLinks true
 param *.visualizer.networkRouteVisualizer[*].displayRoutes true
 param *.visualizer.*LinkVisualizer[*].lineShift 0
 param *.visualizer.networkRouteVisualizer[*].lineShift 0
-param **.arp.typename "\"GlobalArp\""
-param *.host0.wlan[0].radio.channelNumber 0
-param *.host0.wlan[1].radio.channelNumber 1
-param *.host0.wlan[2].radio.channelNumber 2
-param *.host0.wlan[3].radio.channelNumber 3
-param *.host0.wlan[4].radio.channelNumber 4
-param *.host0.wlan[5].radio.channelNumber 5
-param *.host0.wlan[6].radio.channelNumber 6
-param *.host1.wlan[0].radio.channelNumber 0
-param *.host1.wlan[1].radio.channelNumber 1
-param *.host1.wlan[2].radio.channelNumber 2
-param *.host1.wlan[3].radio.channelNumber 3
-param *.host1.wlan[4].radio.channelNumber 4
-param *.host1.wlan[5].radio.channelNumber 5
-param *.host1.wlan[6].radio.channelNumber 6
-param *.host2.wlan[0].radio.channelNumber 0
-param *.host2.wlan[1].radio.channelNumber 1
-param *.host2.wlan[2].radio.channelNumber 2
-param *.host2.wlan[3].radio.channelNumber 3
-param *.host2.wlan[4].radio.channelNumber 4
-param *.host2.wlan[5].radio.channelNumber 5
-param *.host2.wlan[6].radio.channelNumber 6
-param *.host3.wlan[0].radio.channelNumber 0
-param *.host3.wlan[1].radio.channelNumber 1
-param *.host3.wlan[2].radio.channelNumber 2
-param *.host3.wlan[3].radio.channelNumber 3
-param *.host3.wlan[4].radio.channelNumber 4
-param *.host3.wlan[5].radio.channelNumber 5
-param *.host3.wlan[6].radio.channelNumber 6
+param *.host*.wlan[0].radio.channelNumber 0
+param *.host*.wlan[1].radio.channelNumber 1
+param *.host*.wlan[2].radio.channelNumber 2
+param *.host*.wlan[3].radio.channelNumber 3
+param *.host*.wlan[4].radio.channelNumber 4
+param *.host*.wlan[5].radio.channelNumber 5
+param *.host*.wlan[6].radio.channelNumber 6
 
 vector 0 MultiRadioShowcase.host0.wlan[0].radio radioMode:vector ETV
 attr interpolationmode sample-hold
@@ -505,20 +484,20 @@ vector 113 MultiRadioShowcase.host1.udp packetSent:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetSent
 attr title "packets sent, vector(packetBytes)"
-vector 114 MultiRadioShowcase.host1.wlan[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+vector 114 MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packets received from upper layer, vector(packetBytes)"
-vector 115 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+vector 115 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet pushed, vector(packetBytes)"
-vector 116 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+vector 116 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
 attr title "queue length, vector"
-vector 117 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+vector 117 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
 attr interpolationmode none
 attr title "backoff periods, vector"
-vector 118 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.contention backoffActive:vector ETV
+vector 118 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
 attr interpolationmode sample-hold
 attr source count(backoffStarted)-count(backoffStopped)
 attr title "backoff active, vector"
@@ -530,139 +509,332 @@ vector 120 MultiRadioShowcase.host0.udp packetSent:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetSent
 attr title "packets sent, vector(packetBytes)"
-vector 121 MultiRadioShowcase.host0.wlan[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+vector 121 MultiRadioShowcase.host0.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packets received from upper layer, vector(packetBytes)"
-vector 122 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+vector 122 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet pushed, vector(packetBytes)"
-vector 123 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+vector 123 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
 attr interpolationmode sample-hold
 attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
 attr title "queue length, vector"
-vector 124 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+vector 124 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
 attr interpolationmode none
 attr title "backoff periods, vector"
-vector 125 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.contention backoffActive:vector ETV
+vector 125 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
 attr interpolationmode sample-hold
 attr source count(backoffStarted)-count(backoffStopped)
 attr title "backoff active, vector"
-vector 126 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+vector 126 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet popped, vector(packetBytes)"
-vector 127 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+vector 127 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
 attr interpolationmode none
 attr source queueingTime(packetPopped)
 attr title "queueing times, vector"
 attr unit s
-vector 128 MultiRadioShowcase.host0.wlan[3].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+vector 128 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
 attr interpolationmode sample-hold
 attr source "count(packetEnqueued) - count(packetDequeued)"
 attr title "queue length, vector"
-vector 129 MultiRadioShowcase.host0.wlan[3].mac.dcf datarateSelected:vector ETV
+vector 129 MultiRadioShowcase.host0.wlan[0].mac.dcf datarateSelected:vector ETV
 attr interpolationmode none
 attr title "datarates selected, vector"
-vector 130 MultiRadioShowcase.host0.wlan[3].mac packetSentToLower:vector(packetBytes) ETV
+vector 130 MultiRadioShowcase.host0.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packets sent to lower layer, vector(packetBytes)"
-vector 131 MultiRadioShowcase.host0.wlan[3].mac.dcf frameSequenceActive:vector ETV
+vector 131 MultiRadioShowcase.host0.wlan[0].mac.dcf frameSequenceActive:vector ETV
 attr interpolationmode sample-hold
 attr source count(frameSequenceStarted)-count(frameSequenceFinished)
 attr title "frame sequence active, vector"
-vector 132 MultiRadioShowcase.host0.wlan[3].radio transmissionState:vector ETV
+vector 132 MultiRadioShowcase.host0.wlan[0].radio transmissionState:vector ETV
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, vector"
-vector 133 MultiRadioShowcase.host0.wlan[3].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+vector 133 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packets sent, vector(packetBytes)"
-vector 134 MultiRadioShowcase.host0.wlan[3].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+vector 134 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
 attr interpolationmode none
 attr source ieee80211Unicast(packetSentToPeer)
 attr title "packets sent: unicast, vector(packetBytes)"
-vector 135 MultiRadioShowcase.host0.wlan[3].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+vector 135 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
 attr interpolationmode none
 attr source ieee80211NotRetry(packetSentToPeer)
 attr title "packets sent: without retry, vector(packetBytes)"
-vector 136 MultiRadioShowcase.host0.wlan[3].mac.rx nav:vector ETV
+vector 136 MultiRadioShowcase.host0.wlan[0].mac.rx nav:vector ETV
 attr interpolationmode linear
 attr source navChanged
 attr title "network allocation vector, vector"
-vector 137 MultiRadioShowcase.host1.wlan[3].mac packetReceivedFromLower:vector(packetBytes) ETV
+vector 137 MultiRadioShowcase.host3.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packets received from lower layer, vector(packetBytes)"
-vector 138 MultiRadioShowcase.host1.wlan[3].mac.rx nav:vector ETV
-attr interpolationmode linear
-attr source navChanged
-attr title "network allocation vector, vector"
-vector 139 MultiRadioShowcase.host1.wlan[3].mac.dcf packetDrop:vector(packetBytes) ETV
+vector 138 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
 attr interpolationmode none
-attr source packetDropped
-attr title "packet drops, vector(packetBytes)"
-vector 140 MultiRadioShowcase.host1.wlan[3].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr title "packets received, vector(packetBytes)"
+vector 139 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
 attr interpolationmode none
-attr source packetDropReasonIsNotAddressedToUs(packetDropped)
-attr title "packet drops: not addressed to us, vector(packetBytes)"
-vector 141 MultiRadioShowcase.host1.wlan[3].mac packetDrop:vector(packetBytes) ETV
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 140 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
 attr interpolationmode none
-attr source packetDropped
-attr title "packet drops, vector(packetBytes)"
-vector 142 MultiRadioShowcase.host1.wlan[3].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 141 MultiRadioShowcase.host3.wlan[0].mac.dcf datarateSelected:vector ETV
 attr interpolationmode none
-attr source packetDropReasonIsNotAddressedToUs(packetDropped)
-attr title "packet drops: not addressed to us, vector(packetBytes)"
-vector 143 MultiRadioShowcase.host2.wlan[3].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr title "datarates selected, vector"
+vector 142 MultiRadioShowcase.host3.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 143 MultiRadioShowcase.host3.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 144 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 145 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 146 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 147 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 148 MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packets received from lower layer, vector(packetBytes)"
-vector 144 MultiRadioShowcase.host2.wlan[3].mac.rx nav:vector ETV
+vector 149 MultiRadioShowcase.host1.wlan[0].mac.rx nav:vector ETV
 attr interpolationmode linear
 attr source navChanged
 attr title "network allocation vector, vector"
-vector 145 MultiRadioShowcase.host2.wlan[3].mac.dcf packetDrop:vector(packetBytes) ETV
+vector 150 MultiRadioShowcase.host1.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetDropped
 attr title "packet drops, vector(packetBytes)"
-vector 146 MultiRadioShowcase.host2.wlan[3].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+vector 151 MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drops: not addressed to us, vector(packetBytes)"
-vector 147 MultiRadioShowcase.host2.wlan[3].mac packetDrop:vector(packetBytes) ETV
+vector 152 MultiRadioShowcase.host1.wlan[0].mac packetDrop:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetDropped
 attr title "packet drops, vector(packetBytes)"
-vector 148 MultiRadioShowcase.host2.wlan[3].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+vector 153 MultiRadioShowcase.host1.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
 attr interpolationmode none
 attr source packetDropReasonIsNotAddressedToUs(packetDropped)
 attr title "packet drops: not addressed to us, vector(packetBytes)"
-vector 149 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+vector 154 MultiRadioShowcase.host3.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 155 MultiRadioShowcase.host3.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 156 MultiRadioShowcase.host3.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 157 MultiRadioShowcase.host3.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 158 MultiRadioShowcase.host3.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 159 MultiRadioShowcase.host0.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 160 MultiRadioShowcase.host0.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 161 MultiRadioShowcase.host0.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 162 MultiRadioShowcase.host0.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 163 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 164 MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 165 MultiRadioShowcase.host2.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 166 MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 167 MultiRadioShowcase.host2.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 168 MultiRadioShowcase.host2.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 169 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
 attr interpolationmode none
 attr title "packet popped, vector(packetBytes)"
-vector 150 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+vector 170 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
 attr interpolationmode none
 attr source queueingTime(packetPopped)
 attr title "queueing times, vector"
 attr unit s
-vector 151 MultiRadioShowcase.host1.wlan[3].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+vector 171 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
 attr interpolationmode sample-hold
 attr source "count(packetEnqueued) - count(packetDequeued)"
 attr title "queue length, vector"
-vector 152 MultiRadioShowcase.host1.wlan[3].mac.dcf datarateSelected:vector ETV
-attr interpolationmode none
-attr title "datarates selected, vector"
-vector 153 MultiRadioShowcase.host1.wlan[3].mac packetSentToLower:vector(packetBytes) ETV
-attr interpolationmode none
-attr title "packets sent to lower layer, vector(packetBytes)"
-vector 154 MultiRadioShowcase.host1.wlan[3].mac.dcf frameSequenceActive:vector ETV
+vector 172 MultiRadioShowcase.host3.wlan[0].mac.dcf frameSequenceActive:vector ETV
 attr interpolationmode sample-hold
 attr source count(frameSequenceStarted)-count(frameSequenceFinished)
 attr title "frame sequence active, vector"
-vector 155 MultiRadioShowcase.host1.wlan[3].radio transmissionState:vector ETV
+vector 173 MultiRadioShowcase.host3.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 174 MultiRadioShowcase.host0.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 175 MultiRadioShowcase.host0.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 176 MultiRadioShowcase.host0.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 177 MultiRadioShowcase.host0.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 178 MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 179 MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 180 MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 181 MultiRadioShowcase.host2.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 182 MultiRadioShowcase.host2.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 183 MultiRadioShowcase.host2.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 184 MultiRadioShowcase.host2.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 185 MultiRadioShowcase.host2.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 186 MultiRadioShowcase.host2.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 187 MultiRadioShowcase.host2.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 188 MultiRadioShowcase.host2.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 189 MultiRadioShowcase.host2.wlan[0].radio transmissionState:vector ETV
 attr interpolationmode sample-hold
 attr source transmissionStateChanged
 attr title "Radio transmission state, vector"
+vector 190 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 191 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 192 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 193 MultiRadioShowcase.host3.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 194 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 195 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 196 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 197 MultiRadioShowcase.host1.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 198 MultiRadioShowcase.host1.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 199 MultiRadioShowcase.host1.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 200 MultiRadioShowcase.host1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 201 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 202 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 203 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 204 MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 205 MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 206 MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 207 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
 0	0	0	0
 0	0	0	0
 0	0	0	2
+0	18	0.000185960421	3
+0	57	0.000567960421	2
 1	0	0	0
 2	0	0	0
 2	0	0	0
@@ -675,8 +847,6 @@ attr title "Radio transmission state, vector"
 6	0	0	0
 6	0	0	0
 6	0	0	2
-6	20	0.00019	3
-6	56	0.000572	2
 7	0	0	3
 8	0	0	0
 8	0	0	0
@@ -693,6 +863,10 @@ attr title "Radio transmission state, vector"
 14	0	0	0
 14	0	0	0
 14	0	0	2
+14	217	0.001177589785	3
+14	256	0.001211589785	2
+14	477	0.002272345735	3
+14	516	0.002306345735	2
 15	0	0	0
 16	0	0	0
 16	0	0	0
@@ -721,6 +895,16 @@ attr title "Radio transmission state, vector"
 28	0	0	0
 28	0	0	0
 28	0	0	2
+28	86	0.000579360259	3
+28	123	0.000613360259	2
+28	151	0.000783360259	3
+28	187	0.001165360259	2
+28	346	0.001654116209	3
+28	383	0.001688116209	2
+28	411	0.001878116209	3
+28	447	0.002260116209	2
+28	611	0.003714128722	3
+28	648	0.003748128722	2
 29	0	0	0
 30	0	0	0
 30	0	0	0
@@ -749,6 +933,11 @@ attr title "Radio transmission state, vector"
 42	0	0	0
 42	0	0	0
 42	0	0	2
+42	281	0.001260738234	3
+42	317	0.001642738234	2
+42	546	0.003320750747	3
+42	582	0.003702750747	2
+42	681	0.00407342486	3
 43	0	0	0
 44	0	0	0
 44	0	0	0
@@ -761,7 +950,6 @@ attr title "Radio transmission state, vector"
 48	0	0	0
 48	0	0	0
 48	0	0	2
-48	86	0.00104753773	3
 49	0	0	3
 50	0	0	0
 50	0	0	0
@@ -776,83 +964,334 @@ attr title "Radio transmission state, vector"
 54	0	0	2
 55	0	0	6
 56	0	0	1
-56	22	0.00019	2
-56	50	0.000572	1
+56	18	0.000185960421	0
+56	57	0.000567960421	1
+56	101	0.000580760097	3
+56	133	0.000614760097	1
+56	166	0.000784760097	3
+56	196	0.001166760097	1
+56	296	0.001262275964	3
+56	330	0.001644275964	1
+56	361	0.001655516047	3
+56	393	0.001689516047	1
+56	426	0.001879516047	3
+56	456	0.002261516047	1
+56	561	0.003322288477	3
+56	595	0.003704288477	1
+56	626	0.00371552856	3
+56	658	0.00374952856	1
 57	0	0	1
-57	23	0.00019	2
-57	51	0.000572	1
-57	95	0.00104907546	2
+57	20	0.000185960421	2
+57	51	0.000567960421	1
+57	102	0.000580760097	2
+57	134	0.000614760097	1
+57	167	0.000784760097	2
+57	197	0.001166760097	1
+57	297	0.001262275964	2
+57	331	0.001644275964	1
+57	362	0.001655516047	2
+57	394	0.001689516047	1
+57	427	0.001879516047	2
+57	457	0.002261516047	1
+57	562	0.003322288477	2
+57	596	0.003704288477	1
+57	627	0.00371552856	2
+57	659	0.00374952856	1
 58	0	0	1
-58	24	0.00019	2
-58	52	0.000572	1
-58	96	0.00104907546	2
+58	21	0.000185960421	2
+58	52	0.000567960421	1
+58	103	0.000580760097	2
+58	135	0.000614760097	1
+58	168	0.000784760097	2
+58	198	0.001166760097	1
+58	298	0.001262275964	2
+58	332	0.001644275964	1
+58	363	0.001655516047	2
+58	395	0.001689516047	1
+58	428	0.001879516047	2
+58	458	0.002261516047	1
+58	563	0.003322288477	2
+58	597	0.003704288477	1
+58	628	0.00371552856	2
+58	660	0.00374952856	1
 59	0	0	1
-59	20	0.00019	0
-59	56	0.000572	1
-59	97	0.00104907546	3
+59	22	0.000185960421	2
+59	53	0.000567960421	1
+59	104	0.000580760097	2
+59	136	0.000614760097	1
+59	169	0.000784760097	2
+59	199	0.001166760097	1
+59	364	0.001655516047	2
+59	396	0.001689516047	1
+59	429	0.001879516047	2
+59	459	0.002261516047	1
+59	629	0.00371552856	2
+59	661	0.00374952856	1
 60	0	0	1
-60	25	0.00019	2
-60	53	0.000572	1
-60	98	0.00104907546	2
+60	23	0.000185960421	2
+60	54	0.000567960421	1
 61	0	0	1
-61	26	0.00019	2
-61	54	0.000572	1
-61	99	0.00104907546	2
+61	24	0.000185960421	2
+61	55	0.000567960421	1
 62	0	0	1
-62	27	0.00019	2
-62	55	0.000572	1
+62	25	0.000185960421	2
+62	56	0.000567960421	1
 63	0	0	1
+63	108	0.000581589785	3
+63	141	0.000615589785	1
+63	173	0.000785589785	3
+63	204	0.001167589785	1
+63	217	0.001177589785	0
+63	256	0.001211589785	1
+63	368	0.001656345735	3
+63	401	0.001690345735	1
+63	433	0.001880345735	3
+63	464	0.002262345735	1
+63	477	0.002272345735	0
+63	516	0.002306345735	1
+63	633	0.003716358248	3
+63	666	0.003750358248	1
 64	0	0	1
+64	109	0.000581589785	2
+64	142	0.000615589785	1
+64	174	0.000785589785	2
+64	205	0.001167589785	1
+64	219	0.001177589785	2
+64	250	0.001211589785	1
+64	369	0.001656345735	2
+64	402	0.001690345735	1
+64	434	0.001880345735	2
+64	465	0.002262345735	1
+64	479	0.002272345735	2
+64	510	0.002306345735	1
+64	634	0.003716358248	2
+64	667	0.003750358248	1
 65	0	0	1
-65	37	0.000191985852	2
-65	67	0.000573985852	1
-65	103	0.001049511925	2
+65	220	0.001177589785	2
+65	251	0.001211589785	1
+65	480	0.002272345735	2
+65	511	0.002306345735	1
 66	0	0	1
-66	38	0.000191985852	3
-66	68	0.000573985852	1
-66	104	0.001049511925	3
+66	221	0.001177589785	2
+66	252	0.001211589785	1
+66	481	0.002272345735	2
+66	512	0.002306345735	1
 67	0	0	1
-67	39	0.000191985852	2
-67	69	0.000573985852	1
-67	105	0.001049511925	2
+67	222	0.001177589785	2
+67	253	0.001211589785	1
+67	482	0.002272345735	2
+67	513	0.002306345735	1
 68	0	0	1
+68	223	0.001177589785	2
+68	254	0.001211589785	1
+68	483	0.002272345735	2
+68	514	0.002306345735	1
 69	0	0	1
+69	224	0.001177589785	2
+69	255	0.001211589785	1
+69	484	0.002272345735	2
+69	515	0.002306345735	1
 70	0	0	1
+70	26	0.000187360259	3
+70	58	0.000569360259	1
+70	86	0.000579360259	0
+70	123	0.000613360259	1
+70	151	0.000783360259	0
+70	187	0.001165360259	1
+70	225	0.001179819311	3
+70	257	0.001213819311	1
+70	289	0.001262116209	3
+70	318	0.001644116209	1
+70	346	0.001654116209	0
+70	383	0.001688116209	1
+70	411	0.001878116209	0
+70	447	0.002260116209	1
+70	485	0.002274575261	3
+70	517	0.002308575261	1
+70	554	0.003322128722	3
+70	583	0.003704128722	1
+70	611	0.003714128722	0
+70	648	0.003748128722	1
 71	0	0	1
+71	27	0.000187360259	2
+71	59	0.000569360259	1
+71	88	0.000579360259	2
+71	117	0.000613360259	1
+71	153	0.000783360259	2
+71	181	0.001165360259	1
+71	226	0.001179819311	2
+71	258	0.001213819311	1
+71	290	0.001262116209	2
+71	319	0.001644116209	1
+71	348	0.001654116209	2
+71	377	0.001688116209	1
+71	413	0.001878116209	2
+71	441	0.002260116209	1
+71	486	0.002274575261	2
+71	518	0.002308575261	1
+71	555	0.003322128722	2
+71	584	0.003704128722	1
+71	613	0.003714128722	2
+71	642	0.003748128722	1
 72	0	0	1
+72	28	0.000187360259	2
+72	60	0.000569360259	1
+72	89	0.000579360259	2
+72	118	0.000613360259	1
+72	154	0.000783360259	2
+72	182	0.001165360259	1
+72	291	0.001262116209	2
+72	320	0.001644116209	1
+72	349	0.001654116209	2
+72	378	0.001688116209	1
+72	414	0.001878116209	2
+72	442	0.002260116209	1
+72	556	0.003322128722	2
+72	585	0.003704128722	1
+72	614	0.003714128722	2
+72	643	0.003748128722	1
 73	0	0	1
+73	29	0.000187360259	2
+73	61	0.000569360259	1
+73	90	0.000579360259	2
+73	119	0.000613360259	1
+73	155	0.000783360259	2
+73	183	0.001165360259	1
+73	292	0.001262116209	2
+73	321	0.001644116209	1
+73	350	0.001654116209	2
+73	379	0.001688116209	1
+73	415	0.001878116209	2
+73	443	0.002260116209	1
+73	557	0.003322128722	2
+73	586	0.003704128722	1
+73	615	0.003714128722	2
+73	644	0.003748128722	1
 74	0	0	1
+74	91	0.000579360259	2
+74	120	0.000613360259	1
+74	156	0.000783360259	2
+74	184	0.001165360259	1
+74	351	0.001654116209	2
+74	380	0.001688116209	1
+74	416	0.001878116209	2
+74	444	0.002260116209	1
+74	616	0.003714128722	2
+74	645	0.003748128722	1
 75	0	0	1
+75	92	0.000579360259	2
+75	121	0.000613360259	1
+75	157	0.000783360259	2
+75	185	0.001165360259	1
+75	352	0.001654116209	2
+75	381	0.001688116209	1
+75	417	0.001878116209	2
+75	445	0.002260116209	1
+75	617	0.003714128722	2
+75	646	0.003748128722	1
 76	0	0	1
+76	93	0.000579360259	2
+76	122	0.000613360259	1
+76	158	0.000783360259	2
+76	186	0.001165360259	1
+76	353	0.001654116209	2
+76	382	0.001688116209	1
+76	418	0.001878116209	2
+76	446	0.002260116209	1
+76	618	0.003714128722	2
+76	647	0.003748128722	1
 77	0	0	1
-77	88	0.00104753773	2
+77	33	0.000187498151	3
+77	70	0.000569498151	1
+77	94	0.000580738234	3
+77	125	0.000614738234	1
+77	159	0.000784738234	3
+77	188	0.001166738234	1
+77	281	0.001260738234	0
+77	317	0.001642738234	1
+77	354	0.001655494184	3
+77	385	0.001689494184	1
+77	419	0.001879494184	3
+77	448	0.002261494184	1
+77	546	0.003320750747	0
+77	582	0.003702750747	1
+77	619	0.003715506697	3
+77	650	0.003749506697	1
+77	681	0.00407342486	0
 78	0	0	1
-78	29	0.00019153773	2
-78	58	0.00057353773	1
-78	89	0.00104753773	2
+78	34	0.000187498151	2
+78	71	0.000569498151	1
+78	95	0.000580738234	2
+78	126	0.000614738234	1
+78	160	0.000784738234	2
+78	189	0.001166738234	1
+78	283	0.001260738234	2
+78	311	0.001642738234	1
+78	355	0.001655494184	2
+78	386	0.001689494184	1
+78	420	0.001879494184	2
+78	449	0.002261494184	1
+78	548	0.003320750747	2
+78	576	0.003702750747	1
+78	620	0.003715506697	2
+78	651	0.003749506697	1
+78	683	0.00407342486	2
 79	0	0	1
-79	30	0.00019153773	2
-79	59	0.00057353773	1
-79	90	0.00104753773	2
+79	35	0.000187498151	2
+79	72	0.000569498151	1
+79	96	0.000580738234	2
+79	127	0.000614738234	1
+79	161	0.000784738234	2
+79	190	0.001166738234	1
+79	284	0.001260738234	2
+79	312	0.001642738234	1
+79	356	0.001655494184	2
+79	387	0.001689494184	1
+79	421	0.001879494184	2
+79	450	0.002261494184	1
+79	549	0.003320750747	2
+79	577	0.003702750747	1
+79	621	0.003715506697	2
+79	652	0.003749506697	1
+79	684	0.00407342486	2
 80	0	0	1
-80	31	0.00019153773	3
-80	60	0.00057353773	1
-80	86	0.00104753773	0
+80	97	0.000580738234	2
+80	128	0.000614738234	1
+80	162	0.000784738234	2
+80	191	0.001166738234	1
+80	285	0.001260738234	2
+80	313	0.001642738234	1
+80	357	0.001655494184	2
+80	388	0.001689494184	1
+80	422	0.001879494184	2
+80	451	0.002261494184	1
+80	550	0.003320750747	2
+80	578	0.003702750747	1
+80	622	0.003715506697	2
+80	653	0.003749506697	1
+80	685	0.00407342486	2
 81	0	0	1
-81	32	0.00019153773	2
-81	61	0.00057353773	1
-81	91	0.00104753773	2
+81	286	0.001260738234	2
+81	314	0.001642738234	1
+81	551	0.003320750747	2
+81	579	0.003702750747	1
+81	686	0.00407342486	2
 82	0	0	1
-82	33	0.00019153773	2
-82	62	0.00057353773	1
-82	92	0.00104753773	2
+82	287	0.001260738234	2
+82	315	0.001642738234	1
+82	552	0.003320750747	2
+82	580	0.003702750747	1
+82	687	0.00407342486	2
 83	0	0	1
-83	93	0.00104753773	2
+83	288	0.001260738234	2
+83	316	0.001642738234	1
+83	553	0.003320750747	2
+83	581	0.003702750747	1
+83	688	0.00407342486	2
 84	0	0	31
 85	0	0	31
 86	0	0	31
 87	0	0	31
-87	83	0.000627	63
 88	0	0	31
 89	0	0	31
 90	0	0	31
@@ -878,89 +1317,381 @@ attr title "Radio transmission state, vector"
 110	0	0	31
 111	0	0	31
 112	1	0.000005838467	1000
+112	539	0.003320750747	1000
+112	674	0.00407342486	1000
 113	3	0.000005838467	1008
+113	540	0.003320750747	1008
+113	675	0.00407342486	1008
 114	6	0.000005838467	1036
+114	543	0.003320750747	1036
+114	678	0.00407342486	1036
 115	6	0.000005838467	1064
+115	543	0.003320750747	1064
+115	678	0.00407342486	1064
 116	6	0.000005838467	1
-116	85	0.00104753773	0
-117	6	0.000005838467	26
+116	280	0.001260738234	0
+116	543	0.003320750747	1
+116	545	0.003320750747	0
+116	678	0.00407342486	1
+116	680	0.00407342486	0
+117	6	0.000005838467	12
+117	543	0.003320750747	14
+117	678	0.00407342486	5
 118	6	0.000005838467	1
-118	31	0.00019153773	0
-118	60	0.00057353773	1
-118	64	0.00057353773	0
-118	81	0.00061753773	1
-118	84	0.00104753773	0
+118	33	0.000187498151	0
+118	70	0.000569498151	1
+118	77	0.000569498151	0
+118	125	0.000614738234	1
+118	159	0.000784738234	0
+118	188	0.001166738234	1
+118	195	0.001166738234	0
+118	247	0.001210738234	1
+118	279	0.001260738234	0
+118	543	0.003320750747	1
+118	544	0.003320750747	0
+118	678	0.00407342486	1
+118	679	0.00407342486	0
 119	10	0.000185960421	1000
 120	12	0.000185960421	1008
 121	15	0.000185960421	1036
 122	15	0.000185960421	1064
 123	15	0.000185960421	1
-123	19	0.00019	0
-124	15	0.000185960421	7
-124	83	0.000627	23
+123	17	0.000185960421	0
+124	15	0.000185960421	1
 125	15	0.000185960421	1
-125	18	0.00019	0
-125	83	0.000627	1
-125	97	0.00104907546	0
-126	19	0.00019	1064
-127	19	0.00019	4.039579e-06
-128	19	0.00019	1
-129	19	0.00019	24000000
-130	19	0.00019	1064
-131	19	0.00019	1
-131	83	0.000627	0
-132	20	0.00019	1
-132	21	0.00019	2
-132	49	0.000572	1
-132	56	0.000572	0
-133	49	0.000572	1064
-134	49	0.000572	1064
-135	49	0.000572	1064
-136	49	0.000572	0
-136	49	0.000572	4.4e-05
-136	80	0.000616	0
-137	64	0.00057353773	1064
-138	64	0.00057353773	0
-138	64	0.00057353773	4.4e-05
-138	81	0.00061753773	0
-139	64	0.00057353773	1064
-140	64	0.00057353773	1064
-141	64	0.00057353773	1064
-142	64	0.00057353773	1064
-143	72	0.000573985852	1064
-144	72	0.000573985852	0
-144	72	0.000573985852	4.4e-05
-144	82	0.000617985852	0
-145	72	0.000573985852	1064
-146	72	0.000573985852	1064
-147	72	0.000573985852	1064
-148	72	0.000573985852	1064
-149	85	0.00104753773	1064
-150	85	0.00104753773	0.001041699263
-151	85	0.00104753773	1
-152	85	0.00104753773	24000000
-153	85	0.00104753773	1064
-154	85	0.00104753773	1
-155	86	0.00104753773	1
-155	87	0.00104753773	2
-vector 156 MultiRadioShowcase.host0.app[0] throughput:vector ETV
+125	16	0.000185960421	0
+126	17	0.000185960421	1064
+127	17	0.000185960421	0
+128	17	0.000185960421	1
+128	140	0.000614760097	0
+129	17	0.000185960421	24000000
+130	17	0.000185960421	1064
+131	17	0.000185960421	1
+131	140	0.000614760097	0
+132	18	0.000185960421	1
+132	19	0.000185960421	2
+132	50	0.000567960421	1
+132	57	0.000567960421	0
+133	50	0.000567960421	1064
+134	50	0.000567960421	1064
+135	50	0.000567960421	1064
+136	50	0.000567960421	0
+136	50	0.000567960421	4.4e-05
+136	115	0.000611960421	0
+136	203	0.001166760097	0
+136	203	0.001166760097	4.4e-05
+136	248	0.001210760097	0
+136	337	0.001644275964	0
+136	337	0.001644275964	4.4e-05
+136	384	0.001688275964	0
+136	463	0.002261516047	0
+136	463	0.002261516047	4.4e-05
+136	508	0.002305516047	0
+136	602	0.003704288477	0
+136	602	0.003704288477	4.4e-05
+136	649	0.003748288477	0
+137	65	0.000569360259	1064
+137	264	0.001213819311	14
+137	325	0.001644116209	1064
+137	524	0.002308575261	14
+137	590	0.003704128722	1064
+138	65	0.000569360259	1064
+138	264	0.001213819311	14
+138	325	0.001644116209	1064
+138	524	0.002308575261	14
+138	590	0.003704128722	1064
+139	65	0.000569360259	1064
+139	264	0.001213819311	14
+139	325	0.001644116209	1064
+139	524	0.002308575261	14
+139	590	0.003704128722	1064
+140	65	0.000569360259	1064
+140	264	0.001213819311	14
+140	325	0.001644116209	1064
+140	524	0.002308575261	14
+140	590	0.003704128722	1064
+141	65	0.000569360259	24000000
+141	150	0.000783360259	24000000
+141	325	0.001644116209	24000000
+141	410	0.001878116209	24000000
+141	590	0.003704128722	24000000
+142	65	0.000569360259	1036
+142	325	0.001644116209	1036
+142	590	0.003704128722	1036
+143	69	0.000569360259	1036
+143	329	0.001644116209	1036
+143	594	0.003704128722	1036
+144	69	0.000569360259	1064
+144	329	0.001644116209	1064
+144	594	0.003704128722	1064
+145	69	0.000569360259	1
+145	150	0.000783360259	0
+145	329	0.001644116209	1
+145	410	0.001878116209	0
+145	594	0.003704128722	1
+146	69	0.000569360259	6
+146	329	0.001644116209	7
+146	594	0.003704128722	24
+147	69	0.000569360259	1
+147	86	0.000579360259	0
+147	123	0.000613360259	1
+147	149	0.000783360259	0
+147	329	0.001644116209	1
+147	346	0.001654116209	0
+147	383	0.001688116209	1
+147	409	0.001878116209	0
+147	594	0.003704128722	1
+147	611	0.003714128722	0
+147	648	0.003748128722	1
+148	77	0.000569498151	1064
+148	132	0.000614738234	14
+148	195	0.001166738234	1064
+148	392	0.001689494184	14
+148	455	0.002261494184	1064
+148	657	0.003749506697	14
+149	77	0.000569498151	0
+149	77	0.000569498151	4.4e-05
+149	124	0.000613498151	0
+149	195	0.001166738234	0
+149	195	0.001166738234	4.4e-05
+149	247	0.001210738234	0
+149	310	0.001642738234	0
+149	310	0.001642738234	4.4e-05
+149	375	0.001686738234	0
+149	455	0.002261494184	0
+149	455	0.002261494184	4.4e-05
+149	507	0.002305494184	0
+149	575	0.003702750747	0
+149	575	0.003702750747	4.4e-05
+149	640	0.003746750747	0
+150	77	0.000569498151	1064
+150	132	0.000614738234	14
+150	195	0.001166738234	1064
+150	455	0.002261494184	1064
+151	77	0.000569498151	1064
+151	132	0.000614738234	14
+151	195	0.001166738234	1064
+151	455	0.002261494184	1064
+152	77	0.000569498151	1064
+152	132	0.000614738234	14
+152	195	0.001166738234	1064
+152	455	0.002261494184	1064
+153	77	0.000569498151	1064
+153	132	0.000614738234	14
+153	195	0.001166738234	1064
+153	455	0.002261494184	1064
+154	85	0.000579360259	14
+154	150	0.000783360259	1064
+154	345	0.001654116209	14
+154	410	0.001878116209	1064
+154	610	0.003714128722	14
+155	86	0.000579360259	1
+155	87	0.000579360259	2
+155	116	0.000613360259	1
+155	123	0.000613360259	0
+155	151	0.000783360259	1
+155	152	0.000783360259	2
+155	180	0.001165360259	1
+155	187	0.001165360259	0
+155	346	0.001654116209	1
+155	347	0.001654116209	2
+155	376	0.001688116209	1
+155	383	0.001688116209	0
+155	411	0.001878116209	1
+155	412	0.001878116209	2
+155	440	0.002260116209	1
+155	447	0.002260116209	0
+155	611	0.003714128722	1
+155	612	0.003714128722	2
+155	641	0.003748128722	1
+155	648	0.003748128722	0
+156	116	0.000613360259	14
+156	180	0.001165360259	1064
+156	376	0.001688116209	14
+156	440	0.002260116209	1064
+156	641	0.003748128722	14
+157	116	0.000613360259	14
+157	180	0.001165360259	1064
+157	376	0.001688116209	14
+157	440	0.002260116209	1064
+157	641	0.003748128722	14
+158	116	0.000613360259	14
+158	180	0.001165360259	1064
+158	376	0.001688116209	14
+158	440	0.002260116209	1064
+158	641	0.003748128722	14
+159	140	0.000614760097	14
+159	203	0.001166760097	1064
+159	337	0.001644275964	1064
+159	400	0.001689516047	14
+159	463	0.002261516047	1064
+159	602	0.003704288477	1064
+159	665	0.00374952856	14
+160	140	0.000614760097	14
+161	140	0.000614760097	14
+162	140	0.000614760097	14
+163	140	0.000614760097	0.000428799676
+164	148	0.000615589785	14
+164	211	0.001167589785	1064
+164	408	0.001690345735	14
+164	471	0.002262345735	1064
+164	673	0.003750358248	14
+165	148	0.000615589785	14
+165	408	0.001690345735	14
+165	673	0.003750358248	14
+166	148	0.000615589785	14
+166	408	0.001690345735	14
+166	673	0.003750358248	14
+167	148	0.000615589785	14
+167	408	0.001690345735	14
+167	673	0.003750358248	14
+168	148	0.000615589785	14
+168	408	0.001690345735	14
+168	673	0.003750358248	14
+169	150	0.000783360259	1064
+169	410	0.001878116209	1064
+170	150	0.000783360259	0.000214
+170	410	0.001878116209	0.000234
+171	150	0.000783360259	1
+171	264	0.001213819311	0
+171	410	0.001878116209	1
+171	524	0.002308575261	0
+172	150	0.000783360259	1
+172	264	0.001213819311	0
+172	410	0.001878116209	1
+172	524	0.002308575261	0
+173	180	0.001165360259	0
+173	180	0.001165360259	4.4e-05
+173	246	0.001209360259	0
+173	440	0.002260116209	0
+173	440	0.002260116209	4.4e-05
+173	506	0.002304116209	0
+174	203	0.001166760097	1064
+174	337	0.001644275964	1064
+174	400	0.001689516047	14
+174	463	0.002261516047	1064
+174	602	0.003704288477	1064
+174	665	0.00374952856	14
+175	203	0.001166760097	1064
+175	337	0.001644275964	1064
+175	400	0.001689516047	14
+175	463	0.002261516047	1064
+175	602	0.003704288477	1064
+175	665	0.00374952856	14
+176	203	0.001166760097	1064
+176	337	0.001644275964	1064
+176	400	0.001689516047	14
+176	463	0.002261516047	1064
+176	602	0.003704288477	1064
+176	665	0.00374952856	14
+177	203	0.001166760097	1064
+177	337	0.001644275964	1064
+177	400	0.001689516047	14
+177	463	0.002261516047	1064
+177	602	0.003704288477	1064
+177	665	0.00374952856	14
+178	211	0.001167589785	1064
+178	471	0.002262345735	1064
+179	211	0.001167589785	1064
+179	471	0.002262345735	1064
+180	211	0.001167589785	1064
+180	471	0.002262345735	1064
+181	211	0.001167589785	24000000
+181	471	0.002262345735	24000000
+182	211	0.001167589785	1036
+182	471	0.002262345735	1036
+183	214	0.001167589785	1008
+183	474	0.002262345735	1008
+184	214	0.001167589785	1
+184	474	0.002262345735	2
+185	215	0.001167589785	1000
+185	475	0.002262345735	1000
+186	215	0.001167589785	0.000981629364
+186	475	0.002262345735	0.002256507268
+187	215	0.001167589785	0
+187	475	0.002262345735	0
+188	216	0.001177589785	14
+188	476	0.002272345735	14
+189	217	0.001177589785	1
+189	218	0.001177589785	2
+189	249	0.001211589785	1
+189	256	0.001211589785	0
+189	477	0.002272345735	1
+189	478	0.002272345735	2
+189	509	0.002306345735	1
+189	516	0.002306345735	0
+190	249	0.001211589785	14
+190	509	0.002306345735	14
+191	249	0.001211589785	14
+191	509	0.002306345735	14
+192	249	0.001211589785	14
+192	509	0.002306345735	14
+193	264	0.001213819311	0.000430459052
+193	524	0.002308575261	0.000430459052
+194	280	0.001260738234	1064
+194	545	0.003320750747	1064
+194	680	0.00407342486	1064
+195	280	0.001260738234	0.001254899767
+195	545	0.003320750747	0
+195	680	0.00407342486	0
+196	280	0.001260738234	1
+196	392	0.001689494184	0
+196	545	0.003320750747	1
+196	657	0.003749506697	0
+196	680	0.00407342486	1
+197	280	0.001260738234	24000000
+197	545	0.003320750747	24000000
+197	680	0.00407342486	24000000
+198	280	0.001260738234	1064
+198	545	0.003320750747	1064
+198	680	0.00407342486	1064
+199	280	0.001260738234	1
+199	392	0.001689494184	0
+199	545	0.003320750747	1
+199	657	0.003749506697	0
+199	680	0.00407342486	1
+200	281	0.001260738234	1
+200	282	0.001260738234	2
+200	310	0.001642738234	1
+200	317	0.001642738234	0
+200	546	0.003320750747	1
+200	547	0.003320750747	2
+200	575	0.003702750747	1
+200	582	0.003702750747	0
+200	681	0.00407342486	1
+200	682	0.00407342486	2
+201	310	0.001642738234	1064
+201	575	0.003702750747	1064
+202	310	0.001642738234	1064
+202	575	0.003702750747	1064
+203	310	0.001642738234	1064
+203	575	0.003702750747	1064
+204	392	0.001689494184	14
+204	657	0.003749506697	14
+205	392	0.001689494184	14
+205	657	0.003749506697	14
+206	392	0.001689494184	14
+206	657	0.003749506697	14
+207	392	0.001689494184	0.00042875595
+207	657	0.003749506697	0.00042875595
+vector 208 MultiRadioShowcase.host0.app[0] throughput:vector ETV
 attr source throughput(packetReceived)
 attr title "throughput, vector"
 attr unit bps
-vector 157 MultiRadioShowcase.host2.app[0] throughput:vector ETV
+vector 209 MultiRadioShowcase.host2.app[0] throughput:vector ETV
 attr source throughput(packetReceived)
 attr title "throughput, vector"
 attr unit bps
-vector 158 MultiRadioShowcase.host3.app[0] throughput:vector ETV
+vector 210 MultiRadioShowcase.host3.app[0] throughput:vector ETV
 attr source throughput(packetReceived)
 attr title "throughput, vector"
 attr unit bps
-vector 159 MultiRadioShowcase.host1.app[0] throughput:vector ETV
+vector 211 MultiRadioShowcase.host1.app[0] throughput:vector ETV
 attr source throughput(packetReceived)
 attr title "throughput, vector"
 attr unit bps
-156	114	0.001094403175	0
-157	114	0.001094403175	0
-158	114	0.001094403175	0
-159	114	0.001094403175	0
+208	688	0.004074472787	0
+209	688	0.004074472787	3926888.4188034
+210	688	0.004074472787	0
+211	688	0.004074472787	0
 
