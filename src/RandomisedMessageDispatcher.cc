@@ -3,6 +3,7 @@
 #include "RandomisedMessageDispatcher.h"
 #include <omnetpp.h>
 #include "inet/networklayer/common/L3AddressTag_m.h"
+#include "SelectedInterface.cc"
 
 using namespace inet;
 Define_Module(RandomisedMessageDispatcher);
@@ -91,29 +92,40 @@ Define_Module(RandomisedMessageDispatcher);
             }
             auto protocol = dispatchProtocolReq->getProtocol();
             auto it = serviceToGateIndex.find(Key(protocol->getId(), servicePrimitive));
-            std::cout<<"dispatchProtocolId"<<it->second<<std::endl;
+            //std::cout<< protocol->getName()<<" has dispatchProtocolId: "<<protocol->getId()<<std::endl;
             if (it != serviceToGateIndex.end())
                 return gate("out", it->second);
             else
                 throw cRuntimeError("handlePacket(): Unknown protocol: id = %d, name = %s", protocol->getId(), protocol->getName());
         }
         auto interfaceReq = packet->findTag<InterfaceReq>();
-        if (interfaceReq != nullptr) {
+        if(interfaceReq != nullptr) std::cout<<"intReq: "<<interfaceReq->getName()<<" "<<interfaceReq->getInterfaceId() <<std::endl;
+        auto selectedInt = packet->findTag<SelectedInterface>();
+        if (selectedInt != nullptr) {
+            std::cout<<"selectedInterface: "<<selectedInt->num<<std::endl;
+            return gate("out",selectedInt->num + 2);
+            /*
             int interfaceId = interfaceReq->getInterfaceId();
 
             auto it = interfaceIdToGateIndex.find(interfaceId);
             if (it != interfaceIdToGateIndex.end())
             {
-                if (this->selectedWlan < 0) {
-                    int randomInterface = (rand()%wlanInterfaceCount) + 2;
-                    return gate("out", randomInterface);
-                } else {
-                    std::cout << "Sending from selected wlan " << selectedWlan << std::endl << std::endl;
-                    return gate("out", this->selectedWlan + 2);
-                }
+
             }
             else
                 throw cRuntimeError("handlePacket(): Unknown interface: id = %d", interfaceId);
+                */
+        }
+        else{
+            std::cout<<"selectedInterface: null Randomising"<<std::endl;
+            if (this->selectedWlan < 0) {
+                int randomInterface = (rand()%wlanInterfaceCount) + 2;
+                std::cout << "Sending from random Wlan " << randomInterface -2 << std::endl << std::endl;
+                return gate("out", randomInterface);
+            } else {
+                std::cout << "Sending from selected wlan " << selectedWlan << std::endl << std::endl;
+                return gate("out", this->selectedWlan + 2);
+            }
         }
         throw cRuntimeError("handlePacket(): Unknown packet: %s(%s)", packet->getName(), packet->getClassName());
     }

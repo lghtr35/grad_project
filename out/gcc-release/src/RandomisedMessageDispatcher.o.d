@@ -48,7 +48,8 @@ out/gcc-release//src/RandomisedMessageDispatcher.o: \
  ../inet4/src/inet/applications/common/SocketTag_m.h \
  ../inet4/src/inet/linklayer/common/InterfaceTag_m.h \
  ../inet4/src/inet/networklayer/common/L3AddressTag_m.h \
- ../inet4/src/inet/networklayer/common/L3Address_m.h
+ ../inet4/src/inet/networklayer/common/L3Address_m.h \
+ src/SelectedInterface.cc
 
 src/RandomisedMessageDispatcher.h:
 
@@ -157,3 +158,5 @@ src/RandomisedMessageDispatcher.h:
 ../inet4/src/inet/networklayer/common/L3AddressTag_m.h:
 
 ../inet4/src/inet/networklayer/common/L3Address_m.h:
+
+src/SelectedInterface.cc:
