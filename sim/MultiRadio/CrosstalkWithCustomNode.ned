@@ -45,17 +45,20 @@ network MultiRadioShowcase
             parameters:
                 @display("p=217,28");
         }
-        host2: AdhocHost {
+        host3: AdhocHost {
             parameters:
                 @display("p=1232.1238,264.42");
         }
-        host3: AdhocHost {
+        host4: AdhocHost {
             parameters:
                 @display("p=563.72876,264.42");
         }
         host1: AdhocHost {
             parameters:
                 @display("p=217,489");
+        }
+        host2: AdhocHost {
+            @display("p=91,264");
         }
 
 }

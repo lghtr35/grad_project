@@ -64,11 +64,6 @@ void CustomApp::sendPacket()
     payload->addTag<CreationTimeTag>()->setCreationTime(simTime());
     packet->insertAtBack(payload);
     L3Address destAddr = chooseDestAddr(packet);
-
-    auto intReq = packet->addTag<SelectedInterface>();
-    intReq->num = selectedInterface;
-    std::cout<<"selectedInterface at App: "<<intReq->num<<std::endl;
-
     emit(packetSentSignal, packet);
     socket.sendTo(packet, destAddr, destPort);
     numSent++;
