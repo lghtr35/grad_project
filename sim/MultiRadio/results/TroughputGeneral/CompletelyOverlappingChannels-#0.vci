@@ -1,0 +1,2190 @@
+file 63140222 1655329836                                        
+version 2
+run CompletelyOverlappingChannels-0-20220615-14:47:58-11098
+attr configname CompletelyOverlappingChannels
+attr datetime 20220615-14:47:58
+attr experiment CompletelyOverlappingChannels
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MultiRadioShowcase
+attr processid 11098
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.host{3..4}.wlan[0].radio.channelNumber 0
+param *.host{3..4}.wlan[1].radio.channelNumber 0
+param *.host{3..4}.wlan[2].radio.channelNumber 0
+param *.host{3..4}.wlan[3].radio.channelNumber 0
+param *.host{3..4}.wlan[4].radio.channelNumber 0
+param *.host{3..4}.wlan[5].radio.channelNumber 0
+param *.host0.wlan[*].radio.channelNumber 0
+param *.host1.wlan[*].radio.channelNumber 0
+param *.host2.wlan[*].radio.channelNumber 0
+param **.numMediumVisualizers 4
+param **.displaySignals true
+param **.arp.typename "\"GlobalArp\""
+param *.visualizer.interfaceTableVisualizer[*].displayInterfaceTables true
+param *.visualizer.interfaceTableVisualizer[*].placementHint "\"top\""
+param *.visualizer.ieee80211Visualizer[*].displayAssociations true
+param *.visualizer.physicalLinkVisualizer[*].displayLinks true
+param *.visualizer.dataLinkVisualizer[*].displayLinks true
+param *.visualizer.networkRouteVisualizer[*].displayRoutes true
+param *.visualizer.*LinkVisualizer[*].lineShift 0
+param *.visualizer.networkRouteVisualizer[*].lineShift 0
+param *.host*.wlan[*].radio.typename "\"Ieee80211DimensionalRadio\""
+param *.host*.wlan[*].radio.transmitter.frequencyGains "\"left c-b*1.5 -40dB linear c-b -28dB linear c-b*0.5-1MHz -20dB linear c-b*0.5+1MHz 0dB linear c+b*0.5-1MHz 0dB linear c+b*0.5+1MHz -20dB linear c+b -28dB linear c+b*1.5 -40dB right\""
+param *.configurator.config "xml(\"<config><interface hosts='host0' address='10.0.0.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/><interface hosts='host1' address='10.0.1.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/><interface hosts='host2' address='10.0.2.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/><interface hosts='host3' address='10.0.3.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/><interface hosts='host4' address='10.0.4.x' netmask='255.255.255.0'/><autoroute metric='errorRate'/></config>\")"
+param *.configurator.optimizeRoutes false
+param *.host*.ipv4.routingTable.netmaskRoutes "\"\""
+param *.host*.wlan[*].typename "\"Ieee80211Interface\""
+param *.host*.numApps 1
+param *.host*.wlan[*].radio.displayCommunicationRange true
+param *.host*.app[*].localPort 100
+param *.host*.app[*].destPort 100
+param *.host*.app[*].messageLength 1000B
+param *.host0.app[*].startTime exponential(100us)
+param *.host0.app[*].sendInterval exponential(40ms)
+param *.host1.app[*].sendInterval exponential(40ms)
+param *.host2.app[*].sendInterval exponential(40ms)
+param *.host1.app[*].packetName "\"DifferentMessage\""
+param *.host2.app[*].packetName "\"VeryDifferentMessage\""
+param *.host{3..4}.numWlanInterfaces 6
+param *.host{0..2}.numWlanInterfaces 1
+param *.host0.app[0].typename "\"CustomApp\""
+param *.host0.app[0].destAddresses "\"10.0.3.1 10.0.3.2 10.0.3.3 10.0.3.4 10.0.3.5 10.0.3.6\""
+param *.host0.**.layer 0
+param *.host1.app[0].typename "\"CustomApp\""
+param *.host1.app[0].layer 2
+param *.host1.app[0].destAddresses "\"10.0.3.1 10.0.3.2 10.0.3.3 10.0.3.4 10.0.3.5 10.0.3.6\""
+param *.host2.app[0].typename "\"CustomApp\""
+param *.host2.app[0].layer 4
+param *.host2.app[0].destAddresses "\"10.0.3.1 10.0.3.2 10.0.3.3 10.0.3.4 10.0.3.5 10.0.3.6\""
+param *.host4.app[*].typename "\"UdpSink\""
+param *.host3.app[0].typename "\"UdpSink\""
+
+vector 0 MultiRadioShowcase.host0.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 MultiRadioShowcase.host0.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 MultiRadioShowcase.host3.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 MultiRadioShowcase.host3.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 MultiRadioShowcase.host3.wlan[1].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 MultiRadioShowcase.host3.wlan[1].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 6 MultiRadioShowcase.host3.wlan[2].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 7 MultiRadioShowcase.host3.wlan[2].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 8 MultiRadioShowcase.host3.wlan[3].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 9 MultiRadioShowcase.host3.wlan[3].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 10 MultiRadioShowcase.host3.wlan[4].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 11 MultiRadioShowcase.host3.wlan[4].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 12 MultiRadioShowcase.host3.wlan[5].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 13 MultiRadioShowcase.host3.wlan[5].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 14 MultiRadioShowcase.host4.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 15 MultiRadioShowcase.host4.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 16 MultiRadioShowcase.host4.wlan[1].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 17 MultiRadioShowcase.host4.wlan[1].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 18 MultiRadioShowcase.host4.wlan[2].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 19 MultiRadioShowcase.host4.wlan[2].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 20 MultiRadioShowcase.host4.wlan[3].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 21 MultiRadioShowcase.host4.wlan[3].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 22 MultiRadioShowcase.host4.wlan[4].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 23 MultiRadioShowcase.host4.wlan[4].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 24 MultiRadioShowcase.host4.wlan[5].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 25 MultiRadioShowcase.host4.wlan[5].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 26 MultiRadioShowcase.host1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 27 MultiRadioShowcase.host1.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 28 MultiRadioShowcase.host2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 29 MultiRadioShowcase.host2.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 30 MultiRadioShowcase.host0.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 31 MultiRadioShowcase.host3.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 32 MultiRadioShowcase.host3.wlan[1].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 33 MultiRadioShowcase.host3.wlan[2].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 34 MultiRadioShowcase.host3.wlan[3].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 35 MultiRadioShowcase.host3.wlan[4].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 36 MultiRadioShowcase.host3.wlan[5].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 37 MultiRadioShowcase.host4.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 38 MultiRadioShowcase.host4.wlan[1].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 39 MultiRadioShowcase.host4.wlan[2].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 40 MultiRadioShowcase.host4.wlan[3].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 41 MultiRadioShowcase.host4.wlan[4].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 42 MultiRadioShowcase.host4.wlan[5].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 43 MultiRadioShowcase.host1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 44 MultiRadioShowcase.host2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 45 MultiRadioShowcase.host0.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 46 MultiRadioShowcase.host3.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 47 MultiRadioShowcase.host3.wlan[1].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 48 MultiRadioShowcase.host3.wlan[2].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 49 MultiRadioShowcase.host3.wlan[3].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 50 MultiRadioShowcase.host3.wlan[4].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 51 MultiRadioShowcase.host3.wlan[5].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 52 MultiRadioShowcase.host4.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 53 MultiRadioShowcase.host4.wlan[1].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 54 MultiRadioShowcase.host4.wlan[2].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 55 MultiRadioShowcase.host4.wlan[3].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 56 MultiRadioShowcase.host4.wlan[4].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 57 MultiRadioShowcase.host4.wlan[5].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 58 MultiRadioShowcase.host1.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 59 MultiRadioShowcase.host2.wlan[0].mac.dcf.recoveryProcedure contentionWindowChanged:vector ETV
+attr interpolationmode sample-hold
+attr title "contention window, vector"
+vector 60 MultiRadioShowcase.host0.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 61 MultiRadioShowcase.host0.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 62 MultiRadioShowcase.host0.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 63 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 64 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 65 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 66 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 67 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 68 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 69 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 70 MultiRadioShowcase.host0.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 71 MultiRadioShowcase.host0.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 72 MultiRadioShowcase.host0.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 73 MultiRadioShowcase.host0.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 74 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 75 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 76 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 77 MultiRadioShowcase.host0.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 78 MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 79 MultiRadioShowcase.host2.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 80 MultiRadioShowcase.host2.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 81 MultiRadioShowcase.host2.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 82 MultiRadioShowcase.host2.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 83 MultiRadioShowcase.host2.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 84 MultiRadioShowcase.host4.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 85 MultiRadioShowcase.host4.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 86 MultiRadioShowcase.host4.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 87 MultiRadioShowcase.host4.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 88 MultiRadioShowcase.host4.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 89 MultiRadioShowcase.host4.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 90 MultiRadioShowcase.host4.wlan[1].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 91 MultiRadioShowcase.host4.wlan[1].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 92 MultiRadioShowcase.host4.wlan[1].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 93 MultiRadioShowcase.host4.wlan[1].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 94 MultiRadioShowcase.host4.wlan[1].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 95 MultiRadioShowcase.host4.wlan[1].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 96 MultiRadioShowcase.host4.wlan[2].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 97 MultiRadioShowcase.host4.wlan[2].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 98 MultiRadioShowcase.host4.wlan[2].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 99 MultiRadioShowcase.host4.wlan[2].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 100 MultiRadioShowcase.host4.wlan[2].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 101 MultiRadioShowcase.host4.wlan[2].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 102 MultiRadioShowcase.host4.wlan[3].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 103 MultiRadioShowcase.host4.wlan[3].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 104 MultiRadioShowcase.host4.wlan[3].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 105 MultiRadioShowcase.host4.wlan[3].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 106 MultiRadioShowcase.host4.wlan[3].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 107 MultiRadioShowcase.host4.wlan[3].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 108 MultiRadioShowcase.host4.wlan[4].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 109 MultiRadioShowcase.host4.wlan[4].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 110 MultiRadioShowcase.host4.wlan[4].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 111 MultiRadioShowcase.host4.wlan[4].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 112 MultiRadioShowcase.host4.wlan[4].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 113 MultiRadioShowcase.host4.wlan[4].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 114 MultiRadioShowcase.host4.wlan[5].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 115 MultiRadioShowcase.host4.wlan[5].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 116 MultiRadioShowcase.host4.wlan[5].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 117 MultiRadioShowcase.host4.wlan[5].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 118 MultiRadioShowcase.host4.wlan[5].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 119 MultiRadioShowcase.host4.wlan[5].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 120 MultiRadioShowcase.host4.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 121 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 122 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 123 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 124 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 125 MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 126 MultiRadioShowcase.host1.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 127 MultiRadioShowcase.host1.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 128 MultiRadioShowcase.host1.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 129 MultiRadioShowcase.host1.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 130 MultiRadioShowcase.host1.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 131 MultiRadioShowcase.host4.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 132 MultiRadioShowcase.host4.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 133 MultiRadioShowcase.host4.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 134 MultiRadioShowcase.host4.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 135 MultiRadioShowcase.host4.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 136 MultiRadioShowcase.host0.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 137 MultiRadioShowcase.host0.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 138 MultiRadioShowcase.host0.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 139 MultiRadioShowcase.host0.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 140 MultiRadioShowcase.host0.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 141 MultiRadioShowcase.host3.wlan[0].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 142 MultiRadioShowcase.host3.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 143 MultiRadioShowcase.host3.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 144 MultiRadioShowcase.host3.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 145 MultiRadioShowcase.host3.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 146 MultiRadioShowcase.host3.wlan[1].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 147 MultiRadioShowcase.host3.wlan[1].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 148 MultiRadioShowcase.host3.wlan[1].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 149 MultiRadioShowcase.host3.wlan[1].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 150 MultiRadioShowcase.host3.wlan[1].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 151 MultiRadioShowcase.host3.wlan[2].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 152 MultiRadioShowcase.host3.wlan[2].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 153 MultiRadioShowcase.host3.wlan[2].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 154 MultiRadioShowcase.host3.wlan[2].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 155 MultiRadioShowcase.host3.wlan[2].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 156 MultiRadioShowcase.host3.wlan[3].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 157 MultiRadioShowcase.host3.wlan[3].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 158 MultiRadioShowcase.host3.wlan[3].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 159 MultiRadioShowcase.host3.wlan[3].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 160 MultiRadioShowcase.host3.wlan[3].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 161 MultiRadioShowcase.host3.wlan[4].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 162 MultiRadioShowcase.host3.wlan[4].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 163 MultiRadioShowcase.host3.wlan[4].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 164 MultiRadioShowcase.host3.wlan[4].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 165 MultiRadioShowcase.host3.wlan[4].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 166 MultiRadioShowcase.host3.wlan[5].mac packetReceivedFromLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from lower layer, vector(packetBytes)"
+vector 167 MultiRadioShowcase.host3.wlan[5].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 168 MultiRadioShowcase.host3.wlan[5].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 169 MultiRadioShowcase.host3.wlan[5].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 170 MultiRadioShowcase.host3.wlan[5].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 171 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 172 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 173 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 174 MultiRadioShowcase.host4.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 175 MultiRadioShowcase.host4.wlan[0].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 176 MultiRadioShowcase.host0.wlan[0].mac.dcf packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 177 MultiRadioShowcase.host0.wlan[0].mac.dcf packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 178 MultiRadioShowcase.host0.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 179 MultiRadioShowcase.host0.wlan[0].mac packetDropNotAddressedToUs:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, vector(packetBytes)"
+vector 180 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 181 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 182 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 183 MultiRadioShowcase.host3.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 184 MultiRadioShowcase.host3.wlan[0].mac packetSentToUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to upper layer, vector(packetBytes)"
+vector 185 MultiRadioShowcase.host3.wlan[1].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 186 MultiRadioShowcase.host3.wlan[2].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 187 MultiRadioShowcase.host3.wlan[3].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 188 MultiRadioShowcase.host3.wlan[4].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 189 MultiRadioShowcase.host3.wlan[5].mac.rx nav:vector ETV
+attr interpolationmode linear
+attr source navChanged
+attr title "network allocation vector, vector"
+vector 190 MultiRadioShowcase.host3.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 191 MultiRadioShowcase.host3.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed up, vector(count)"
+vector 192 MultiRadioShowcase.host3.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 193 MultiRadioShowcase.host3.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, vector"
+attr unit s
+vector 194 MultiRadioShowcase.host3.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number, vector"
+vector 195 MultiRadioShowcase.host3.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 196 MultiRadioShowcase.host3.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 197 MultiRadioShowcase.host3.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 198 MultiRadioShowcase.host3.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 199 MultiRadioShowcase.host3.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 200 MultiRadioShowcase.host4.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 201 MultiRadioShowcase.host2.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 202 MultiRadioShowcase.host2.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 203 MultiRadioShowcase.host2.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 204 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 205 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 206 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 207 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 208 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 209 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 210 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 211 MultiRadioShowcase.host2.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 212 MultiRadioShowcase.host2.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 213 MultiRadioShowcase.host2.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 214 MultiRadioShowcase.host2.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 215 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 216 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 217 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 218 MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 219 MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 220 MultiRadioShowcase.host2.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 221 MultiRadioShowcase.host2.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 222 MultiRadioShowcase.host1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 223 MultiRadioShowcase.host1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 224 MultiRadioShowcase.host1.wlan[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received from upper layer, vector(packetBytes)"
+vector 225 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 226 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 227 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.contention backoffPeriodGenerated:vector ETV
+attr interpolationmode none
+attr title "backoff periods, vector"
+vector 228 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.contention backoffActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(backoffStarted)-count(backoffStopped)
+attr title "backoff active, vector"
+vector 229 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 230 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.pendingQueue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 231 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetEnqueued) - count(packetDequeued)"
+attr title "queue length, vector"
+vector 232 MultiRadioShowcase.host1.wlan[0].mac.dcf datarateSelected:vector ETV
+attr interpolationmode none
+attr title "datarates selected, vector"
+vector 233 MultiRadioShowcase.host1.wlan[0].mac packetSentToLower:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 234 MultiRadioShowcase.host1.wlan[0].mac.dcf frameSequenceActive:vector ETV
+attr interpolationmode sample-hold
+attr source count(frameSequenceStarted)-count(frameSequenceFinished)
+attr title "frame sequence active, vector"
+vector 235 MultiRadioShowcase.host1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+vector 236 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets sent, vector(packetBytes)"
+vector 237 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, vector(packetBytes)"
+vector 238 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, vector(packetBytes)"
+vector 239 MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeer:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packets received, vector(packetBytes)"
+vector 240 MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerUnicast:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, vector(packetBytes)"
+vector 241 MultiRadioShowcase.host1.wlan[0].mac.dcf packetReceivedFromPeerWithoutRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, vector(packetBytes)"
+vector 242 MultiRadioShowcase.host1.wlan[0].mac.dcf.channelAccess.inProgressFrames queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetDequeued)
+attr title "queueing times, vector"
+vector 243 MultiRadioShowcase.host3.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	52191 18996 0 238734 0 14.724313629249 739 0 3 1842 4788
+1	71187 8 0 0 0 0 1 0 0 0 0
+2	71195 55924 0 238905 0 14.725217258613 2175 0 3 5432 14122
+3	127119 8 0 0 0 0 1 0 0 0 0
+4	127127 24 0 0 0 0 3 0 2 2 4
+5	127151 8 0 0 0 0 1 0 0 0 0
+6	127159 24 0 0 0 0 3 0 2 2 4
+7	127183 8 0 0 0 0 1 0 0 0 0
+8	127191 24 0 0 0 0 3 0 2 2 4
+9	127215 8 0 0 0 0 1 0 0 0 0
+10	127223 27 0 0 0 0 3 0 2 2 4
+11	127250 9 0 0 0 0 1 0 0 0 0
+12	127259 27 0 0 0 0 3 0 2 2 4
+13	127286 9 0 0 0 0 1 0 0 0 0
+14	127295 116373 0 239058 0 14.734868720889 4351 0 3 10872 28266
+15	243668 9 0 0 0 0 1 0 0 0 0
+16	243677 27 0 0 0 0 3 0 2 2 4
+17	243704 9 0 0 0 0 1 0 0 0 0
+18	243713 27 0 0 0 0 3 0 2 2 4
+19	243740 9 0 0 0 0 1 0 0 0 0
+20	243749 27 0 0 0 0 3 0 2 2 4
+21	243776 9 0 0 0 0 1 0 0 0 0
+22	243785 27 0 0 0 0 3 0 2 2 4
+23	243812 9 0 0 0 0 1 0 0 0 0
+24	243821 27 0 0 0 0 3 0 2 2 4
+25	243848 9 0 0 0 0 1 0 0 0 0
+26	243857 18717 0 238950 0 14.733911342914 703 0 3 1752 4554
+27	262574 9 0 0 0 0 1 0 0 0 0
+28	262583 19769 0 237192 0 14.627184157647 741 0 3 1847 4801
+29	282352 9 0 0 0 0 1 0 0 0 0
+30	282361 174355 0 239044 0 14.734488120727 6522 0 3 11940 29298
+31	456716 174305 0 239046 0 14.734488950415 6520 0 3 9782 22826
+32	631021 174305 0 239047 0 14.734488950415 6520 1 3 13040 32600
+33	805326 174305 0 239048 0 14.734488950415 6520 1 3 13040 32600
+34	979631 174305 0 239049 0 14.734488950415 6520 1 3 13040 32600
+35	1153936 174305 0 239050 0 14.734488950415 6520 1 3 13040 32600
+36	1328241 174305 0 239051 0 14.734488950415 6520 1 3 13040 32600
+37	1502546 232637 0 239058 0 14.734868720889 8695 0 3 10867 23905
+38	1735183 232639 0 239053 0 14.734868720889 8695 1 3 17389 43471
+39	1967822 232639 0 239054 0 14.734868720889 8695 1 3 17389 43471
+40	2200461 232639 0 239055 0 14.734868720889 8695 1 3 17389 43471
+41	2433100 232639 0 239056 0 14.734868720889 8695 1 3 17389 43471
+42	2665739 232639 0 239057 0 14.734868720889 8695 1 3 17389 43471
+43	2898378 174291 0 239043 0 14.734488098864 6522 0 3 11994 29460
+44	3072669 174366 0 239045 0 14.734488297743 6522 0 3 11937 29289
+45	3247035 10 0 0 0 0 1 31 31 31 961
+46	3247045 10 0 0 0 0 1 31 31 31 961
+47	3247055 10 0 0 0 0 1 31 31 31 961
+48	3247065 10 0 0 0 0 1 31 31 31 961
+49	3247075 10 0 0 0 0 1 31 31 31 961
+50	3247085 10 0 0 0 0 1 31 31 31 961
+51	3247095 10 0 0 0 0 1 31 31 31 961
+52	3247105 10 0 0 0 0 1 31 31 31 961
+53	3247115 10 0 0 0 0 1 31 31 31 961
+54	3247125 10 0 0 0 0 1 31 31 31 961
+55	3247135 10 0 0 0 0 1 31 31 31 961
+56	3247145 10 0 0 0 0 1 31 31 31 961
+57	3247155 10 0 0 0 0 1 31 31 31 961
+58	3247165 10 0 0 0 0 1 31 31 31 961
+59	3247175 10 0 0 0 0 1 31 31 31 961
+60	3247185 10955 7 238710 0.000185960421 14.723931629249 368 1000 1000 368000 368000000
+61	3258140 10955 9 238711 0.000185960421 14.723931629249 368 1008 1008 370944 373911552
+62	3269095 10956 12 238714 0.000185960421 14.723931629249 368 1036 1036 381248 394972928
+63	3280051 10956 12 238714 0.000185960421 14.723931629249 368 1064 1064 391552 416611328
+64	3291007 19707 12 238716 0.000185960421 14.723931629249 736 0 2 372 376
+65	3310714 10098 12 238714 0.000185960421 14.723931629249 368 0 31 5590 115880
+66	3320812 20989 12 238715 0.000185960421 14.723931629249 784 0 1 392 392
+67	3341801 10959 14 238716 0.000185960421 14.723931629249 368 1064 1064 391552 416611328
+68	3352760 10342 14 238716 0.000185960421 14.723931629249 368 0 0.001549185824 0.018135195277 1.2827545483751e-05
+69	3363102 19695 14 238801 0.000185960421 14.724360428925 736 0 2 372 376
+70	3382797 12430 14 238716 0.000185960421 14.723931629249 368 24000000 24000000 8832000000 2.11968e+17
+71	3395227 10958 14 238716 0.000185960421 14.723931629249 368 1064 1064 391552 416611328
+72	3406185 19694 14 238801 0.000185960421 14.724360428925 736 0 1 368 368
+73	3425879 39416 15 238734 0.000185960421 14.724313629249 1472 0 2 1472 2208
+74	3465295 10958 31 238733 0.000567960421 14.724313629249 368 1064 1064 391552 416611328
+75	3476253 10958 31 238733 0.000567960421 14.724313629249 368 1064 1064 391552 416611328
+76	3487211 10958 31 238733 0.000567960421 14.724313629249 368 1064 1064 391552 416611328
+77	3498169 187347 31 239013 0.000567960421 14.733956880644 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+78	3685516 83793 34 239019 0.000568852803 14.733958297743 2891 14 1064 1934674 2042514236
+79	3769309 187359 34 238995 0.000568852803 14.733956203102 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+80	3956668 73562 34 239019 0.000568852803 14.733958297743 2522 14 1064 1929508 2042441912
+81	4030230 73562 34 239019 0.000568852803 14.733958297743 2522 14 1064 1929508 2042441912
+82	4103792 73562 34 239019 0.000568852803 14.733958297743 2522 14 1064 1929508 2042441912
+83	4177354 73562 34 239019 0.000568852803 14.733958297743 2522 14 1064 1929508 2042441912
+84	4250916 62488 41 238959 0.000569360259 14.733912720889 2173 14 1064 1171772 1230801208
+85	4313404 62488 41 238959 0.000569360259 14.733912720889 2173 14 1064 1171772 1230801208
+86	4375892 62488 41 238959 0.000569360259 14.733912720889 2173 14 1064 1171772 1230801208
+87	4438380 62488 41 238959 0.000569360259 14.733912720889 2173 14 1064 1171772 1230801208
+88	4500868 73390 41 239035 0.000569360259 14.734486720889 2174 24000000 24000000 52176000000 1.252224e+18
+89	4574258 32345 41 238959 0.000569360259 14.733912720889 1087 1036 1036 1126132 1166672752
+90	4606603 125010 42 239059 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+91	4731613 187538 42 239059 0.000569360259 14.734868720889 6521 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+92	4919151 125010 42 239059 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+93	5044161 125010 42 239059 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+94	5169171 125010 42 239059 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+95	5294181 125010 42 239059 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+96	5419191 125010 43 239060 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+97	5544201 187538 43 239060 0.000569360259 14.734868720889 6521 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+98	5731739 125010 43 239060 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+99	5856749 125010 43 239060 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+100	5981759 129357 43 239060 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+101	6111116 129357 43 239060 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+102	6240473 129357 44 239061 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+103	6369830 194059 44 239061 0.000569360259 14.734868720889 6521 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+104	6563889 129357 44 239061 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+105	6693246 129357 44 239061 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+106	6822603 129357 44 239061 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+107	6951960 129357 44 239061 0.000569360259 14.734868720889 4347 14 1064 2343558 2461602612
+108	7081317 129325 45 239011 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+109	7210642 193995 45 238999 0.000569360259 14.733956720889 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+110	7404637 129325 45 239011 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+111	7533962 129325 45 239011 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+112	7663287 129325 45 239011 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+113	7792612 129325 45 239011 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+114	7921937 129325 46 239012 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+115	8051262 193995 46 239000 0.000569360259 14.733956720889 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+116	8245257 129325 46 239012 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+117	8374582 129325 46 239012 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+118	8503907 129325 46 239012 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+119	8633232 129325 46 239012 0.000569360259 14.733956720889 4346 14 1064 2342494 2460470516
+120	8762557 33432 50 238968 0.000569360259 14.733912720889 1087 1036 1036 1126132 1166672752
+121	8795989 33432 50 238968 0.000569360259 14.733912720889 1087 1064 1064 1156568 1230588352
+122	8829421 60347 50 239035 0.000569360259 14.734486720889 2174 0 3 1165 1251
+123	8889768 30923 50 238968 0.000569360259 14.733912720889 1087 0 31 16778 350632
+124	8920691 123032 50 239034 0.000569360259 14.734486720889 4432 0 1 2216 2216
+125	9043723 87248 52 239015 0.000569498151 14.733958098864 2910 14 1064 1954890 2064024060
+126	9130971 193806 52 238994 0.000569498151 14.733955342914 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+127	9324777 77206 52 238847 0.000569498151 14.725172407062 2560 14 1064 1949990 2063955460
+128	9401983 77206 52 238847 0.000569498151 14.725172407062 2560 14 1064 1949990 2063955460
+129	9479189 77206 52 238847 0.000569498151 14.725172407062 2560 14 1064 1949990 2063955460
+130	9556395 77206 52 238847 0.000569498151 14.725172407062 2560 14 1064 1949990 2063955460
+131	9633601 64694 59 239035 0.000579360259 14.734486720889 2174 14 1064 1171786 1230801404
+132	9698295 241388 60 239058 0.000579360259 14.734868720889 8696 0 2 8696 13044
+133	9939683 64696 83 239052 0.000613360259 14.734868720889 2174 14 1064 1171786 1230801404
+134	10004379 64696 83 239052 0.000613360259 14.734868720889 2174 14 1064 1171786 1230801404
+135	10069075 64696 83 239052 0.000613360259 14.734868720889 2174 14 1064 1171786 1230801404
+136	10133771 86699 99 239017 0.000614760097 14.733958120727 2892 14 1064 1935738 2043646332
+137	10220470 10576 99 238801 0.000614760097 14.724360428925 368 14 14 5152 72128
+138	10231046 10576 99 238801 0.000614760097 14.724360428925 368 14 14 5152 72128
+139	10241622 10576 99 238801 0.000614760097 14.724360428925 368 14 14 5152 72128
+140	10252198 14992 99 238801 0.000614760097 14.724360428925 368 0.000428799676 0.001663599352 0.15953188012 7.0924116704206e-05
+141	10267190 64617 108 239026 0.000615589785 14.733958950415 2173 14 1064 1170722 1229669308
+142	10331807 31237 108 239026 0.000615589785 14.733958950415 1087 14 14 15218 213052
+143	10363044 31237 108 239026 0.000615589785 14.733958950415 1087 14 14 15218 213052
+144	10394281 31237 108 239026 0.000615589785 14.733958950415 1087 14 14 15218 213052
+145	10425518 31237 108 239026 0.000615589785 14.733958950415 1087 14 14 15218 213052
+146	10456755 95825 109 239027 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+147	10552580 95825 109 239027 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+148	10648405 95825 109 239027 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+149	10744230 95825 109 239027 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+150	10840055 95825 109 239027 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+151	10935880 95825 110 239028 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+152	11031705 95825 110 239028 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+153	11127530 95825 110 239028 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+154	11223355 95825 110 239028 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+155	11319180 95825 110 239028 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+156	11415005 95825 111 239029 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+157	11510830 95825 111 239029 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+158	11606655 95825 111 239029 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+159	11702480 95825 111 239029 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+160	11798305 95825 111 239029 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+161	11894130 95825 112 239030 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+162	11989955 95825 112 239030 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+163	12085780 95825 112 239030 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+164	12181605 95825 112 239030 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+165	12277430 95825 112 239030 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+166	12373255 95825 113 239031 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+167	12469080 95825 113 239031 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+168	12564905 95825 113 239031 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+169	12660730 95825 113 239031 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+170	12756555 95825 113 239031 0.000615589785 14.733958950415 3259 14 1064 1185926 1229882164
+171	12852380 33437 115 239035 0.000783360259 14.734486720889 1087 1064 1064 1156568 1230588352
+172	12885817 37979 115 239035 0.000783360259 14.734486720889 1087 9.4e-05 0.001651953384 0.454845089522 0.00024099270166479
+173	12923796 60319 115 239035 0.000783360259 14.734486720889 2173 0 2 1171 1255
+174	12984115 60318 115 239035 0.000783360259 14.734486720889 2173 0 1 1087 1087
+175	13044433 97024 132 239052 0.001165360259 14.734868720889 3260 0 4.4e-05 0.047828000000001 2.104432e-06
+176	13141457 76123 147 239017 0.001166760097 14.733958120727 2524 14 1064 1930586 2043574204
+177	13217580 76123 147 239017 0.001166760097 14.733958120727 2524 14 1064 1930586 2043574204
+178	13293703 76123 147 239017 0.001166760097 14.733958120727 2524 14 1064 1930586 2043574204
+179	13369826 76123 147 239017 0.001166760097 14.733958120727 2524 14 1064 1930586 2043574204
+180	13445949 33380 156 238858 0.001167589785 14.725173258613 1086 1064 1064 1155504 1229456256
+181	13479329 33380 156 238858 0.001167589785 14.725173258613 1086 1064 1064 1155504 1229456256
+182	13512709 33380 156 238858 0.001167589785 14.725173258613 1086 1064 1064 1155504 1229456256
+183	13546089 37724 156 238858 0.001167589785 14.725173258613 1086 24000000 24000000 26064000000 6.25536e+17
+184	13583813 33380 156 238858 0.001167589785 14.725173258613 1086 1036 1036 1125096 1165599456
+185	13617193 96882 157 238894 0.001167589785 14.725217258613 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+186	13714075 96882 158 238895 0.001167589785 14.725217258613 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+187	13810957 96882 159 238896 0.001167589785 14.725217258613 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+188	13907839 96882 160 238897 0.001167589785 14.725217258613 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+189	14004721 96882 161 238898 0.001167589785 14.725217258613 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+190	14101603 33380 164 238866 0.001167589785 14.725173258613 1086 1008 1008 1094688 1103445504
+191	14134983 32273 164 238866 0.001167589785 14.725173258613 1086 1 1086 590241 427531231
+192	14167256 33380 165 238867 0.001167589785 14.725173258613 1086 1000 1000 1086000 1086000000
+193	14200636 43914 165 238867 0.001167589785 14.725173258613 1086 0.000861607501 0.00375127424 1.391033868365 0.0019452962355387
+194	14244550 31964 165 238867 0.001167589785 14.725173258613 1086 0 368 196150 47332818
+195	14276514 31208 166 238868 0.001177589785 14.725183258613 1086 14 14 15204 212856
+196	14307722 120488 167 238905 0.001177589785 14.725217258613 4344 0 2 4344 6516
+197	14428210 31208 197 238899 0.001211589785 14.725217258613 1086 14 14 15204 212856
+198	14459418 31208 197 238899 0.001211589785 14.725217258613 1086 14 14 15204 212856
+199	14490626 31208 197 238899 0.001211589785 14.725217258613 1086 14 14 15204 212856
+200	14521834 44261 215 238917 0.001213819311 14.725219488139 1086 0.000430459052 0.002025258728 0.50240947005001 0.00026372123741258
+201	14566095 11350 228 237166 0.012734245634 14.626802157647 369 1000 1000 369000 369000000
+202	14577445 11350 230 237167 0.012734245634 14.626802157647 369 1008 1008 371952 374927616
+203	14588795 11350 233 237170 0.012734245634 14.626802157647 369 1036 1036 382284 396046224
+204	14600145 11350 233 237170 0.012734245634 14.626802157647 369 1064 1064 392616 417743424
+205	14611495 20483 233 237172 0.012734245634 14.626802157647 738 0 2 371 373
+206	14631978 10505 233 237170 0.012734245634 14.626802157647 369 0 31 5974 129164
+207	14642483 24220 233 237171 0.012734245634 14.626802157647 872 0 1 436 436
+208	14666703 11347 235 237172 0.012734245634 14.626802157647 369 1064 1064 392616 417743424
+209	14678050 10907 235 237172 0.012734245634 14.626802157647 369 0 0.001981530489 0.033762908441 3.1360359062571e-05
+210	14688957 20471 235 237261 0.012734245634 14.627231311355 738 0 2 371 373
+211	14709428 12823 235 237172 0.012734245634 14.626802157647 369 24000000 24000000 8856000000 2.12544e+17
+212	14722251 11347 235 237172 0.012734245634 14.626802157647 369 1064 1064 392616 417743424
+213	14733598 20471 235 237261 0.012734245634 14.627231311355 738 0 1 369 369
+214	14754069 40960 236 237192 0.012734245634 14.627184157647 1476 0 2 1476 2214
+215	14795029 11347 252 237191 0.013116245634 14.627184157647 369 1064 1064 392616 417743424
+216	14806376 11347 252 237191 0.013116245634 14.627184157647 369 1064 1064 392616 417743424
+217	14817723 11347 252 237191 0.013116245634 14.627184157647 369 1064 1064 392616 417743424
+218	14829070 10600 322 237261 0.013163399342 14.627231311355 369 14 14 5166 72324
+219	14839670 10600 322 237261 0.013163399342 14.627231311355 369 14 14 5166 72324
+220	14850270 10600 322 237261 0.013163399342 14.627231311355 369 14 14 5166 72324
+221	14860870 15028 322 237261 0.013163399342 14.627231311355 369 0.000429153708 0.000908307416 0.15883687196 6.8600651435136e-05
+222	14875898 10746 445 238926 0.014126365566 14.733529342914 350 1000 1000 350000 350000000
+223	14886644 10746 447 238927 0.014126365566 14.733529342914 350 1008 1008 352800 355622400
+224	14897390 10746 450 238930 0.014126365566 14.733529342914 350 1036 1036 362600 375653600
+225	14908136 10746 450 238930 0.014126365566 14.733529342914 350 1064 1064 372400 396233600
+226	14918882 19391 450 238932 0.014126365566 14.733529342914 700 0 1 350 350
+227	14938273 9930 450 238930 0.014126365566 14.733529342914 350 0 31 5217 106003
+228	14948203 20654 450 238931 0.014126365566 14.733529342914 746 0 1 373 373
+229	14968857 10745 452 238932 0.014309200463 14.733529342914 350 1064 1064 372400 396233600
+230	14979602 10052 452 238932 0.014309200463 14.733529342914 350 0 0.001412541874 0.014017804466 1.1521488125203e-05
+231	14989654 19387 452 239015 0.014309200463 14.733958098864 700 0 1 350 350
+232	15009041 12145 452 238932 0.014309200463 14.733529342914 350 24000000 24000000 8400000000 2.016e+17
+233	15021186 10745 452 238932 0.014309200463 14.733529342914 350 1064 1064 372400 396233600
+234	15031931 19387 452 239015 0.014309200463 14.733958098864 700 0 1 350 350
+235	15051318 38780 453 238950 0.014309200463 14.733911342914 1400 0 2 1400 2100
+236	15090098 10745 469 238949 0.014691200463 14.733911342914 350 1064 1064 372400 396233600
+237	15100843 10745 469 238949 0.014691200463 14.733911342914 350 1064 1064 372400 396233600
+238	15111588 10745 469 238949 0.014691200463 14.733911342914 350 1064 1064 372400 396233600
+239	15122333 10042 535 239015 0.014737956413 14.733958098864 350 14 14 4900 68600
+240	15132375 10042 535 239015 0.014737956413 14.733958098864 350 14 14 4900 68600
+241	15142417 10042 535 239015 0.014737956413 14.733958098864 350 14 14 4900 68600
+242	15152459 13892 535 239015 0.014737956413 14.733958098864 350 0.00042875595 0.00042875595 0.1500645825 6.4341082631141e-05
+243	15166351 3195 2147 238207 0.1 14.7 147 80000 1440000 86560000 58688000000000
+0	15169546 19004 239155 475662 14.744799911941 30.047140061339 706 2 3 1765 4589
+2	15188550 58442 239087 478044 14.734880950415 30.165015963283 2174 2 3 5435 14131
+14	15246992 121252 239202 478143 14.745193311779 30.165512489707 4346 2 3 10865 28249
+26	15368244 19872 239377 478086 14.778242387106 30.165467111732 712 2 3 1780 4628
+28	15388116 21084 239813 477649 14.80751943495 30.162621192821 756 2 3 1890 4914
+30	15409200 181786 239066 478122 14.734870120727 30.165479889545 6520 0 3 11981 29423
+31	15590986 181798 239070 478124 14.734870950415 30.165480719233 6520 0 3 9779 22817
+32	15772784 181798 239071 478125 14.734870950415 30.165480719233 6520 1 3 13040 32600
+33	15954582 181798 239072 478126 14.734870950415 30.165480719233 6520 1 3 13040 32600
+34	16136380 181798 239073 478127 14.734870950415 30.165480719233 6520 1 3 13040 32600
+35	16318178 181798 239074 478128 14.734870950415 30.165480719233 6520 1 3 13040 32600
+36	16499976 181798 239075 478129 14.734870950415 30.165480719233 6520 1 3 13040 32600
+37	16681774 242540 239094 478143 14.734883179941 30.165512489707 8694 0 3 10869 23913
+38	16924314 242540 239095 478138 14.734883179941 30.165512489707 8694 1 3 17388 43470
+39	17166854 242540 239096 478139 14.734883179941 30.165512489707 8694 1 3 17388 43470
+40	17409394 242540 239097 478140 14.734883179941 30.165512489707 8694 1 3 17388 43470
+41	17651934 242540 239098 478141 14.734883179941 30.165512489707 8694 1 3 17388 43470
+42	17894474 242540 239099 478142 14.734883179941 30.165512489707 8694 1 3 17388 43470
+43	18137014 181896 239064 478150 14.734870098864 30.165513867682 6521 0 3 11973 29397
+44	18318910 181822 239068 478123 14.734870297743 30.165480066561 6520 0 3 11906 29198
+60	18500732 10914 239148 475638 14.744799911941 30.046758061339 353 1000 1000 353000 353000000
+61	18511646 10914 239149 475639 14.744799911941 30.046758061339 353 1008 1008 355824 358670592
+62	18522560 10914 239152 475642 14.744799911941 30.046758061339 353 1036 1036 365708 378873488
+63	18533474 10914 239152 475642 14.744799911941 30.046758061339 353 1064 1064 375592 399629888
+64	18544388 19710 239152 475644 14.744799911941 30.046758061339 706 0 2 355 357
+65	18564098 10093 239152 475642 14.744799911941 30.046758061339 353 0 31 5450 115210
+66	18574191 21443 239152 475643 14.744799911941 30.046758061339 768 0 1 384 384
+67	18595634 10914 239154 475644 14.744799911941 30.046758061339 353 1064 1064 375592 399629888
+68	18606548 10266 239154 475644 14.744799911941 30.046758061339 353 0 0.001294793581 0.018926390964 1.5150004745552e-05
+69	18616814 19697 239154 475729 14.744799911941 30.047186861015 706 0 2 355 357
+70	18636511 12326 239154 475644 14.744799911941 30.046758061339 353 24000000 24000000 8472000000 2.03328e+17
+71	18648837 10914 239154 475644 14.744799911941 30.046758061339 353 1064 1064 375592 399629888
+72	18659751 19697 239154 475729 14.744799911941 30.047186861015 706 0 1 353 353
+73	18679448 39420 239155 475662 14.744799911941 30.047140061339 1412 0 2 1412 2118
+74	18718868 10914 239173 475661 14.745181911941 30.047140061339 353 1064 1064 375592 399629888
+75	18729782 10914 239173 475661 14.745181911941 30.047140061339 353 1064 1064 375592 399629888
+76	18740696 10914 239173 475661 14.745181911941 30.047140061339 353 1064 1064 375592 399629888
+77	18751610 194910 239067 478149 14.734870120727 30.165512649462 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+78	18946520 86843 239069 478088 14.734870297743 30.16546797192 2882 14 1064 1926148 2033457272
+79	19033363 194907 239069 478131 14.734870297743 30.16551197192 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+80	19228270 75918 239069 478088 14.734870297743 30.16546797192 2504 14 1064 1920856 2033383184
+81	19304188 75918 239069 478088 14.734870297743 30.16546797192 2504 14 1064 1920856 2033383184
+82	19380106 75918 239069 478088 14.734870297743 30.16546797192 2504 14 1064 1920856 2033383184
+83	19456024 75918 239069 478088 14.734870297743 30.16546797192 2504 14 1064 1920856 2033383184
+84	19531942 64992 239135 478095 14.734917179941 30.165468489707 2174 14 1064 1171786 1230801404
+85	19596934 64992 239135 478095 14.734917179941 30.165468489707 2174 14 1064 1171786 1230801404
+86	19661926 64992 239135 478095 14.734917179941 30.165468489707 2174 14 1064 1171786 1230801404
+87	19726918 64992 239135 478095 14.734917179941 30.165468489707 2174 14 1064 1171786 1230801404
+88	19791910 75837 239183 478095 14.745183311779 30.165468489707 2173 24000000 24000000 52152000000 1.251648e+18
+89	19867747 33587 239183 478095 14.745183311779 30.165468489707 1087 1036 1036 1126132 1166672752
+90	19901334 129963 239136 478144 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+91	20031297 194944 239104 478132 14.734912720889 30.165512489707 6520 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+92	20226241 129963 239136 478144 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+93	20356204 129963 239136 478144 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+94	20486167 129963 239136 478144 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+95	20616130 129963 239136 478144 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+96	20746093 129963 239137 478145 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+97	20876056 194944 239105 478133 14.734912720889 30.165512489707 6520 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+98	21071000 129963 239137 478145 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+99	21200963 129963 239137 478145 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+100	21330926 134310 239137 478145 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+101	21465236 134310 239137 478145 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+102	21599546 134310 239138 478146 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+103	21733856 201464 239106 478134 14.734912720889 30.165512489707 6520 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+104	21935320 134310 239138 478146 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+105	22069630 134310 239138 478146 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+106	22203940 134310 239138 478146 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+107	22338250 134310 239138 478146 14.734917179941 30.165512489707 4347 14 1064 2342508 2460470712
+108	22472560 134342 239062 478147 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+109	22606902 201528 239062 478135 14.734868720889 30.165512489707 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+110	22808430 134342 239062 478147 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+111	22942772 134342 239062 478147 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+112	23077114 134342 239062 478147 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+113	23211456 134342 239062 478147 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+114	23345798 134342 239063 478148 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+115	23480140 201528 239063 478136 14.734868720889 30.165512489707 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+116	23681668 134342 239063 478148 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+117	23816010 134342 239063 478148 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+118	23950352 134342 239063 478148 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+119	24084694 134342 239063 478148 14.734868720889 30.165512489707 4348 14 1064 2343572 2461602808
+120	24219036 34674 239192 478104 14.745183311779 30.165468489707 1087 1036 1036 1126132 1166672752
+121	24253710 34674 239192 478104 14.745183311779 30.165468489707 1087 1064 1064 1156568 1230588352
+122	24288384 62796 239192 478104 14.745183311779 30.165468489707 2173 0 2 1145 1203
+123	24351180 32144 239192 478104 14.745183311779 30.165468489707 1087 0 31 16402 339218
+124	24383324 127357 239192 478143 14.745183311779 30.165512489707 4407 0 1 2204 2204
+125	24510681 90472 239065 478151 14.734870098864 30.165513867682 2905 14 1064 1949570 2058363580
+126	24601153 201513 239065 478130 14.734870098864 30.165511111732 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+127	24802666 79826 239065 477986 14.734870098864 30.164971111732 2549 14 1064 1944586 2058293804
+128	24882492 79826 239065 477986 14.734870098864 30.164971111732 2549 14 1064 1944586 2058293804
+129	24962318 79826 239065 477986 14.734870098864 30.164971111732 2549 14 1064 1944586 2058293804
+130	25042144 79826 239065 477986 14.734870098864 30.164971111732 2549 14 1064 1944586 2058293804
+131	25121970 67144 239201 478113 14.745193311779 30.165478489707 2173 14 1064 1170722 1229669308
+132	25189114 251196 239202 478143 14.745193311779 30.165512489707 8692 0 2 8692 13038
+133	25440310 67144 239225 478137 14.745227311779 30.165512489707 2173 14 1064 1170722 1229669308
+134	25507454 67144 239225 478137 14.745227311779 30.165512489707 2173 14 1064 1170722 1229669308
+135	25574598 67144 239225 478137 14.745227311779 30.165512489707 2173 14 1064 1170722 1229669308
+136	25641742 90494 239067 478106 14.734870120727 30.165468649462 2907 14 1064 1952748 2061759672
+137	25732236 10548 239241 475729 14.745228711617 30.047186861015 353 14 14 4942 69188
+138	25742784 10548 239241 475729 14.745228711617 30.047186861015 353 14 14 4942 69188
+139	25753332 10548 239241 475729 14.745228711617 30.047186861015 353 14 14 4942 69188
+140	25763880 14784 239241 475729 14.745228711617 30.047186861015 353 0.000428799676 0.001443599352 0.152381085304 6.6805924161567e-05
+141	25778664 67111 239076 477997 14.734870950415 30.164971963283 2173 14 1064 1171772 1230801208
+142	25845775 32455 239250 477942 14.745229541305 30.164019963283 1086 14 14 15204 212856
+143	25878230 32455 239250 477942 14.745229541305 30.164019963283 1086 14 14 15204 212856
+144	25910685 32455 239250 477942 14.745229541305 30.164019963283 1086 14 14 15204 212856
+145	25943140 32455 239250 477942 14.745229541305 30.164019963283 1086 14 14 15204 212856
+146	25975595 99593 239077 478045 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+147	26075188 99593 239077 478045 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+148	26174781 99593 239077 478045 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+149	26274374 99593 239077 478045 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+150	26373967 99593 239077 478045 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+151	26473560 99593 239078 478046 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+152	26573153 99593 239078 478046 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+153	26672746 99593 239078 478046 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+154	26772339 99593 239078 478046 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+155	26871932 99593 239078 478046 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+156	26971525 99593 239079 478047 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+157	27071118 99593 239079 478047 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+158	27170711 99593 239079 478047 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+159	27270304 99593 239079 478047 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+160	27369897 99593 239079 478047 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+161	27469490 99593 239080 478048 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+162	27569083 99593 239080 478048 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+163	27668676 99593 239080 478048 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+164	27768269 99593 239080 478048 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+165	27867862 99593 239080 478048 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+166	27967455 99593 239081 478049 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+167	28067048 99593 239081 478049 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+168	28166641 99593 239081 478049 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+169	28266234 99593 239081 478049 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+170	28365827 99593 239081 478049 14.734870950415 30.165015963283 3260 14 1064 1186990 1231014260
+171	28465420 34641 239257 477951 14.745377311779 30.164587733757 1086 1064 1064 1155504 1229456256
+172	28500061 39114 239257 477951 14.745377311779 30.164587733757 1086 9.4e-05 0.001193153708 0.44077819206 0.00022643249438753
+173	28539175 62788 239135 478056 14.734917179941 30.165018192809 2173 0 2 1146 1206
+174	28601963 62791 239135 478056 14.734917179941 30.165018192809 2173 0 1 1086 1086
+175	28664754 100703 239103 478024 14.734912720889 30.165013733757 3259 0 4.4e-05 0.047784000000001 2.102496e-06
+176	28765457 79946 239067 478106 14.734870120727 30.165468649462 2554 14 1064 1947806 2061690484
+177	28845403 79946 239067 478106 14.734870120727 30.165468649462 2554 14 1064 1947806 2061690484
+178	28925349 79946 239067 478106 14.734870120727 30.165468649462 2554 14 1064 1947806 2061690484
+179	29005295 79946 239067 478106 14.734870120727 30.165468649462 2554 14 1064 1947806 2061690484
+180	29085241 34656 239076 477997 14.734870950415 30.164971963283 1087 1064 1064 1156568 1230588352
+181	29119897 34656 239076 477997 14.734870950415 30.164971963283 1087 1064 1064 1156568 1230588352
+182	29154553 34656 239076 477997 14.734870950415 30.164971963283 1087 1064 1064 1156568 1230588352
+183	29189209 39004 239076 477997 14.734870950415 30.164971963283 1087 24000000 24000000 26088000000 6.26112e+17
+184	29228213 34656 239076 477997 14.734870950415 30.164971963283 1087 1036 1036 1126132 1166672752
+185	29262869 100707 239077 478033 14.734870950415 30.165015963283 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+186	29363576 100707 239078 478034 14.734870950415 30.165015963283 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+187	29464283 100707 239079 478035 14.734870950415 30.165015963283 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+188	29564990 100707 239080 478036 14.734870950415 30.165015963283 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+189	29665697 100707 239081 478037 14.734870950415 30.165015963283 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+190	29766404 34656 239084 478005 14.734870950415 30.164971963283 1087 1008 1008 1095696 1104461568
+191	29801060 34656 239084 478005 14.734870950415 30.164971963283 1087 1087 2173 1771810 2995080668
+192	29835716 34656 239085 478006 14.734870950415 30.164971963283 1087 1000 1000 1087000 1087000000
+193	29870372 45198 239085 478006 14.734870950415 30.164971963283 1087 0.000861607501 0.003544437869 1.370713324146 0.0018655148552717
+194	29915570 33569 239085 478006 14.734870950415 30.164971963283 1087 349 746 590201 332560343
+195	29949139 32482 239086 478007 14.734880950415 30.164981963283 1087 14 14 15218 213052
+196	29981621 125580 239087 478044 14.734880950415 30.165015963283 4348 0 2 4348 6522
+197	30107201 32482 239117 478038 14.734914950415 30.165015963283 1087 14 14 15218 213052
+198	30139683 32482 239117 478038 14.734914950415 30.165015963283 1087 14 14 15218 213052
+199	30172165 32482 239117 478038 14.734914950415 30.165015963283 1087 14 14 15218 213052
+200	30204647 45535 239135 478056 14.734917179941 30.165018192809 1087 0.000430459052 0.00158561276 0.49191745574001 0.000242408338963
+201	30250182 12050 239806 477624 14.80751943495 30.162239192821 378 1000 1000 378000 378000000
+202	30262232 12050 239807 477625 14.80751943495 30.162239192821 378 1008 1008 381024 384072192
+203	30274282 12050 239810 477628 14.80751943495 30.162239192821 378 1036 1036 391608 405705888
+204	30286332 12050 239810 477628 14.80751943495 30.162239192821 378 1064 1064 402192 427932288
+205	30298382 21836 239810 477630 14.80751943495 30.162239192821 756 0 2 380 382
+206	30320218 11174 239810 477628 14.80751943495 30.162239192821 378 0 31 5913 125439
+207	30331392 25422 239810 477629 14.80751943495 30.162239192821 880 0 1 440 440
+208	30356814 12054 239812 477630 14.80751943495 30.162239192821 378 1064 1064 402192 427932288
+209	30368868 11575 239812 477630 14.80751943495 30.162239192821 378 0 0.002469207346 0.032842102626 3.3418616774522e-05
+210	30380443 21845 239812 477719 14.80751943495 30.162668346529 756 0 2 380 382
+211	30402288 13566 239812 477630 14.80751943495 30.162239192821 378 24000000 24000000 9072000000 2.17728e+17
+212	30415854 12054 239812 477630 14.80751943495 30.162239192821 378 1064 1064 402192 427932288
+213	30427908 21845 239812 477719 14.80751943495 30.162668346529 756 0 1 378 378
+214	30449753 43680 239813 477649 14.80751943495 30.162621192821 1512 0 2 1512 2268
+215	30493433 12054 239829 477648 14.80790143495 30.162621192821 378 1064 1064 402192 427932288
+216	30505487 12054 239829 477648 14.80790143495 30.162621192821 378 1064 1064 402192 427932288
+217	30517541 12054 239829 477648 14.80790143495 30.162621192821 378 1064 1064 402192 427932288
+218	30529595 11303 239899 477719 14.807948588658 30.162668346529 378 14 14 5292 74088
+219	30540898 11303 239899 477719 14.807948588658 30.162668346529 378 14 14 5292 74088
+220	30552201 11303 239899 477719 14.807948588658 30.162668346529 378 14 14 5292 74088
+221	30563504 15839 239899 477719 14.807948588658 30.162668346529 378 0.000429153708 0.001944307416 0.163735255332 7.3213516546899e-05
+222	30579343 11358 239370 477968 14.778242387106 30.164720727001 356 1000 1000 356000 356000000
+223	30590701 11358 239371 477969 14.778242387106 30.164720727001 356 1008 1008 358848 361718784
+224	30602059 11358 239374 477972 14.778242387106 30.164720727001 356 1036 1036 368816 382093376
+225	30613417 11358 239374 477972 14.778242387106 30.164720727001 356 1064 1064 378784 403026176
+226	30624775 20582 239374 478067 14.778242387106 30.165085111732 712 0 1 356 356
+227	30645357 10519 239374 477972 14.778242387106 30.164720727001 356 0 31 5275 109217
+228	30655876 22439 239374 478066 14.778242387106 30.165085111732 776 0 1 388 388
+229	30678315 11360 239376 478067 14.778242387106 30.165085111732 356 1064 1064 378784 403026176
+230	30689675 10725 239376 478067 14.778242387106 30.165085111732 356 0 0.001368668633 0.016946356139 1.3194325527096e-05
+231	30700400 20582 239376 478151 14.778242387106 30.165513867682 712 0 1 356 356
+232	30720982 12784 239376 478067 14.778242387106 30.165085111732 356 24000000 24000000 8544000000 2.05056e+17
+233	30733766 11360 239376 478067 14.778242387106 30.165085111732 356 1064 1064 378784 403026176
+234	30745126 20553 239376 478067 14.778242387106 30.165085111732 711 0 1 356 356
+235	30765679 41168 239377 478086 14.778242387106 30.165467111732 1424 0 2 1424 2136
+236	30806847 11360 239393 478085 14.778624387106 30.165467111732 356 1064 1064 378784 403026176
+237	30818207 11360 239393 478085 14.778624387106 30.165467111732 356 1064 1064 378784 403026176
+238	30829567 11360 239393 478085 14.778624387106 30.165467111732 356 1064 1064 378784 403026176
+239	30840927 10646 239459 478151 14.778671143056 30.165513867682 356 14 14 4984 69776
+240	30851573 10646 239459 478151 14.778671143056 30.165513867682 356 14 14 4984 69776
+241	30862219 10646 239459 478151 14.778671143056 30.165513867682 356 14 14 4984 69776
+242	30872865 14562 239459 478151 14.778671143056 30.165513867682 356 0.00042875595 0.00042875595 0.1526371182 6.5444072619104e-05
+243	30887427 3513 239747 476679 14.8 30.1 154 80000 1120000 86720000 56102400000000
+vector 244 MultiRadioShowcase.host1.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 245 MultiRadioShowcase.host0.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 246 MultiRadioShowcase.host3.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 247 MultiRadioShowcase.host3.wlan[1].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 248 MultiRadioShowcase.host3.wlan[2].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 249 MultiRadioShowcase.host3.wlan[3].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 250 MultiRadioShowcase.host3.wlan[4].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 251 MultiRadioShowcase.host3.wlan[5].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 252 MultiRadioShowcase.host4.wlan[0].mac.dcf packetSentToPeerWithRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, vector(packetBytes)"
+vector 253 MultiRadioShowcase.host3.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, vector(packetBytes)"
+vector 254 MultiRadioShowcase.host2.wlan[0].mac.dcf packetSentToPeerWithRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, vector(packetBytes)"
+vector 255 MultiRadioShowcase.host4.wlan[0].mac.dcf packetReceivedFromPeerWithRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, vector(packetBytes)"
+vector 256 MultiRadioShowcase.host2.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 257 MultiRadioShowcase.host4.wlan[0].mac packetDrop:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropped
+attr title "packet drops, vector(packetBytes)"
+vector 258 MultiRadioShowcase.host4.wlan[0].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 259 MultiRadioShowcase.host4.wlan[1].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 260 MultiRadioShowcase.host4.wlan[2].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 261 MultiRadioShowcase.host4.wlan[3].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 262 MultiRadioShowcase.host4.wlan[4].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 263 MultiRadioShowcase.host4.wlan[5].mac packetDropIncorrectlyReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, vector(packetBytes)"
+vector 264 MultiRadioShowcase.host1.wlan[0].mac.dcf packetSentToPeerWithRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, vector(packetBytes)"
+vector 265 MultiRadioShowcase.host0.wlan[0].mac.dcf packetSentToPeerWithRetry:vector(packetBytes) ETV
+attr interpolationmode none
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, vector(packetBytes)"
+0	30896520 19710 479169 716966 30.212959462945 44.684470081585 734 2 3 1835 4771
+2	30916230 58412 478221 717137 30.166096719233 44.685293710949 2172 2 3 5430 14118
+14	30974642 121282 478170 717292 30.165702489707 44.711953760072 4348 2 3 10870 28262
+26	31095924 19576 478285 717186 30.169324527693 44.711216382097 702 2 3 1755 4563
+28	31115500 20678 478737 716746 30.209625271251 44.652246140486 742 2 3 1855 4823
+30	31136178 181923 478152 717278 30.165513889545 44.71157315991 6524 0 3 11947 29315
+31	31318101 181912 478156 717280 30.165514719233 44.711573989598 6522 0 3 9785 22831
+32	31500013 181912 478157 717281 30.165514719233 44.711573989598 6522 1 3 13043 32605
+33	31681925 181912 478158 717282 30.165514719233 44.711573989598 6522 1 3 13043 32605
+34	31863837 181912 478159 717283 30.165514719233 44.711573989598 6522 1 3 13043 32605
+35	32045749 181912 478160 717284 30.165514719233 44.711573989598 6522 1 3 13043 32605
+36	32227661 181912 478161 717285 30.165514719233 44.711573989598 6522 1 3 13043 32605
+37	32409573 242510 478170 717292 30.165702489707 44.711953760072 8696 0 3 10870 23912
+38	32652083 242510 478172 717287 30.165702489707 44.711953760072 8696 1 3 17392 43478
+39	32894593 242510 478173 717288 30.165702489707 44.711953760072 8696 1 3 17392 43478
+40	33137103 242510 478174 717289 30.165702489707 44.711953760072 8696 1 3 17392 43478
+41	33379613 242510 478175 717290 30.165702489707 44.711953760072 8696 1 3 17392 43478
+42	33622123 242510 478176 717291 30.165702489707 44.711953760072 8696 1 3 17392 43478
+43	33864633 181938 478177 717277 30.165703867682 44.711573138047 6523 0 3 11994 29458
+44	34046571 181980 478154 717279 30.165514066561 44.711573336926 6524 0 3 11935 29279
+45	34228551 55 615740 615933 38.466653542374 38.468400098 2 31 63 94 4930
+52	34228606 58 583642 583749 36.693885886097 36.695015345149 2 31 63 94 4930
+58	34228664 58 615739 615828 38.466653520511 38.467901276461 2 31 63 94 4930
+59	34228722 58 583641 583947 36.693885668381 36.696330416335 2 31 63 94 4930
+60	34228780 11297 479162 716942 30.212926245515 44.684088081585 366 1000 1000 366000 366000000
+61	34240077 11297 479163 716943 30.212926245515 44.684088081585 366 1008 1008 368928 371879424
+62	34251374 11297 479166 716946 30.212926245515 44.684088081585 366 1036 1036 379176 392826336
+63	34262671 11297 479166 716946 30.212926245515 44.684088081585 366 1064 1064 389424 414347136
+64	34273968 20393 479166 716948 30.212926245515 44.684088081585 732 0 1 366 366
+65	34294361 10485 479166 716946 30.212926245515 44.684088081585 367 0 40 5862 124952
+66	34304846 22845 479166 716947 30.212926245515 44.684088081585 820 0 1 410 410
+67	34327691 11292 479168 716948 30.212959462945 44.684088081585 366 1064 1064 389424 414347136
+68	34338983 10778 479168 716948 30.212959462945 44.684088081585 366 0 0.001245482052 0.023618915856 1.7378292791498e-05
+69	34349761 20410 479168 717033 30.212959462945 44.684516881261 732 0 1 366 366
+70	34370171 12791 479168 716948 30.212959462945 44.684088081585 367 24000000 24000000 8808000000 2.11392e+17
+71	34382962 11323 479168 716948 30.212959462945 44.684088081585 367 1064 1064 390488 415479232
+72	34394285 20466 479168 717033 30.212959462945 44.684516881261 734 0 1 367 367
+73	34414751 40888 479169 716966 30.212959462945 44.684470081585 1468 0 2 1468 2202
+74	34455639 11323 479185 716965 30.213341462945 44.684470081585 367 1064 1064 390488 415479232
+75	34466962 11323 479185 716965 30.213341462945 44.684470081585 367 1064 1064 390488 415479232
+76	34478285 11292 479185 716965 30.213341462945 44.684470081585 366 1064 1064 389424 414347136
+77	34489577 194811 478201 717249 30.166085889545 44.711261919827 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+78	34684388 87119 478155 717255 30.165514066561 44.711263336926 2890 14 1064 1933610 2041382140
+79	34771507 194868 478203 717231 30.166086066561 44.711261242285 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+80	34966375 76399 478155 717255 30.165514066561 44.711263336926 2519 14 1064 1927366 2040177524
+81	35042774 76399 478155 717255 30.165514066561 44.711263336926 2519 14 1064 1927366 2040177524
+82	35119173 76430 478155 717255 30.165514066561 44.711263336926 2520 14 1064 1928430 2041309620
+83	35195603 76399 478155 717255 30.165514066561 44.711263336926 2519 14 1064 1927366 2040177524
+84	35272002 64933 478269 717195 30.166132948759 44.711217760072 2173 14 1064 1171772 1230801208
+85	35336935 64902 478269 717195 30.166132948759 44.711217760072 2172 14 1064 1170708 1229669112
+86	35401837 64902 478269 717195 30.166132948759 44.711217760072 2172 14 1064 1170708 1229669112
+87	35466739 64809 478269 717195 30.166132948759 44.711217760072 2169 14 1064 1167516 1226272824
+88	35531548 75859 478169 717269 30.165702489707 44.711571760072 2174 24000000 24000000 52176000000 1.252224e+18
+89	35607407 33553 478311 717195 30.169707905668 44.711217760072 1086 1036 1036 1125096 1165599456
+90	35640960 129924 478193 717293 30.166084489707 44.711953760072 4347 14 1064 2344608 2462734512
+91	35770884 194939 478193 717293 30.166084489707 44.711953760072 6521 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+92	35965823 129893 478193 717293 30.166084489707 44.711953760072 4346 14 1064 2343544 2461602416
+93	36095716 129893 478193 717293 30.166084489707 44.711953760072 4346 14 1064 2343544 2461602416
+94	36225609 129924 478193 717293 30.166084489707 44.711953760072 4347 14 1064 2344608 2462734512
+95	36355533 129893 478193 717293 30.166084489707 44.711953760072 4346 14 1064 2343544 2461602416
+96	36485426 129924 478194 717294 30.166084489707 44.711953760072 4347 14 1064 2344608 2462734512
+97	36615350 194905 478194 717294 30.166084489707 44.711953760072 6520 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+98	36810255 129862 478194 717245 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+99	36940117 129862 478194 717245 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+100	37069979 134239 478194 717245 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+101	37204218 134207 478194 717245 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+102	37338425 134239 478195 717246 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+103	37472664 201396 478195 717234 30.166084489707 44.711261760072 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+104	37674060 134207 478195 717246 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+105	37808267 134207 478195 717246 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+106	37942474 134239 478195 717246 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+107	38076713 134207 478195 717246 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+108	38210920 134239 478196 717247 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+109	38345159 201396 478196 717235 30.166084489707 44.711261760072 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+110	38546555 134207 478196 717247 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+111	38680762 134207 478196 717247 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+112	38814969 134239 478196 717247 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+113	38949208 134207 478196 717247 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+114	39083415 134239 478197 717248 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+115	39217654 201396 478197 717236 30.166084489707 44.711261760072 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+116	39419050 134207 478197 717248 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+117	39553257 134207 478197 717248 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+118	39687464 134239 478197 717248 30.166084489707 44.711261760072 4346 14 1064 2343544 2461602416
+119	39821703 134207 478197 717248 30.166084489707 44.711261760072 4345 14 1064 2342480 2460470320
+120	39955910 34639 478320 717204 30.169707905668 44.711217760072 1086 1036 1036 1125096 1165599456
+121	39990549 34639 478320 717204 30.169707905668 44.711217760072 1086 1064 1064 1155504 1229456256
+122	40025188 62792 478169 717269 30.165702489707 44.711571760072 2173 0 2 1174 1262
+123	40087980 32146 478320 717204 30.169707905668 44.711217760072 1087 0 33 16933 357951
+124	40120126 128318 478168 717268 30.165702489707 44.711571760072 4441 0 1 2220 2220
+125	40248444 90603 478199 717251 30.166085867682 44.711263138047 2909 14 1064 1954876 2064023864
+126	40339047 201360 478199 717230 30.166085867682 44.711260382097 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+127	40540407 80108 478199 717079 30.166085867682 44.685248859398 2558 14 1064 1948912 2062823168
+128	40620515 80108 478199 717079 30.166085867682 44.685248859398 2558 14 1064 1948912 2062823168
+129	40700623 80140 478199 717079 30.166085867682 44.685248859398 2559 14 1064 1949976 2063955264
+130	40780763 80108 478199 717079 30.166085867682 44.685248859398 2558 14 1064 1948912 2062823168
+131	40860871 67165 478169 717269 30.165702489707 44.711571760072 2174 14 1064 1172836 1231933304
+132	40928036 251260 478170 717292 30.165702489707 44.711953760072 8696 0 2 8696 13044
+133	41179296 67165 478186 717286 30.166084489707 44.711953760072 2174 14 1064 1172836 1231933304
+134	41246461 67165 478186 717286 30.166084489707 44.711953760072 2174 14 1064 1172836 1231933304
+135	41313626 67133 478186 717286 30.166084489707 44.711953760072 2173 14 1064 1171772 1230801208
+136	41380759 90114 478153 717253 30.165513889545 44.71126315991 2894 14 1064 1937866 2045910524
+137	41470873 10948 479253 717033 30.213388262621 44.684516881261 366 14 14 5124 71736
+138	41481821 10948 479253 717033 30.213388262621 44.684516881261 366 14 14 5124 71736
+139	41492769 10948 479253 717033 30.213388262621 44.684516881261 366 14 14 5124 71736
+140	41503717 15340 479253 717033 30.213388262621 44.684516881261 366 0.000428799676 0.002183555626 0.158695437366 7.1880159352099e-05
+141	41519057 67158 478162 717262 30.165514719233 44.711263989598 2174 14 1064 1171786 1230801404
+142	41586215 32490 478162 717262 30.165514719233 44.711263989598 1087 14 14 15218 213052
+143	41618705 32490 478162 717262 30.165514719233 44.711263989598 1087 14 14 15218 213052
+144	41651195 32522 478162 717262 30.165514719233 44.711263989598 1088 14 1064 16282 1345148
+145	41683717 32490 478162 717262 30.165514719233 44.711263989598 1087 14 14 15218 213052
+146	41716207 99622 478163 717263 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+147	41815829 99590 478163 717263 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+148	41915419 99590 478163 717263 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+149	42015009 99622 478163 717263 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+150	42114631 99590 478163 717263 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+151	42214221 99622 478164 717264 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+152	42313843 99590 478164 717264 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+153	42413433 99590 478164 717264 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+154	42513023 99622 478164 717264 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+155	42612645 99590 478164 717264 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+156	42712235 99622 478165 717265 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+157	42811857 99590 478165 717265 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+158	42911447 99590 478165 717265 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+159	43011037 99622 478165 717265 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+160	43110659 99590 478165 717265 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+161	43210249 99622 478166 717266 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+162	43309871 99590 478166 717266 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+163	43409461 99590 478166 717266 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+164	43509051 99622 478166 717266 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+165	43608673 99590 478166 717266 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+166	43708263 99622 478167 717267 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+167	43807885 99590 478167 717267 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+168	43907475 99590 478167 717267 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+169	44007065 99622 478167 717267 30.165514719233 44.711263989598 3260 14 1064 1186990 1231014260
+170	44106687 99590 478167 717267 30.165514719233 44.711263989598 3259 14 1064 1185926 1229882164
+171	44206277 34672 478169 717269 30.165702489707 44.711571760072 1087 1064 1064 1156568 1230588352
+172	44240949 39232 478169 717269 30.165702489707 44.711571760072 1087 9.4e-05 0.001208196973 0.45754113174 0.00024647686525262
+173	44280181 62760 478169 717269 30.165702489707 44.711571760072 2173 0 2 1181 1275
+174	44342941 62812 478169 717269 30.165702489707 44.711571760072 2175 0 1 1088 1088
+175	44405753 100801 478186 717286 30.166084489707 44.711953760072 3263 0 4.4e-05 0.047872000000001 2.106368e-06
+176	44506554 79134 478153 717253 30.165513889545 44.71126315991 2527 14 1064 1931678 2044706692
+177	44585688 79134 478153 717253 30.165513889545 44.71126315991 2527 14 1064 1931678 2044706692
+178	44664822 79166 478153 717253 30.165513889545 44.71126315991 2528 14 1064 1932742 2045838788
+179	44743988 79134 478153 717253 30.165513889545 44.71126315991 2527 14 1064 1931678 2044706692
+180	44823122 34636 478210 717090 30.166086719233 44.685249710949 1086 1064 1064 1155504 1229456256
+181	44857758 34636 478210 717090 30.166086719233 44.685249710949 1086 1064 1064 1155504 1229456256
+182	44892394 34604 478210 717090 30.166086719233 44.685249710949 1085 1064 1064 1154440 1228324160
+183	44926998 38980 478210 717090 30.166086719233 44.685249710949 1086 24000000 24000000 26064000000 6.25536e+17
+184	44965978 34636 478210 717090 30.166086719233 44.685249710949 1086 1036 1036 1125096 1165599456
+185	45000614 100650 478211 717126 30.166086719233 44.685293710949 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+186	45101264 100650 478212 717127 30.166086719233 44.685293710949 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+187	45201914 100650 478213 717128 30.166086719233 44.685293710949 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+188	45302564 100650 478214 717129 30.166086719233 44.685293710949 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+189	45403214 100650 478215 717130 30.166086719233 44.685293710949 3258 0 4.4e-05 0.047784000000001 2.102496e-06
+190	45503864 34636 478218 717098 30.166086719233 44.685249710949 1086 1008 1008 1094688 1103445504
+191	45538500 34636 478218 717098 30.166086719233 44.685249710949 1086 2174 3259 2950119 8120733511
+192	45573136 34636 478219 717099 30.166086719233 44.685249710949 1086 1000 1000 1086000 1086000000
+193	45607772 45161 478219 717099 30.166086719233 44.685249710949 1086 0.000861607501 0.004394859678 1.401814266025 0.0019803676435235
+194	45652933 33809 478219 717099 30.166086719233 44.685249710949 1086 705 1116 983161 902428071
+195	45686742 32464 478220 717100 30.166096719233 44.685259710949 1086 14 14 15204 212856
+196	45719206 125512 478221 717137 30.166096719233 44.685293710949 4344 0 2 4344 6516
+197	45844718 32464 478251 717131 30.166130719233 44.685293710949 1086 14 14 15204 212856
+198	45877182 32464 478251 717131 30.166130719233 44.685293710949 1086 14 14 15204 212856
+199	45909646 32464 478251 717131 30.166130719233 44.685293710949 1086 14 14 15204 212856
+200	45942110 45465 478269 717149 30.166132948759 44.685295940475 1086 0.000430459052 0.00174561276 0.50669983585201 0.00026928380556553
+201	45987575 11791 478730 716722 30.209625271251 44.651864140486 370 1000 1000 370000 370000000
+202	45999366 11791 478731 716723 30.209625271251 44.651864140486 370 1008 1008 372960 375943680
+203	46011157 11791 478734 716726 30.209625271251 44.651864140486 370 1036 1036 383320 397119520
+204	46022948 11791 478734 716726 30.209625271251 44.651864140486 370 1064 1064 393680 418875520
+205	46034739 21364 478734 716728 30.209625271251 44.651864140486 740 0 2 372 374
+206	46056103 10970 478734 716726 30.209625271251 44.651864140486 371 0 51 5808 123176
+207	46067073 24075 478734 716727 30.209625271251 44.651864140486 834 0 1 417 417
+208	46091148 11793 478736 716728 30.209625271251 44.651864140486 370 1064 1064 393680 418875520
+209	46102941 11095 478736 716728 30.209625271251 44.651864140486 370 0 0.001453860699 0.019715174403 1.6873492936584e-05
+210	46114036 21372 478736 716815 30.209625271251 44.652293294194 740 0 2 372 374
+211	46135408 13307 478736 716728 30.209625271251 44.651864140486 371 24000000 24000000 8904000000 2.13696e+17
+212	46148715 11823 478736 716728 30.209625271251 44.651864140486 371 1064 1064 394744 420007616
+213	46160538 21428 478736 716815 30.209625271251 44.652293294194 742 0 1 371 371
+214	46181966 42840 478737 716746 30.209625271251 44.652246140486 1484 0 2 1484 2226
+215	46224806 11823 478758 716745 30.210007271251 44.652246140486 371 1064 1064 394744 420007616
+216	46236629 11823 478758 716745 30.210007271251 44.652246140486 371 1064 1064 394744 420007616
+217	46248452 11791 478758 716745 30.210007271251 44.652246140486 370 1064 1064 393680 418875520
+218	46260243 11059 478828 716815 30.210054424959 44.652293294194 370 14 14 5180 72520
+219	46271302 11059 478828 716815 30.210054424959 44.652293294194 370 14 14 5180 72520
+220	46282361 11059 478828 716815 30.210054424959 44.652293294194 370 14 14 5180 72520
+221	46293420 15499 478828 716815 30.210054424959 44.652293294194 370 0.000429153708 0.002881747954 0.162694619914 7.9630714781551e-05
+222	46308919 11163 478278 717162 30.169324527693 44.710834382097 350 1000 1000 350000 350000000
+223	46320082 11163 478279 717163 30.169324527693 44.710834382097 350 1008 1008 352800 355622400
+224	46331245 11163 478282 717166 30.169324527693 44.710834382097 350 1036 1036 362600 375653600
+225	46342408 11163 478282 717166 30.169324527693 44.710834382097 350 1064 1064 372400 396233600
+226	46353571 20223 478282 717168 30.169324527693 44.710834382097 700 0 1 350 350
+227	46373794 10383 478282 717166 30.169324527693 44.710834382097 351 0 39 5581 120739
+228	46384177 22410 478282 717167 30.169324527693 44.710834382097 776 0 1 388 388
+229	46406587 11160 478284 717168 30.169324527693 44.710834382097 350 1064 1064 372400 396233600
+230	46417747 10522 478284 717168 30.169324527693 44.710834382097 350 0 0.001537226558 0.021085516837 1.8533908456082e-05
+231	46428269 20223 478284 717251 30.169324527693 44.711263138047 700 0 1 350 350
+232	46448492 12596 478284 717168 30.169324527693 44.710834382097 351 24000000 24000000 8424000000 2.02176e+17
+233	46461088 11192 478284 717168 30.169324527693 44.710834382097 351 1064 1064 373464 397365696
+234	46472280 20310 478151 717251 30.165513867682 44.711263138047 703 0 1 351 351
+235	46492590 40556 478285 717186 30.169324527693 44.711216382097 1404 0 2 1404 2106
+236	46533146 11192 478301 717185 30.169706527693 44.711216382097 351 1064 1064 373464 397365696
+237	46544338 11192 478301 717185 30.169706527693 44.711216382097 351 1064 1064 373464 397365696
+238	46555530 11160 478301 717185 30.169706527693 44.711216382097 350 1064 1064 372400 396233600
+239	46566690 10463 478367 717251 30.169753283643 44.711263138047 350 14 14 4900 68600
+240	46577153 10463 478367 717251 30.169753283643 44.711263138047 350 14 14 4900 68600
+241	46587616 10463 478367 717251 30.169753283643 44.711263138047 350 14 14 4900 68600
+242	46598079 14313 478367 717251 30.169753283643 44.711263138047 350 0.00042875595 0.00168475595 0.1513205825 6.6995653577541e-05
+243	46612392 3314 478993 716435 30.2 44.6 145 160000 1280000 87120000 60192000000000
+244	46615706 32 583604 583604 36.693831528569 36.693831528569 1 1064 1064 1064 1132096
+245	46615738 32 583606 583606 36.693831560763 36.693831560763 1 1064 1064 1064 1132096
+246	46615770 32 583622 583622 36.693833115623 36.693833115623 1 1064 1064 1064 1132096
+247	46615802 32 583623 583623 36.693833115623 36.693833115623 1 1064 1064 1064 1132096
+248	46615834 32 583624 583624 36.693833115623 36.693833115623 1 1064 1064 1064 1132096
+249	46615866 32 583625 583625 36.693833115623 36.693833115623 1 1064 1064 1064 1132096
+250	46615898 32 583626 583626 36.693833115623 36.693833115623 1 1064 1064 1064 1132096
+251	46615930 32 583627 583627 36.693833115623 36.693833115623 1 1064 1064 1064 1132096
+252	46615962 32 583666 583666 36.694966886097 36.694966886097 1 1064 1064 1064 1132096
+253	46615994 32 583690 583690 36.694969115623 36.694969115623 1 1064 1064 1064 1132096
+254	46616026 32 583877 583877 36.696283262627 36.696283262627 1 1064 1064 1064 1132096
+255	46616058 96 583889 615875 36.696284839481 38.468354698162 3 1064 1064 3192 3396288
+256	46616154 32 615702 615702 38.466599380699 38.466599380699 1 1064 1064 1064 1132096
+257	46616186 32 615710 615710 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+258	46616218 32 615710 615710 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+259	46616250 32 615711 615711 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+260	46616282 32 615712 615712 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+261	46616314 32 615713 615713 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+262	46616346 32 615714 615714 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+263	46616378 32 615715 615715 38.466599898486 38.466599898486 1 1064 1064 1064 1132096
+264	46616410 32 615762 615762 38.467854520511 38.467854520511 1 1064 1064 1064 1132096
+265	46616442 32 615865 615865 38.468353298324 38.468353298324 1 1064 1064 1064 1132096
+0	46616474 18580 719365 955537 44.9214715276 59.407438416082 692 2 3 1730 4498
+2	46635054 58480 717321 956364 44.711965989598 59.428139321063 2174 2 3 5435 14131
+14	46693534 121204 717434 956299 44.732877995735 59.428093091537 4346 2 3 10865 28249
+26	46814738 19796 717389 955317 44.73248461776 59.379890130169 710 2 3 1775 4615
+28	46834534 21546 717715 956193 44.801145313296 59.427155514683 772 2 3 1930 5018
+30	46856080 181723 717300 956307 44.71195515991 59.428094491375 6520 0 3 12001 29481
+31	47037803 181942 717304 956364 44.711955989598 59.428139321063 6521 0 3 9780 22818
+32	47219745 181942 717305 956359 44.711955989598 59.428139321063 6521 1 3 13041 32601
+33	47401687 181942 717306 956360 44.711955989598 59.428139321063 6521 1 3 13041 32601
+34	47583629 181942 717307 956361 44.711955989598 59.428139321063 6521 1 3 13041 32601
+35	47765571 181942 717308 956362 44.711955989598 59.428139321063 6521 1 3 13041 32601
+36	47947513 181942 717309 956363 44.711955989598 59.428139321063 6521 1 3 13041 32601
+37	48129455 242420 717328 956370 44.711968219124 59.428141550589 8693 0 3 10867 23907
+38	48371875 242420 717329 956371 44.711968219124 59.428141550589 8693 1 3 17386 43464
+39	48614295 242420 717330 956372 44.711968219124 59.428141550589 8693 1 3 17386 43464
+40	48856715 242420 717331 956373 44.711968219124 59.428141550589 8693 1 3 17386 43464
+41	49099135 242420 717332 956374 44.711968219124 59.428141550589 8693 1 3 17386 43464
+42	49341555 242420 717333 956375 44.711968219124 59.428141550589 8693 1 3 17386 43464
+43	49583975 181796 717298 956305 44.711955138047 59.428094469512 6520 0 3 11974 29400
+44	49765771 181914 717302 956309 44.711955336926 59.428094668391 6520 0 3 11881 29121
+52	49947685 58 881922 882125 55.081269474178 55.083235945077 2 31 63 94 4930
+58	49947743 54 881921 882007 55.08126910805 55.081796864 2 31 63 94 4930
+60	49947797 10671 719358 955513 44.9214715276 59.407056416082 346 1000 1000 346000 346000000
+61	49958468 10671 719359 955514 44.9214715276 59.407056416082 346 1008 1008 348768 351558144
+62	49969139 10671 719362 955517 44.9214715276 59.407056416082 346 1036 1036 358456 371360416
+63	49979810 10671 719362 955517 44.9214715276 59.407056416082 346 1064 1064 368144 391705216
+64	49990481 19269 719362 955519 44.9214715276 59.407056416082 692 0 2 348 350
+65	50009750 9864 719362 955517 44.9214715276 59.407056416082 346 0 31 5202 109206
+66	50019614 21457 719362 955518 44.9214715276 59.407056416082 770 0 1 385 385
+67	50041071 10674 719364 955519 44.9214715276 59.407056416082 346 1064 1064 368144 391705216
+68	50051745 10068 719364 955519 44.9214715276 59.407056416082 346 0 0.001376556923 0.02035414625 1.9651622615207e-05
+69	50061813 19283 719364 955604 44.9214715276 59.407485215758 692 0 2 348 350
+70	50081096 12058 719364 955519 44.9214715276 59.407056416082 346 24000000 24000000 8304000000 1.99296e+17
+71	50093154 10674 719364 955519 44.9214715276 59.407056416082 346 1064 1064 368144 391705216
+72	50103828 19283 719364 955604 44.9214715276 59.407485215758 692 0 1 346 346
+73	50123111 38544 719365 955537 44.9214715276 59.407438416082 1384 0 2 1384 2076
+74	50161655 10674 719381 955536 44.9218535276 59.407438416082 346 1064 1064 368144 391705216
+75	50172329 10674 719381 955536 44.9218535276 59.407438416082 346 1064 1064 368144 391705216
+76	50183003 10674 719381 955536 44.9218535276 59.407438416082 346 1064 1064 368144 391705216
+77	50193677 194724 717301 956351 44.71195515991 59.428138491375 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+78	50388401 86634 717303 956310 44.711955336926 59.428094668391 2874 14 1064 1917636 2024400504
+79	50475035 194928 717303 956352 44.711955336926 59.428138668391 6519 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+80	50669963 75453 717303 956310 44.711955336926 59.428094668391 2487 14 1064 1911168 2023192752
+81	50745416 75453 717303 956310 44.711955336926 59.428094668391 2487 14 1064 1911168 2023192752
+82	50820869 75484 717303 956310 44.711955336926 59.428094668391 2488 14 1064 1912232 2024324848
+83	50896353 75453 717303 956310 44.711955336926 59.428094668391 2487 14 1064 1911168 2023192752
+84	50971806 64939 717369 956376 44.712002219124 59.428141550589 2173 14 1064 1170722 1229669308
+85	51036745 64939 717369 956376 44.712002219124 59.428141550589 2173 14 1064 1170722 1229669308
+86	51101684 64939 717369 956376 44.712002219124 59.428141550589 2173 14 1064 1170722 1229669308
+87	51166623 64908 717369 956376 44.712002219124 59.428141550589 2172 14 1064 1169658 1228537212
+88	51231531 75813 717415 956276 44.732867995735 59.427711091537 2173 24000000 24000000 52152000000 1.251648e+18
+89	51307344 33545 717415 956204 44.732867995735 59.427157091537 1086 1036 1036 1125096 1165599456
+90	51340889 129888 717370 956377 44.712002219124 59.428141550589 4346 14 1064 2342494 2460470516
+91	51470777 194872 717338 956345 44.711997760072 59.428137091537 6520 0 4.4e-05 0.095612000000003 4.2069280000001e-06
+92	51665649 129888 717370 956377 44.712002219124 59.428141550589 4346 14 1064 2342494 2460470516
+93	51795537 129888 717370 956377 44.712002219124 59.428141550589 4346 14 1064 2342494 2460470516
+94	51925425 129888 717370 956377 44.712002219124 59.428141550589 4346 14 1064 2342494 2460470516
+95	52055313 129888 717370 956377 44.712002219124 59.428141550589 4346 14 1064 2342494 2460470516
+96	52185201 129888 717371 956378 44.712002219124 59.428141550589 4346 14 1064 2342494 2460470516
+97	52315089 194906 717294 956346 44.711953760072 59.428137091537 6521 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+98	52509995 129919 717294 956378 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+99	52639914 129919 717294 956378 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+100	52769833 134266 717294 956378 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+101	52904099 134266 717294 956378 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+102	53038365 134266 717295 956379 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+103	53172631 201456 717295 956347 44.711953760072 59.428137091537 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+104	53374087 134266 717295 956379 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+105	53508353 134266 717295 956379 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+106	53642619 134266 717295 956379 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+107	53776885 134266 717295 956379 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+108	53911151 134266 717296 956380 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+109	54045417 201456 717296 956348 44.711953760072 59.428137091537 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+110	54246873 134266 717296 956380 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+111	54381139 134266 717296 956380 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+112	54515405 134266 717296 956380 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+113	54649671 134266 717296 956380 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+114	54783937 134266 717297 956381 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+115	54918203 201456 717297 956349 44.711953760072 59.428137091537 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+116	55119659 134266 717297 956381 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+117	55253925 134266 717297 956381 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+118	55388191 134266 717297 956381 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+119	55522457 134266 717297 956381 44.711953760072 59.428141550589 4347 14 1064 2343558 2461602612
+120	55656723 34631 717424 956213 44.732867995735 59.427157091537 1086 1036 1036 1125096 1165599456
+121	55691354 34631 717424 956213 44.732867995735 59.427157091537 1086 1064 1064 1155504 1229456256
+122	55725985 62746 717424 956276 44.732867995735 59.427711091537 2172 0 3 1150 1218
+123	55788731 32151 717424 956213 44.732867995735 59.427157091537 1087 0 51 16783 354813
+124	55820882 127578 717424 956275 44.732867995735 59.427711091537 4416 0 1 2208 2208
+125	55948460 90448 717299 956306 44.711955138047 59.428094469512 2905 14 1064 1950620 2059495480
+126	56038908 201411 717299 956350 44.711955138047 59.428138469512 6522 0 4.4e-05 0.095656000000003 4.2088640000001e-06
+127	56240319 79870 717299 956306 44.711955138047 59.428094469512 2551 14 1064 1945664 2059426096
+128	56320189 79870 717299 956306 44.711955138047 59.428094469512 2551 14 1064 1945664 2059426096
+129	56400059 79870 717299 956306 44.711955138047 59.428094469512 2551 14 1064 1945664 2059426096
+130	56479929 79870 717299 956306 44.711955138047 59.428094469512 2551 14 1064 1945664 2059426096
+131	56559799 67122 717433 956276 44.732877995735 59.427711091537 2173 14 1064 1171772 1230801208
+132	56626921 251100 717434 956299 44.732877995735 59.428093091537 8692 0 2 8692 13038
+133	56878021 67122 717457 956293 44.732911995735 59.428093091537 2173 14 1064 1171772 1230801208
+134	56945143 67122 717457 956293 44.732911995735 59.428093091537 2173 14 1064 1171772 1230801208
+135	57012265 67090 717457 956293 44.732911995735 59.428093091537 2172 14 1064 1170708 1229669112
+136	57079355 90709 717301 956308 44.71195515991 59.428094491375 2914 14 1064 1960196 2069684344
+137	57170064 10339 719449 955604 44.921900327276 59.407485215758 346 14 14 4844 67816
+138	57180403 10339 719449 955604 44.921900327276 59.407485215758 346 14 14 4844 67816
+139	57190742 10339 719449 955604 44.921900327276 59.407485215758 346 14 14 4844 67816
+140	57201081 14491 719449 955604 44.921900327276 59.407485215758 346 0.000428799676 0.001027599352 0.148963487572 6.4490821365739e-05
+141	57215572 67182 717310 956317 44.711955989598 59.428095321063 2174 14 1064 1172836 1231933304
+142	57282754 32475 717482 956269 44.732914225261 59.427203321063 1086 14 14 15204 212856
+143	57315229 32475 717482 956269 44.732914225261 59.427203321063 1086 14 14 15204 212856
+144	57347704 32507 717482 956269 44.732914225261 59.427203321063 1087 14 1064 16268 1344952
+145	57380211 32475 717482 956269 44.732914225261 59.427203321063 1086 14 14 15204 212856
+146	57412686 99683 717311 956365 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+147	57512369 99651 717311 956365 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+148	57612020 99651 717311 956365 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+149	57711671 99683 717311 956365 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+150	57811354 99651 717311 956365 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+151	57911005 99683 717312 956366 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+152	58010688 99651 717312 956366 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+153	58110339 99651 717312 956366 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+154	58209990 99683 717312 956366 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+155	58309673 99651 717312 956366 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+156	58409324 99683 717313 956367 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+157	58509007 99651 717313 956367 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+158	58608658 99651 717313 956367 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+159	58708309 99683 717313 956367 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+160	58807992 99651 717313 956367 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+161	58907643 99683 717314 956368 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+162	59007326 99651 717314 956368 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+163	59106977 99651 717314 956368 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+164	59206628 99683 717314 956368 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+165	59306311 99651 717314 956368 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+166	59405962 99683 717315 956369 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+167	59505645 99651 717315 956369 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+168	59605296 99651 717315 956369 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+169	59704947 99683 717315 956369 44.711955989598 59.428139321063 3261 14 1064 1188054 1232146356
+170	59804630 99651 717315 956369 44.711955989598 59.428139321063 3260 14 1064 1186990 1231014260
+171	59904281 34631 717489 956276 44.733201995735 59.427711091537 1086 1064 1064 1155504 1229456256
+172	59938912 39125 717489 956276 44.733201995735 59.427711091537 1086 9.4e-05 0.001648290334 0.451351220237 0.00023856881117924
+173	59978037 62767 717369 956376 44.712002219124 59.428141550589 2173 0 2 1156 1226
+174	60040804 62825 717369 956376 44.712002219124 59.428141550589 2175 0 1 1087 1087
+175	60103629 100757 717337 956344 44.711997760072 59.428137091537 3262 0 4.4e-05 0.047828000000001 2.104432e-06
+176	60204386 80339 717301 956308 44.71195515991 59.428094491375 2567 14 1064 1954288 2068484432
+177	60284725 80339 717301 956308 44.71195515991 59.428094491375 2567 14 1064 1954288 2068484432
+178	60365064 80370 717301 956308 44.71195515991 59.428094491375 2568 14 1064 1955352 2069616528
+179	60445434 80339 717301 956308 44.71195515991 59.428094491375 2567 14 1064 1954288 2068484432
+180	60525773 34675 717310 956317 44.711955989598 59.428095321063 1087 1064 1064 1156568 1230588352
+181	60560448 34675 717310 956317 44.711955989598 59.428095321063 1087 1064 1064 1156568 1230588352
+182	60595123 34643 717310 956317 44.711955989598 59.428095321063 1086 1064 1064 1155504 1229456256
+183	60629766 39023 717310 956317 44.711955989598 59.428095321063 1087 24000000 24000000 26088000000 6.26112e+17
+184	60668789 34675 717310 956317 44.711955989598 59.428095321063 1087 1036 1036 1126132 1166672752
+185	60703464 100764 717311 956353 44.711955989598 59.428139321063 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+186	60804228 100764 717312 956354 44.711955989598 59.428139321063 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+187	60904992 100764 717313 956355 44.711955989598 59.428139321063 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+188	61005756 100764 717314 956356 44.711955989598 59.428139321063 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+189	61106520 100764 717315 956357 44.711955989598 59.428139321063 3261 0 4.4e-05 0.047828000000001 2.104432e-06
+190	61207284 34675 717318 956325 44.711955989598 59.428095321063 1087 1008 1008 1095696 1104461568
+191	61241959 34675 717318 956325 44.711955989598 59.428095321063 1087 3260 4346 4133861 15828103751
+192	61276634 34675 717319 956326 44.711955989598 59.428095321063 1087 1000 1000 1087000 1087000000
+193	61311309 45212 717319 956326 44.711955989598 59.428095321063 1087 0.000861607501 0.003562367749 1.392538718543 0.0019386648518412
+194	61356521 34675 717319 956326 44.711955989598 59.428095321063 1087 1055 1502 1378614 1761582948
+195	61391196 32501 717320 956327 44.711965989598 59.428105321063 1087 14 14 15218 213052
+196	61423697 125656 717321 956364 44.711965989598 59.428139321063 4348 0 2 4348 6522
+197	61549353 32501 717351 956358 44.711999989598 59.428139321063 1087 14 14 15218 213052
+198	61581854 32501 717351 956358 44.711999989598 59.428139321063 1087 14 14 15218 213052
+199	61614355 32501 717351 956358 44.711999989598 59.428139321063 1087 14 14 15218 213052
+200	61646856 45523 717369 956376 44.712002219124 59.428141550589 1087 0.000430459052 0.002403470899 0.49828179812701 0.00025622369853357
+201	61692379 12314 717708 956169 44.801145313296 59.426773514683 386 1000 1000 386000 386000000
+202	61704693 12314 717709 956170 44.801145313296 59.426773514683 386 1008 1008 389088 392200704
+203	61717007 12314 717712 956173 44.801145313296 59.426773514683 386 1036 1036 399896 414292256
+204	61729321 12314 717712 956173 44.801145313296 59.426773514683 386 1064 1064 410704 436989056
+205	61741635 22315 717712 956175 44.801145313296 59.426773514683 772 0 1 386 386
+206	61763950 11431 717712 956173 44.801145313296 59.426773514683 386 0 31 6120 129860
+207	61775381 25099 717712 956174 44.801145313296 59.426773514683 868 0 1 434 434
+208	61800480 12317 717714 956175 44.801145313296 59.426773514683 386 1064 1064 410704 436989056
+209	61812797 11799 717714 956175 44.801145313296 59.426773514683 386 0 0.001555510235 0.030314070796 2.5719968254671e-05
+210	61824596 22309 717714 956262 44.801145313296 59.427202668391 772 0 1 386 386
+211	61846905 13861 717714 956175 44.801145313296 59.426773514683 386 24000000 24000000 9264000000 2.22336e+17
+212	61860766 12317 717714 956175 44.801145313296 59.426773514683 386 1064 1064 410704 436989056
+213	61873083 22309 717714 956262 44.801145313296 59.427202668391 772 0 1 386 386
+214	61895392 44636 717715 956193 44.801145313296 59.427155514683 1544 0 2 1544 2316
+215	61940028 12317 717731 956192 44.801527313296 59.427155514683 386 1064 1064 410704 436989056
+216	61952345 12317 717731 956192 44.801527313296 59.427155514683 386 1064 1064 410704 436989056
+217	61964662 12317 717731 956192 44.801527313296 59.427155514683 386 1064 1064 410704 436989056
+218	61976979 11536 717801 956262 44.801574467004 59.427202668391 386 14 14 5404 75656
+219	61988515 11536 717801 956262 44.801574467004 59.427202668391 386 14 14 5404 75656
+220	62000051 11536 717801 956262 44.801574467004 59.427202668391 386 14 14 5404 75656
+221	62011587 16168 717801 956262 44.801574467004 59.427202668391 386 0.000429153708 0.000429153708 0.165653331288 7.1090741364798e-05
+222	62027755 11321 717382 956391 44.73248461776 59.43797472443 355 1000 1000 355000 355000000
+223	62039076 11321 717383 956392 44.73248461776 59.43797472443 355 1008 1008 357840 360702720
+224	62050397 11321 717386 956395 44.73248461776 59.43797472443 355 1036 1036 367780 381020080
+225	62061718 11321 717386 956395 44.73248461776 59.43797472443 355 1064 1064 377720 401894080
+226	62073039 20481 717386 956395 44.73248461776 59.43797472443 709 0 2 357 359
+227	62093520 10534 717386 956395 44.73248461776 59.43797472443 356 0 31 5663 119749
+228	62104054 22991 717386 956396 44.73248461776 59.43797472443 796 0 1 398 398
+229	62127045 11287 717388 955299 44.73248461776 59.379508130169 354 1064 1064 376656 400761984
+230	62138332 10740 717388 955299 44.73248461776 59.379508130169 354 0 0.001442066866 0.022749231552 1.9390027636046e-05
+231	62149072 20449 717388 955382 44.73248461776 59.379936886119 708 0 2 356 358
+232	62169521 12738 717388 955299 44.73248461776 59.379508130169 355 24000000 24000000 8520000000 2.0448e+17
+233	62182259 11318 717388 955299 44.73248461776 59.379508130169 355 1064 1064 377720 401894080
+234	62193577 20505 717388 955382 44.73248461776 59.379936886119 710 0 1 355 355
+235	62214082 41012 717389 955317 44.73248461776 59.379890130169 1420 0 2 1420 2130
+236	62255094 11318 717405 955316 44.73286661776 59.379890130169 355 1064 1064 377720 401894080
+237	62266412 11318 717405 955316 44.73286661776 59.379890130169 355 1064 1064 377720 401894080
+238	62277730 11287 717405 955316 44.73286661776 59.379890130169 354 1064 1064 376656 400761984
+239	62289017 10578 717471 955382 44.73291337371 59.379936886119 354 14 14 4956 69384
+240	62299595 10578 717471 955382 44.73291337371 59.379936886119 354 14 14 4956 69384
+241	62310173 10578 717471 955382 44.73291337371 59.379936886119 354 14 14 4956 69384
+242	62320751 14471 717471 955382 44.73291337371 59.379936886119 354 0.00042875595 0.0018635119 0.15375036225 6.9112176604964e-05
+243	62335222 3380 717319 955670 44.7 59.4 148 160000 1280000 86960000 58259200000000
+245	62338602 31 881892 881892 55.08121564578 55.08121564578 1 1064 1064 1064 1132096
+246	62338633 32 881902 881902 55.081216703704 55.081216703704 1 1064 1064 1064 1132096
+247	62338665 32 881903 881903 55.081216703704 55.081216703704 1 1064 1064 1064 1132096
+248	62338697 32 881904 881904 55.081216703704 55.081216703704 1 1064 1064 1064 1132096
+249	62338729 32 881905 881905 55.081216703704 55.081216703704 1 1064 1064 1064 1132096
+250	62338761 32 881906 881906 55.081216703704 55.081216703704 1 1064 1064 1064 1132096
+251	62338793 32 881907 881907 55.081216703704 55.081216703704 1 1064 1064 1064 1132096
+252	62338825 32 882042 882042 55.083187486025 55.083187486025 1 1064 1064 1064 1132096
+253	62338857 32 882066 882066 55.083189715551 55.083189715551 1 1064 1064 1064 1132096
+255	62338889 32 881951 881951 55.081751486025 55.081751486025 1 1064 1064 1064 1132096
+256	62338921 32 881884 881884 55.081214968238 55.081214968238 1 1064 1064 1064 1132096
+264	62338953 31 881941 881941 55.08175010805 55.08175010805 1 1064 1064 1064 1132096
+vector 266 MultiRadioShowcase.host0.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 267 MultiRadioShowcase.host4.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 268 MultiRadioShowcase.host1.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+vector 269 MultiRadioShowcase.host2.app[0] throughput:vector ETV
+attr source throughput(packetReceived)
+attr title "throughput, vector"
+attr unit bps
+0	62339584 858 956836 967193 59.46341543006 59.978230428788 32 2 3 80 208
+2	62340442 2786 956552 967804 59.439306331931 59.9968222982 104 2 3 260 676
+14	62343228 5870 956445 967906 59.438368102405 59.99983629623 210 2 3 525 1365
+26	62349098 890 956398 967849 59.43797472443 59.999790918255 32 2 3 80 208
+28	62349988 1162 956620 967417 59.456842972166 59.994368812924 42 2 3 105 273
+30	62351150 8824 956407 967915 59.43797626216 59.999837696068 316 0 3 584 1436
+31	62359974 8726 956455 967919 59.438370331931 59.999838525756 314 0 3 472 1102
+32	62368700 8726 956456 967920 59.438370331931 59.999838525756 314 1 3 628 1570
+33	62377426 8726 956457 967921 59.438370331931 59.999838525756 314 1 3 628 1570
+34	62386152 8726 956458 967922 59.438370331931 59.999838525756 314 1 3 628 1570
+35	62394878 8726 956459 967923 59.438370331931 59.999838525756 314 1 3 628 1570
+36	62403604 8726 956460 967924 59.438370331931 59.999838525756 314 1 3 628 1570
+37	62412330 11732 956401 967906 59.437976102405 59.99983629623 420 0 3 525 1155
+38	62424062 11732 956402 967901 59.437976102405 59.99983629623 420 1 3 840 2100
+39	62435794 11732 956403 967902 59.437976102405 59.99983629623 420 1 3 840 2100
+40	62447526 11732 956404 967903 59.437976102405 59.99983629623 420 1 3 840 2100
+41	62459258 11732 956405 967904 59.437976102405 59.99983629623 420 1 3 840 2100
+42	62470990 11732 956406 967905 59.437976102405 59.99983629623 420 1 3 840 2100
+43	62482722 8804 956398 967913 59.43797472443 59.999837674205 316 0 3 584 1436
+44	62491526 8802 956400 967917 59.437975584618 59.999837873084 316 0 3 569 1391
+60	62500328 493 956829 967169 59.46341543006 59.977848428788 16 1000 1000 16000 16000000
+61	62500821 493 956830 967170 59.46341543006 59.977848428788 16 1008 1008 16128 16257024
+62	62501314 493 956833 967173 59.46341543006 59.977848428788 16 1036 1036 16576 17172736
+63	62501807 493 956833 967173 59.46341543006 59.977848428788 16 1064 1064 17024 18113536
+64	62502300 890 956833 967175 59.46341543006 59.977848428788 32 0 1 16 16
+65	62503190 459 956833 967173 59.46341543006 59.977848428788 16 7 28 306 6552
+66	62503649 890 956833 967174 59.46341543006 59.977848428788 32 0 1 16 16
+67	62504539 493 956835 967175 59.46341543006 59.977848428788 16 1064 1064 17024 18113536
+68	62505032 458 956835 967175 59.46341543006 59.977848428788 16 0 0.000435874771 0.000435874771 1.899868159943e-07
+69	62505490 892 956835 967260 59.46341543006 59.978277228464 32 0 1 16 16
+70	62506382 557 956835 967175 59.46341543006 59.977848428788 16 24000000 24000000 384000000 9.216e+15
+71	62506939 493 956835 967175 59.46341543006 59.977848428788 16 1064 1064 17024 18113536
+72	62507432 892 956835 967260 59.46341543006 59.978277228464 32 0 1 16 16
+73	62508324 1780 956836 967193 59.46341543006 59.978230428788 64 0 2 64 96
+74	62510104 493 956852 967192 59.46379743006 59.978230428788 16 1064 1064 17024 18113536
+75	62510597 493 956852 967192 59.46379743006 59.978230428788 16 1064 1064 17024 18113536
+76	62511090 493 956852 967192 59.46379743006 59.978230428788 16 1064 1064 17024 18113536
+77	62511583 9423 956437 967912 59.43835826216 59.999836455985 315 0 4.4e-05 0.00462 2.0328e-07
+78	62521006 4125 956419 967918 59.438357584618 59.999837873084 137 14 1064 90118 95106452
+79	62525131 9399 956419 967894 59.438357584618 59.999835778443 315 0 4.4e-05 0.00462 2.0328e-07
+80	62534530 3519 956419 967918 59.438357584618 59.999837873084 116 14 1064 89824 95102336
+81	62538049 3519 956419 967918 59.438357584618 59.999837873084 116 14 1064 89824 95102336
+82	62541568 3519 956419 967918 59.438357584618 59.999837873084 116 14 1064 89824 95102336
+83	62545087 3519 956419 967918 59.438357584618 59.999837873084 116 14 1064 89824 95102336
+84	62548606 3142 956426 967858 59.438358102405 59.99979229623 105 14 1064 57120 60011280
+85	62551748 3142 956426 967858 59.438358102405 59.99979229623 105 14 1064 57120 60011280
+86	62554890 3142 956426 967858 59.438358102405 59.99979229623 105 14 1064 57120 60011280
+87	62558032 3142 956426 967858 59.438358102405 59.99979229623 105 14 1064 57120 60011280
+88	62561174 3670 956426 967858 59.438358102405 59.99979229623 105 24000000 24000000 2520000000 6.048e+16
+89	62564844 1640 956426 967858 59.438358102405 59.99979229623 53 1036 1036 54908 56884688
+90	62566484 6286 956427 967907 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+91	62572770 9435 956427 967895 59.438358102405 59.99983629623 315 0 4.4e-05 0.00462 2.0328e-07
+92	62582205 6286 956427 967907 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+93	62588491 6286 956427 967907 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+94	62594777 6286 956427 967907 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+95	62601063 6286 956427 967907 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+96	62607349 6286 956428 967908 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+97	62613635 9435 956428 967896 59.438358102405 59.99983629623 315 0 4.4e-05 0.00462 2.0328e-07
+98	62623070 6286 956428 967908 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+99	62629356 6286 956428 967908 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+100	62635642 6496 956428 967908 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+101	62642138 6496 956428 967908 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+102	62648634 6496 956429 967909 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+103	62655130 9750 956429 967897 59.438358102405 59.99983629623 315 0 4.4e-05 0.00462 2.0328e-07
+104	62664880 6496 956429 967909 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+105	62671376 6496 956429 967909 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+106	62677872 6496 956429 967909 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+107	62684368 6496 956429 967909 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+108	62690864 6496 956430 967910 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+109	62697360 9750 956430 967898 59.438358102405 59.99983629623 315 0 4.4e-05 0.00462 2.0328e-07
+110	62707110 6496 956430 967910 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+111	62713606 6496 956430 967910 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+112	62720102 6496 956430 967910 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+113	62726598 6496 956430 967910 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+114	62733094 6496 956431 967911 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+115	62739590 9750 956431 967899 59.438358102405 59.99983629623 315 0 4.4e-05 0.00462 2.0328e-07
+116	62749340 6496 956431 967911 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+117	62755836 6496 956431 967911 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+118	62762332 6496 956431 967911 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+119	62768828 6496 956431 967911 59.438358102405 59.99983629623 210 14 1064 113190 118890660
+120	62775324 1693 956435 967867 59.438358102405 59.99979229623 53 1036 1036 54908 56884688
+121	62777017 1693 956435 967867 59.438358102405 59.99979229623 53 1064 1064 56392 60001088
+122	62778710 3040 956435 967867 59.438358102405 59.99979229623 105 0 2 61 69
+123	62781750 1573 956435 967867 59.438358102405 59.99979229623 53 0 31 897 20441
+124	62783323 6340 956435 967906 59.438358102405 59.99983629623 219 0 1 110 110
+125	62789663 4419 956482 967914 59.43840348038 59.999837674205 142 14 1064 95438 100766932
+126	62794082 9720 956416 967893 59.43835672443 59.999834918255 315 0 4.4e-05 0.00462 2.0328e-07
+127	62803802 3942 956530 967746 59.43929548038 59.996777446649 126 14 1064 95214 100763796
+128	62807744 3942 956530 967746 59.43929548038 59.996777446649 126 14 1064 95214 100763796
+129	62811686 3942 956530 967746 59.43929548038 59.996777446649 126 14 1064 95214 100763796
+130	62815628 3942 956530 967746 59.43929548038 59.996777446649 126 14 1064 95214 100763796
+131	62819570 3249 956444 967876 59.438368102405 59.99980229623 105 14 1064 56070 58879380
+132	62822819 12160 956445 967906 59.438368102405 59.99983629623 420 0 2 420 630
+133	62834979 3249 956468 967900 59.438402102405 59.99983629623 105 14 1064 56070 58879380
+134	62838228 3249 956468 967900 59.438402102405 59.99983629623 105 14 1064 56070 58879380
+135	62841477 3249 956468 967900 59.438402102405 59.99983629623 105 14 1064 56070 58879380
+136	62844726 4429 956437 967916 59.43835826216 59.999837696068 142 14 1064 95438 100766932
+137	62849155 479 956920 967260 59.463844229736 59.978277228464 16 14 14 224 3136
+138	62849634 479 956920 967260 59.463844229736 59.978277228464 16 14 14 224 3136
+139	62850113 479 956920 967260 59.463844229736 59.978277228464 16 14 14 224 3136
+140	62850592 671 956920 967260 59.463844229736 59.978277228464 16 0.000428799676 0.000428799676 0.006860794816 2.9419065942033e-06
+141	62851263 3232 956493 967925 59.438404331931 59.999838525756 105 14 1064 56070 58879380
+142	62854495 1579 956493 967925 59.438404331931 59.999838525756 53 14 14 742 10388
+143	62856074 1579 956493 967925 59.438404331931 59.999838525756 53 14 14 742 10388
+144	62857653 1579 956493 967925 59.438404331931 59.999838525756 53 14 14 742 10388
+145	62859232 1579 956493 967925 59.438404331931 59.999838525756 53 14 14 742 10388
+146	62860811 4781 956494 967926 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+147	62865592 4781 956494 967926 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+148	62870373 4781 956494 967926 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+149	62875154 4781 956494 967926 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+150	62879935 4781 956494 967926 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+151	62884716 4781 956495 967927 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+152	62889497 4781 956495 967927 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+153	62894278 4781 956495 967927 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+154	62899059 4781 956495 967927 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+155	62903840 4781 956495 967927 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+156	62908621 4781 956496 967928 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+157	62913402 4781 956496 967928 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+158	62918183 4781 956496 967928 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+159	62922964 4781 956496 967928 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+160	62927745 4781 956496 967928 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+161	62932526 4781 956497 967929 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+162	62937307 4781 956497 967929 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+163	62942088 4781 956497 967929 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+164	62946869 4781 956497 967929 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+165	62951650 4781 956497 967929 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+166	62956431 4781 956498 967930 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+167	62961212 4781 956498 967930 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+168	62965993 4781 956498 967930 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+169	62970774 4781 956498 967930 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+170	62975555 4781 956498 967930 59.438404331931 59.999838525756 157 14 1064 56798 58889572
+171	62980336 1662 956500 967716 59.438912102405 59.996394068674 52 1064 1064 55328 58868992
+172	62981998 1893 956500 967716 59.438912102405 59.996394068674 52 9.4e-05 0.001195212287 0.023663406284 1.4428610506148e-05
+173	62983891 3008 956500 967816 59.438912102405 59.996824527726 104 0 2 60 68
+174	62986899 3008 956500 967816 59.438912102405 59.996824527726 104 0 1 52 52
+175	62989907 4830 956517 967784 59.439294102405 59.996820068674 156 0 4.4e-05 0.002288 1.00672e-07
+176	62994737 3950 956437 967916 59.43835826216 59.999837696068 126 14 1064 95214 100763796
+177	62998687 3950 956437 967916 59.43835826216 59.999837696068 126 14 1064 95214 100763796
+178	63002637 3950 956437 967916 59.43835826216 59.999837696068 126 14 1064 95214 100763796
+179	63006587 3950 956437 967916 59.43835826216 59.999837696068 126 14 1064 95214 100763796
+180	63010537 1653 956541 967757 59.439296331931 59.9967782982 52 1064 1064 55328 58868992
+181	63012190 1653 956541 967757 59.439296331931 59.9967782982 52 1064 1064 55328 58868992
+182	63013843 1653 956541 967757 59.439296331931 59.9967782982 52 1064 1064 55328 58868992
+183	63015496 1861 956541 967757 59.439296331931 59.9967782982 52 24000000 24000000 1248000000 2.9952e+16
+184	63017357 1653 956541 967757 59.439296331931 59.9967782982 52 1036 1036 53872 55811392
+185	63019010 4803 956542 967793 59.439296331931 59.9968222982 156 0 4.4e-05 0.002288 1.00672e-07
+186	63023813 4803 956543 967794 59.439296331931 59.9968222982 156 0 4.4e-05 0.002288 1.00672e-07
+187	63028616 4803 956544 967795 59.439296331931 59.9968222982 156 0 4.4e-05 0.002288 1.00672e-07
+188	63033419 4803 956545 967796 59.439296331931 59.9968222982 156 0 4.4e-05 0.002288 1.00672e-07
+189	63038222 4803 956546 967797 59.439296331931 59.9968222982 156 0 4.4e-05 0.002288 1.00672e-07
+190	63043025 1653 956549 967765 59.439296331931 59.9967782982 52 1008 1008 52416 52835328
+191	63044678 1653 956549 967765 59.439296331931 59.9967782982 52 4347 4398 227370 994187038
+192	63046331 1653 956550 967766 59.439296331931 59.9967782982 52 1000 1000 52000 52000000
+193	63047984 2158 956550 967766 59.439296331931 59.9967782982 52 0.000861607501 0.002162265432 0.069615864258 0.00010027975001123
+194	63050142 1653 956550 967766 59.439296331931 59.9967782982 52 1410 1523 76076 111392918
+195	63051795 1549 956551 967767 59.439306331931 59.9967882982 52 14 14 728 10192
+196	63053344 5988 956552 967804 59.439306331931 59.9968222982 208 0 2 208 312
+197	63059332 1549 956582 967798 59.439340331931 59.9968222982 52 14 14 728 10192
+198	63060881 1549 956582 967798 59.439340331931 59.9968222982 52 14 14 728 10192
+199	63062430 1549 956582 967798 59.439340331931 59.9968222982 52 14 14 728 10192
+200	63063979 2178 956600 967816 59.439342561457 59.996824527726 52 0.000430459052 0.001530918104 0.025765706912 1.5682327813999e-05
+201	63066157 667 956613 967393 59.456842972166 59.993986812924 21 1000 1000 21000 21000000
+202	63066824 667 956614 967394 59.456842972166 59.993986812924 21 1008 1008 21168 21337344
+203	63067491 667 956617 967397 59.456842972166 59.993986812924 21 1036 1036 21756 22539216
+204	63068158 667 956617 967397 59.456842972166 59.993986812924 21 1064 1064 22344 23774016
+205	63068825 1206 956617 967399 59.456842972166 59.993986812924 42 0 1 21 21
+206	63070031 618 956617 967397 59.456842972166 59.993986812924 21 1 31 336 7322
+207	63070649 1322 956617 967398 59.456842972166 59.993986812924 46 0 1 23 23
+208	63071971 665 956619 967399 59.456842972166 59.993986812924 21 1064 1064 22344 23774016
+209	63072636 667 956619 967399 59.456842972166 59.993986812924 21 0 0.000846733524 0.002214630676 1.207906409381e-06
+210	63073303 1208 956619 967486 59.456842972166 59.994415966632 42 0 1 21 21
+211	63074511 749 956619 967399 59.456842972166 59.993986812924 21 24000000 24000000 504000000 1.2096e+16
+212	63075260 665 956619 967399 59.456842972166 59.993986812924 21 1064 1064 22344 23774016
+213	63075925 1208 956619 967486 59.456842972166 59.994415966632 42 0 1 21 21
+214	63077133 2408 956620 967417 59.456842972166 59.994368812924 84 0 2 84 126
+215	63079541 665 956636 967416 59.457224972166 59.994368812924 21 1064 1064 22344 23774016
+216	63080206 665 956636 967416 59.457224972166 59.994368812924 21 1064 1064 22344 23774016
+217	63080871 665 956636 967416 59.457224972166 59.994368812924 21 1064 1064 22344 23774016
+218	63081536 627 956706 967486 59.457272125874 59.994415966632 21 14 14 294 4116
+219	63082163 627 956706 967486 59.457272125874 59.994415966632 21 14 14 294 4116
+220	63082790 627 956706 967486 59.457272125874 59.994415966632 21 14 14 294 4116
+221	63083417 879 956706 967486 59.457272125874 59.994415966632 21 0.000429153708 0.000429153708 0.009012227868 3.8676310068931e-06
+222	63084296 478 957709 967825 59.505240432833 59.999408918255 15 1000 1000 15000 15000000
+223	63084774 478 957710 967826 59.505240432833 59.999408918255 15 1008 1008 15120 15240960
+224	63085252 478 957713 967829 59.505240432833 59.999408918255 15 1036 1036 15540 16099440
+225	63085730 478 957713 967829 59.505240432833 59.999408918255 15 1064 1064 15960 16981440
+226	63086208 894 956397 967831 59.43797472443 59.999408918255 31 0 1 15 15
+227	63087102 441 957713 967829 59.505240432833 59.999408918255 15 0 27 207 3899
+228	63087543 866 957713 967830 59.505240432833 59.999408918255 30 0 1 15 15
+229	63088409 509 956397 967831 59.43797472443 59.999408918255 16 1064 1064 17024 18113536
+230	63088918 461 956397 967831 59.43797472443 59.999408918255 16 0 0 0 0
+231	63089379 922 956397 967914 59.43797472443 59.999837674205 32 0 1 16 16
+232	63090301 573 956397 967831 59.43797472443 59.999408918255 16 24000000 24000000 384000000 9.216e+15
+233	63090874 509 956397 967831 59.43797472443 59.999408918255 16 1064 1064 17024 18113536
+234	63091383 922 956397 967914 59.43797472443 59.999837674205 32 0 1 16 16
+235	63092305 1844 956398 967849 59.43797472443 59.999790918255 64 0 2 64 96
+236	63094149 509 956416 967848 59.43835672443 59.999790918255 16 1064 1064 17024 18113536
+237	63094658 509 956416 967848 59.43835672443 59.999790918255 16 1064 1064 17024 18113536
+238	63095167 509 956416 967848 59.43835672443 59.999790918255 16 1064 1064 17024 18113536
+239	63095676 477 956482 967914 59.43840348038 59.999837674205 16 14 14 224 3136
+240	63096153 477 956482 967914 59.43840348038 59.999837674205 16 14 14 224 3136
+241	63096630 477 956482 967914 59.43840348038 59.999837674205 16 14 14 224 3136
+242	63097107 653 956482 967914 59.43840348038 59.999837674205 16 0.00042875595 0.00042875595 0.0068600952 2.9413066345664e-06
+243	63097760 137 957650 967931 59.5 60 6 400000 1120000 4480000 3635200000000
+266	63097897 10581 967931 967931 0.1 60 600 0 0 0 0
+267	63108478 10581 967931 967931 0.1 60 600 0 0 0 0
+268	63119059 10581 967931 967931 0.1 60 600 0 0 0 0
+269	63129640 10581 967931 967931 0.1 60 600 0 0 0 0
+

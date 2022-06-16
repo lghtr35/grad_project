@@ -1,0 +1,7 @@
+<config>
+	<interface hosts='EndDevice*' address='10.0.0.x' netmask='255.255.255.x'/><autoroute metric='errorRate'/>
+	<interface hosts='NoiseDevice*' address='10.0.0.x' netmask='255.255.255.x'/><autoroute metric='errorRate'/>
+	<interface hosts='MiddleDevice*' address='10.0.0.x' netmask='255.255.255.x'/><autoroute metric='errorRate'/>
+	<interface hosts='ServerRadio' address='10.0.0.x' netmask='255.255.255.x'/><autoroute metric='errorRate'/>
+	<interface hosts='NoiseServer' address='10.0.0.x' netmask='255.255.255.x'/><autoroute metric='errorRate'/>
+</config>
